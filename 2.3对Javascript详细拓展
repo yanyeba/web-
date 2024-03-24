@@ -1526,3 +1526,455 @@ while (cars[i])
     document.write(cars[i] + "<br>");
     i++;
 }
+
+21.JavaScript break 和 continue 语句
+break 语句用于跳出循环。
+continue 用于跳过循环中的一个迭代。
+
+21.1.break 语句
+我们已经在本教程之前的章节中见到过 break 语句。它用于跳出 switch() 语句。
+break 语句可用于跳出循环。
+break 语句跳出循环后，会继续执行该循环之后的代码（如果有的话）：
+<button onclick="myFunction()">按钮</button>
+<p id="demo"></p>
+<script>
+    function myFunction(){
+        var x=""; i=0;
+        for(i=0; i<10; i++){
+            if(i==3){
+                break
+            }
+            x=x +"The number is" + i +"<br>"
+        }
+        document.getElementById("demo").innerHTML=x;
+    }
+</script>
+由于这个 if 语句只有一行代码，所以可以省略花括号：
+
+21.2.continue 语句
+continue 语句中断当前的循环中的迭代，然后继续循环下一个迭代。 以下例子在值为 3 时，直接跳过：
+for (i=0;i<=10;i++)
+{
+    if (i==3) continue;
+    x=x + "The number is " + i + "<br>";
+}
+
+while (i < 10){
+  if (i == 3){
+    i++;    //加入i++不会进入死循环
+    continue;
+  }
+  x= x + "该数字为 " + i + "<br>";
+  i++;
+}
+
+21.3.JavaScript 标签
+正如您在 switch 语句那一章中看到的，可以对 JavaScript 语句进行标记。
+
+如需标记 JavaScript 语句，请在语句之前加上冒号：
+label:
+statements
+break 和 continue 语句仅仅是能够跳出代码块的语句。
+语法:
+break labelname;
+continue labelname;
+continue 语句（带有或不带标签引用）只能用在循环中。
+break 语句（不带标签引用），只能用在循环或 switch 中。
+通过标签引用，break 语句可用于跳出任何 JavaScript 代码块：
+
+
+22.JavaScript typeof, null, 和 undefined
+
+22.1.typeof 操作符
+你可以使用 typeof 操作符来检测变量的数据类型。
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<script>
+    x= typeof"john"
+    x1= typeof 1
+    x2= typeof false
+    x3= typeof [1, 2, 3]
+    x4= typeof {name:'johe'}
+    document.getElementById("demo").innerHTML=x
+    document.getElementById("demo1").innerHTML=x1
+    document.getElementById("demo2").innerHTML=x2
+    document.getElementById("demo2").innerHTML=x3
+    document.getElementById("demo4").innerHTML=x4
+</script>
+在JavaScript中，数组是一种特殊的对象类型。 因此 typeof [1,2,3,4] 返回 object。
+
+22.2.null
+在 JavaScript 中 null 表示 "什么都没有"。
+null是一个只有一个值的特殊类型。表示一个空对象引用。
+用 typeof 检测 null 返回是object。
+你可以设置为 null 来清空对象:
+<p id="mode"></p>
+<p id="mode1"></p>
+<script>
+    var person = null;   // 值为 null(空), 但类型为对象;可以设置为 null 来清空对象:
+    x = typeof person
+    document.getElementById("mode").innerHTML = x
+
+    var person1 = undefined;    //可以设置为 undefined 来清空对象:
+    y = typeof person1
+    document.getElementById("mode1").innerHTML = y
+</script>
+
+22.3.undefined
+在 JavaScript 中, undefined 是一个没有设置值的变量。
+typeof 一个没有值的变量会返回 undefined。
+var person;                  // 值为 undefined(空), 类型是undefined
+
+任何变量都可以通过设置值为 undefined 来清空。 类型为 undefined.
+person = undefined;          // 值为 undefined, 类型是undefined
+
+4.undefined 和 null 的区别
+null 和 undefined 的值相等，但类型不等：
+<p id="un"></p>
+<p id="un1"></p>
+<p id="un2"></p>
+<p id="un3"></p>
+<script>
+    x = typeof undefined    // 数据类型undefined
+    y = typeof null         // 数据类型object
+    z = null === undefined  // false
+    c = null == undefined   // 数据类型也要相同true
+    document.getElementById("un").innerHTML= x
+    document.getElementById("un1").innerHTML= y
+    document.getElementById("un2").innerHTML= z
+    document.getElementById("un3").innerHTML= c
+
+23.JavaScript 类型转换
+Number() 转换为数字， String() 转换为字符串， Boolean() 转换为布尔值。
+
+23.1.JavaScript 数据类型
+在 JavaScript 中有 6 种不同的数据类型：
+    string
+    number
+    boolean
+    object
+    function
+    symbol
+3 种对象类型：
+    Object
+    Date
+    Array
+2 个不包含任何值的数据类型：
+    null
+    undefined
+
+23.2.typeof 操作符
+你可以使用 typeof 操作符来查看 JavaScript 变量的数据类型。
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<p id="demo8"></p>
+<p id="demo9"></p>
+<script>
+    x = typeof 'Johe'   // 返回 string
+    x1 = typeof 3       // 返回 number
+    x2 = typeof NaN     // 返回 number
+    x3 = typeof false   // 返回 boolean
+    x4 = typeof [1,2,3] // 返回 object
+    x5 = typeof {name:"Johe", age:30}   // 返回 object
+    x6 = typeof new Date()          // 返回 object
+    x7 = typeof function (){}       // 返回 function
+    x8 = typeof myCar                // 返回 undefined (如果 myCar 没有声明)
+    x9 = typeof null                // 返回 object
+    document.getElementById("demo").innerHTML= x;
+    document.getElementById("demo1").innerHTML= x1;
+    document.getElementById("demo2").innerHTML= x2;
+    document.getElementById("demo3").innerHTML= x3;
+    document.getElementById("demo4").innerHTML= x4;
+    document.getElementById("demo5").innerHTML= x5;
+    document.getElementById("demo6").innerHTML= x6;
+    document.getElementById("demo7").innerHTML= x7;
+    document.getElementById("demo8").innerHTML= x8;
+    document.getElementById("demo9").innerHTML= x9;
+</script>
+请注意：
+    NaN 的数据类型是 number
+    数组(Array)的数据类型是 object
+    日期(Date)的数据类型为 object
+    null 的数据类型是 object
+    未定义变量的数据类型为 undefined
+如果对象是 JavaScript Array 或 JavaScript Date ，我们就无法通过 typeof 来判断他们的类型，因为都是 返回 object。
+
+23.3.constructor 属性
+constructor 属性返回所有 JavaScript 变量的构造函数。
+Function() { [native code] }: 返回函数Function()；[native code]：构造函数
+<p  id="mo"></p>
+<script>
+document.getElementById("mo").innerHTML=
+    "jihe".constructor + "<br>" +   //返回函数 String() { [native code] }
+    (3.14).constructor + "<br>" +   //       Number() { [native code] }
+    false.constructor + "<br>" +     //       Boolean() { [native code] }
+    [1, 2, 3].constructor + "<br>"+  //     String() { [native code] }
+    {name:'John', age:34}.constructor + "<br>" + //Object() { [native code] }
+    new Date().constructor + "<br>" +   //Date() { [native code] }
+    function () {}.constructor + "<br>" //Function() { [native code] }
+
+</script>
+
+23.4.JavaScript 类型转换
+JavaScript 变量可以转换为新变量或其他数据类型：
+    通过使用 JavaScript 函数
+    通过 JavaScript 自身自动转换
+<p id="m"></p>
+<p id="m1"></p>
+
+<script>
+    document.getElementById("m").innerHTML=
+        typeof(String(x)) + "<br>" +     // 将变量 x 转换为字符串并返回
+        typeof(String(123)) + "<br>" +   // 将数字 123 转换为字符串并返回
+        typeof(String(123 + 1))         // 将数字表达式转换为字符串并返回
+    //Number 方法 toString() 也是有同样的效果。
+    document.getElementById("m1").innerHTML=
+        x.toString() + "<br>" +
+        (123).toString() + "<br>" + //toString() 方法将数字转换为字符串。
+        (100 + 25).toString()
+</script>
+更多数字转换为字符串的方法：
+方法	            描述
+toExponential()	把对象的值转换为指数计数法。
+toFixed()	    把数字转换为字符串，结果的小数点后有指定位数的数字。
+toPrecision()	把数字格式化为指定的长度。
+
+23.5.将布尔值转换为字符串
+全局方法 String() 可以将布尔值转换为字符串。
+<p id="mode"></p>
+<script>
+    document.getElementById("mode").innerHTML=
+        typeof String(false) + "<br>" +
+        String(false) + "<br>" +  //全局方法 String() 可以将布尔值转换为字符串。
+        false.toString()
+</script>
+
+23.6.将日期转换为字符串
+Date() 返回字符串。
+<p id="cc"></p>
+<script>
+    document.getElementById("cc").innerHTML=
+        Date() + "<br>" +
+        String(new Date())  //全局方法 String() 可以将日期对象转换为字符串。
+</script>
+查看更多关于日期转换为字符串的函数：
+方法	                描述
+getDate()	        从 Date 对象返回一个月中的某一天 (1 ~ 31)。
+getDay()	        从 Date 对象返回一周中的某一天 (0 ~ 6)。
+getFullYear()	    从 Date 对象以四位数字返回年份。
+getHours()	        返回 Date 对象的小时 (0 ~ 23)。
+getMilliseconds()	返回 Date 对象的毫秒(0 ~ 999)。
+getMinutes()	    返回 Date 对象的分钟 (0 ~ 59)。
+getMonth()	        从 Date 对象返回月份 (0 ~ 11)。
+getSeconds()	    返回 Date 对象的秒数 (0 ~ 59)。
+getTime()	        返回 1970 年 1 月 1 日至今的毫秒数。
+
+23.7.将字符串转换为数字
+全局方法 Number() 可以将字符串转换为数字。
+字符串包含数字(如 "3.14") 转换为数字 (如 3.14).
+空字符串转换为 0。
+其他的字符串会转换为 NaN (不是个数字)。
+<p id="xx"></p>
+<script>
+    document.getElementById("xx").innerHTML=
+        Number("3.14") + "<br>" +
+        Number("")  + "<br>" +  // 返回 0
+        Number(" ") + "<br>" +  // 返回 0
+        Number("99 88")         // 返回 NaN
+</script>
+查看到更多关于字符串转为数字的方法：
+方法	            描述
+parseFloat()	解析一个字符串，并返回一个浮点数。
+parseInt()	    解析一个字符串，并返回一个整数。
+
+23.8.一元运算符 +
+Operator + 可用于将变量转换为数字：
+<p id="xxx"></p>
+<script>
+    document.getElementById("xxx").innerHTML=
+        // Operator + 可用于将变量转换为数字：
+        typeof( y="5") +" <br>" +
+        typeof( x= + y) + "<br>" +
+        //如果变量不能转换，它仍然会是一个数字，但值为 NaN (不是一个数字):
+        typeof (z = "johe") + "<br>" +
+        typeof (z1 = + z)
+</script>
+
+23.9.将布尔值转换为数字
+全局方法 Number() 可将布尔值转换为数字。
+Number(false)     // 返回 0
+Number(true)      // 返回 1
+
+23.10.将日期转换为数字
+全局方法 Number() 可将日期转换为数字。
+日期方法 getTime() 也有相同的效果。
+<p id="z"></p>
+<script>
+    d= new Date();
+    d1= Number(d)   //全局方法 Number() 可将日期转换为数字。
+    d2= d.getTime() //日期方法 getTime() 也有相同的效果。
+    document.getElementById("z").innerHTML=
+        typeof d1 + "<br>" +
+        d2
+</script>
+
+23.11.自动转换类型
+当 JavaScript 尝试操作一个 "错误" 的数据类型时，会自动转换为 "正确" 的数据类型。
+以下输出结果不是你所期望的：
+<p id="zz"></p>
+<script>
+    document.getElementById("zz").innerHTML=
+        (5 + null) + "<br>" + // 返回 5         null 转换为 0
+        ("5" + null) + "<br>" + // 返回"5null"   null 转换为 "null"
+        ("5" + 1) + "<br>" +    // 返回 "51"      1 转换为 "1"
+        ("5" - 1) + "<br>"       // 返回 4         "5" 转换为 5
+</script>
+
+23.12.自动转换为字符串
+当你尝试输出一个对象或一个变量时 JavaScript 会自动调用变量的 toString() 方法：
+document.getElementById("demo").innerHTML = myVar;
+
+myVar = {name:"Fjohn"}  // toString 转换为 "[object Object]"
+myVar = [1,2,3,4]       // toString 转换为 "1,2,3,4"
+myVar = new Date()      // toString 转换为 "Sun Mar 24 2024 16:08:52 GMT+0800 (中国标准时间)"
+
+23.13.下表展示了使用不同的数值转换为数字(Number), 字符串(String), 布尔值(Boolean):
+原始值	    转换为数字	转换为字符串	转换为布尔值	实例
+false	    0	        "false"	      false	尝试一下 »
+true	    1	        "true"	        true	尝试一下 »
+0	        0	        "0"	            false	尝试一下 »
+1	        1	        "1"	            true	尝试一下 »
+"0"	        0	        "0"	            true	尝试一下 »
+"000"	    0	        "000"	        true	尝试一下 »
+"1"	        1	        "1"	            true	尝试一下 »
+NaN	        NaN	        "NaN"	        false	尝试一下 »
+Infinity	Infinity	"Infinity"	    true	尝试一下 »
+-Infinity	-Infinity	"-Infinity"	    true	尝试一下 »
+""	        0	        ""	            false	尝试一下 »
+"20"	    20	        "20"	        true	尝试一下 »
+"Runoob"	NaN	        "Runoob"	    true	尝试一下 »
+[ ]	        0	        ""	            true	尝试一下 »
+[20]	    20	        "20"	        true	尝试一下 »
+[10,20]	    NaN	        "10,20"	        true	尝试一下 »
+["Runoob"]	NaN	        "Runoob"	    true	尝试一下 »
+["Runoob","Google"]	NaN	"Runoob,Google"	true	尝试一下 »
+function(){}	NaN	    "function(){}"	true	尝试一下 »
+{ }	        NaN	    "[object Object]"	true	尝试一下 »
+null	    0	        "null"	        false	尝试一下 »
+undefined	NaN	        "undefined"	    false
+
+
+24.JavaScript 正则表达式
+正则表达式（英语：Regular Expression，在代码中常简写为regex、regexp或RE）使用单个字符串来描述、匹配一系列符合某个句法规则的字符串搜索模式。
+搜索模式可用于文本搜索和文本替换。
+
+24.1.什么是正则表达式？
+正则表达式是由一个字符序列形成的搜索模式。
+当你在文本中搜索数据时，你可以用搜索模式来描述你要查询的内容。
+正则表达式可以是一个简单的字符，或一个更复杂的模式。
+正则表达式可用于所有文本搜索和文本替换的操作。
+语法：
+    /正则表达式主体/修饰符(可选)
+其中修饰符是可选的。
+var patt = /runoob/i
+实例解析：
+/runoob/i  是一个正则表达式。
+runoob  是一个正则表达式主体 (用于检索)。
+i  是一个修饰符 (搜索不区分大小写)。
+
+24.2.使用字符串方法
+在 JavaScript 中，正则表达式通常用于两个字符串方法 : search() 和 replace()。
+search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。
+replace() 方法用于在字符串中用一些字符串替换另一些字符串，或替换一个与正则表达式匹配的子串。
+<p id="demo"></p>
+<script>
+    var str = "visit runoob"
+    var n =str.search(/runoob/i)    //使用正则表达式搜索 "Runoob" 字符串，且不区分大小写：
+    var c =str.search("runoob")     //search 方法可使用字符串作为参数。字符串参数会转换为正则表达式：
+    document.getElementById("demo").innerHTML=
+        n + "<br>" + c;
+</script>
+
+24.3.search() 方法使用字符串
+search 方法可使用字符串作为参数。字符串参数会转换为正则表达式：
+var str = "Visit Runoob!";
+var n = str.search("Runoob");
+
+24.4.replace() 方法使用正则表达式
+使用正则表达式且不区分大小写将字符串中的 Microsoft 替换为 Runoob :<br>
+<button onclick="myFunction()">按钮</button>
+<p id="dem">Visit Microsoft!</p>
+<script>
+    function myFunction(){
+        var str = document.getElementById("dem").innerHTML;
+        var txt = str.replace(/microsoft/i,"Runoob")
+        document.getElementById("dem").innerHTML=txt
+        }
+</script>
+
+24.5.replace() 方法使用字符串
+replace() 方法将接收字符串作为参数：
+
+var str = document.getElementById("demo").innerHTML;
+var txt = str.replace("Microsoft","Runoob");
+    正则表达式参数可用在以上方法中 (替代字符串参数)。
+    正则表达式使得搜索功能更加强大(如实例中不区分大小写)。
+
+24.6.正则表达式修饰符
+修饰符 可以在全局搜索中不区分大小写:
+
+修饰符	描述
+i	    执行对大小写不敏感的匹配。
+g	    执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。
+m	    执行多行匹配。
+
+24.7.正则表达式模式
+方括号用于查找某个范围内的字符：
+
+表达式	描述
+[abc]	查找方括号之间的任何字符。
+[0-9]	查找任何从 0 至 9 的数字。
+(x|y)	查找任何以 | 分隔的选项。
+
+24.8.元字符是拥有特殊含义的字符：
+
+元字符	描述
+\d	    查找数字。
+\s	    查找空白字符。
+\b	    匹配单词边界。
+\uxxxx	查找以十六进制数 xxxx 规定的 Unicode 字符。
+
+24.9.量词:
+
+量词	描述
+n+	匹配任何包含至少一个 n 的字符串。
+n*	匹配任何包含零个或多个 n 的字符串。
+n?	匹配任何包含零个或一个 n 的字符串。
+
+24.10.使用 RegExp 对象
+在 JavaScript 中，RegExp 对象是一个预定义了属性和方法的正则表达式对象。
+
+24.11.使用 test()
+test() 方法是一个正则表达式方法。
+test() 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。
+以下实例用于搜索字符串中的字符 "e"：
+
+var patt = /e/;
+patt.test("The best things in life are free!");
+
+24.12.使用 exec()
+exec() 方法是一个正则表达式方法。
+exec() 方法用于检索字符串中的正则表达式的匹配。
+该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
+以下实例用于搜索字符串中的字母 "e":
+/e/.exec("The best things in life are free!");
+
