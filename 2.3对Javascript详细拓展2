@@ -1024,3 +1024,506 @@ var obj = JSON.parse(text);
 函数	描述
 JSON.parse()	用于将一个 JSON 字符串转换为 JavaScript 对象。
 JSON.stringify()	用于将 JavaScript 值转换为 JSON 字符串。
+
+35.</head>
+    <script type="text/javascript">
+        function getValue(){
+            var a, b,c;
+            a= void( b = 5, c = 7);
+            document.write('a = ' + a + ' b = ' + b +' c = ' + c);
+        }
+    </script>
+</head>
+<body>
+javascript:void(0) 含义
+我们经常会使用到 javascript:void(0) 这样的代码，那么在 JavaScript 中 javascript:void(0) 代表的是什么意思呢？
+
+javascript:void(0) 中最关键的是 void 关键字， void 是 JavaScript 中非常重要的关键字，该操作符指定要计算一个表达式但是不返回值。
+
+语法格式如下：
+    void func()
+    javascript:void func()
+或者
+    void(func())
+    javascript:void(func())
+下面的代码创建了一个超级链接，当用户点击以后不会发生任何事。<br>
+<a href="javascript:void(0)">当用户点击以后不会发生任何事</a><br>
+当用户链接时，void(0) 计算为 0，但 Javascript 上没有任何效果。<br><br><br>
+
+<p>点击以下链接查看结果</p><br>
+<a href="javascript:void(alert('warning!'))">重新点击</a><br><br>
+
+
+以下实例中参数 a 将返回 undefined :<br>
+<form>
+    <input type="button" value="点我" onclick="getValue();">
+</form>
+
+href="#"与href="javascript:void(0)"的区别
+# 包含了一个位置信息，默认的锚是#top 也就是网页的上端。
+而javascript:void(0), 仅仅表示一个死链接。
+在页面很长的时候会使用 # 来定位页面的具体位置，格式为：# + id。
+如果你要定义一个死链接请使用 javascript:void(0) 。
+
+
+<a href="javascript:void(0);">点我没有反应的!</a>
+<a href="#pos">点我定位到指定位置!</a>
+<br>
+...
+<br>
+<p id="pos">尾部定位点</p>
+<body>
+
+36.JavaScript 异步编程
+36.1.异步的概念
+    异步（Asynchronous, async）是与同步（Synchronous, sync）相对的概念。
+    在我们学习的传统单线程编程中，程序的运行是同步的（同步不意味着所有步骤同时运行，而是指步骤在一个控制流序列中按顺序执行）。而异步的概念则是不保证同步的概念，也就是说，一个异步过程的执行将不再与原有的序列有顺序关系。
+    简单来理解就是：同步按你的代码顺序执行，异步不按照代码顺序执行，异步的执行效率更高。
+    以上是关于异步的概念的解释，接下来我们通俗地解释一下异步：异步就是从主线程发射一个子线程来完成任务。
+36.2.什么时候用异步编程
+    在前端编程中（甚至后端有时也是这样），我们在处理一些简短、快速的操作时，例如计算 1 + 1 的结果，往往在主线程中就可以完成。主线程作为一个线程，不能够同时接受多方面的请求。所以，当一个事件没有结束时，界面将无法处理其他请求。
+    现在有一个按钮，如果我们设置它的 onclick 事件为一个死循环，那么当这个按钮按下，整个网页将失去响应。
+    为了避免这种情况的发生，我们常常用子线程来完成一些可能消耗时间足够长以至于被用户察觉的事情，比如读取一个大文件或者发出一个网络请求。因为子线程独立于主线程，所以即使出现阻塞也不会影响主线程的运行。但是子线程有一个局限：一旦发射了以后就会与主线程失去同步，我们无法确定它的结束，如果结束之后需要处理一些事情，比如处理来自服务器的信息，我们是无法将它合并到主线程中去的。
+    为了解决这个问题，JavaScript 中的异步操作函数往往通过回调函数来实现异步任务的结果处理。
+
+36.3.回调函数
+回调函数就是一个函数，它是在我们启动一个异步任务的时候就告诉它：等你完成了这个任务之后要干什么。这样一来主线程几乎不用关心异步任务的状态了，他自己会善始善终。
+<p>回调函数等待 3 秒后执行。</p>
+<p id="demo"></p>
+<script>
+    function  print(){
+        document.getElementById("demo").innerHTML="OOB"
+    }
+    setTimeout(print, 3000);
+</script>
+这段程序中的 setTimeout 就是一个消耗时间较长（3 秒）的过程，它的第一个参数是个回调函数，第二个参数是毫秒数，这个函数执行之后会产生一个子线程，子线程会等待 3 秒，然后执行回调函数 "print"，在命令行输出 "RUNOOB!"。
+
+当然，JavaScript 语法十分友好，我们不必单独定义一个函数 print ，我们常常将上面的程序写成：
+setTimeout(function () {
+    document.getElementById("demo").innerHTML="RUNOOB!";
+}, 3000);
+
+注意：既然 setTimeout 会在子线程中等待 3 秒，在 setTimeout 函数执行之后主线程并没有停止，所以：
+
+setTimeout(function () {
+    document.getElementById("demo1").innerHTML="RUNOOB-1!";  // 三秒后子线程执行
+}, 3000);
+document.getElementById("demo2").innerHTML="RUNOOB-2!";      // 主线程先执行
+
+36.4.异步 AJAX(https://www.runoob.com/ajax/ajax-tutorial.html)
+除了 setTimeout 函数以外，异步回调广泛应用于 AJAX 编程。
+XMLHttpRequest 常常用于请求来自远程服务器上的 XML 或 JSON 数据。一个标准的 XMLHttpRequest 对象往往包含多个回调：
+var xhr = new XMLHttpRequest();
+
+xhr.onload = function () {
+    // 输出接收到的文字数据
+    document.getElementById("demo").innerHTML=xhr.responseText;
+}
+
+xhr.onerror = function () {
+    document.getElementById("demo").innerHTML="请求出错";
+}
+
+// 发送异步 GET 请求
+xhr.open("GET", "https://www.runoob.com/try/ajax/ajax_info.txt", true);
+xhr.send();
+
+
+
+XMLHttpRequest 的 onload 和 onerror 属性都是函数，分别在它请求成功和请求失败时被调用。如果你使用完整的 jQuery 库，也可以更加优雅的使用异步 AJAX：
+$.get("https://www.runoob.com/try/ajax/demo_test.php",function(data,status){
+    alert("数据: " + data + "\n状态: " + status);
+});
+
+37.JavaScript Promise
+在学习本章节内容前，你需要先了解什么是异步编程，
+Promise 是一个 ECMAScript 6 提供的类，目的是更加优雅地书写复杂的异步任务。
+
+37.1.构造 Promise
+现在我们新建一个 Promise 对象：
+
+new Promise(function (resolve, reject) {
+    // 要做的事情...
+});
+通过新建一个 Promise 对象好像并没有看出它怎样 "更加优雅地书写复杂的异步任务"。我们之前遇到的异步任务都是一次异步，如果需要多次调用异步函数呢？例如，如果我想分三次输出字符串，第一次间隔 1 秒，第二次间隔 4 秒，第三次间隔 3 秒：
+setTimeout(function () {
+    console.log("First");
+    setTimeout(function () {
+        console.log("Second");
+        setTimeout(function () {
+            console.log("Third");
+        }, 3000);
+    }, 4000);
+}, 1000);
+这段程序实现了这个功能，但是它是用 "函数瀑布" 来实现的。可想而知，在一个复杂的程序当中，用 "函数瀑布" 实现的程序无论是维护还是异常处理都是一件特别繁琐的事情，而且会让缩进格式变得非常冗赘。
+
+现在我们用 Promise 来实现同样的功能：
+new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        console.log("First");
+        resolve();
+    }, 1000);
+}).then(function () {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log("Second");
+            resolve();
+        }, 4000);
+    });
+}).then(function () {
+    setTimeout(function () {
+        console.log("Third");
+    }, 3000);
+});
+这段代码较长，所以还不需要完全理解它，我想引起注意的是 Promise 将嵌套格式的代码变成了顺序格式的代码。
+
+
+37.2.Promise 的构造函数
+Promise 构造函数是 JavaScript 中用于创建 Promise 对象的内置构造函数。
+
+Promise 构造函数接受一个函数作为参数，该函数是同步的并且会被立即执行，所以我们称之为起始函数。起始函数包含两个参数 resolve 和 reject，分别表示 Promise 成功和失败的状态。
+
+起始函数执行成功时，它应该调用 resolve 函数并传递成功的结果。当起始函数执行失败时，它应该调用 reject 函数并传递失败的原因。
+
+Promise 构造函数返回一个 Promise 对象，该对象具有以下几个方法：
+    then：用于处理 Promise 成功状态的回调函数。
+    catch：用于处理 Promise 失败状态的回调函数。
+    finally：无论 Promise 是成功还是失败，都会执行的回调函数。
+
+下面是一个使用 Promise 构造函数创建 Promise 对象的例子：
+当 Promise 被构造时，起始函数会被同步执行：
+const promise = new Promise((resolve, reject) => {
+  // 异步操作
+  setTimeout(() => {
+    if (Math.random() < 0.5) {
+      resolve('success');
+    } else {
+      reject('error');
+    }
+  }, 1000);
+});
+
+promise.then(result => {
+  console.log(result);
+}).catch(error => {
+  console.log(error);
+});
+在上面的例子中，我们使用 Promise 构造函数创建了一个 Promise 对象，并使用 setTimeout 模拟了一个异步操作。如果异步操作成功，则调用 resolve 函数并传递成功的结果；如果异步操作失败，则调用 reject 函数并传递失败的原因。然后我们使用 then 方法处理 Promise 成功状态的回调函数，使用 catch 方法处理 Promise 失败状态的回调函数。
+这段程序会直接输出 error 或 success。
+
+resolve 和 reject 都是函数，其中调用 resolve 代表一切正常，reject 是出现异常时所调用的：
+new Promise(function (resolve, reject) {
+    var a = 0;
+    var b = 1;
+    if (b == 0) reject("Divide zero");
+    else resolve(a / b);
+}).then(function (value) {
+    console.log("a / b = " + value);
+}).catch(function (err) {
+    console.log(err);
+}).finally(function () {
+    console.log("End");
+});
+
+这段程序执行结果是:
+    a / b = 0
+    End
+
+Promise 类有 .then() .catch() 和 .finally() 三个方法，这三个方法的参数都是一个函数，.then() 可以将参数中的函数添加到当前 Promise 的正常执行序列，.catch() 则是设定 Promise 的异常处理序列，.finally() 是在 Promise 执行的最后一定会执行的序列。 .then() 传入的函数会按顺序依次执行，有任何异常都会直接跳到 catch 序列：
+new Promise(function (resolve, reject) {
+    console.log(1111);
+    resolve(2222);
+}).then(function (value) {
+    console.log(value);
+    return 3333;
+}).then(function (value) {
+    console.log(value);
+    throw "An error";
+}).catch(function (err) {
+    console.log(err);
+});
+执行结果：
+
+    1111
+    2222
+    3333
+    An error
+
+resolve() 中可以放置一个参数用于向下一个 then 传递一个值，then 中的函数也可以返回一个值传递给 then。但是，如果 then 中返回的是一个 Promise 对象，那么下一个 then 将相当于对这个返回的 Promise 进行操作，这一点从刚才的计时器的例子中可以看出来。
+
+reject() 参数中一般会传递一个异常给之后的 catch 函数用于处理异常。
+
+但是请注意以下两点：
+    resolve 和 reject 的作用域只有起始函数，不包括 then 以及其他序列；
+    resolve 和 reject 并不能够使起始函数停止运行，别忘了 return。
+
+37.3.Promise 函数
+上述的 "计时器" 程序看上去比函数瀑布还要长，所以我们可以将它的核心部分写成一个 Promise 函数：
+function print(delay, message) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log(message);
+            resolve();
+        }, delay);
+    });
+}
+
+然后我们就可以放心大胆的实现程序功能了：
+
+实例
+print(1000, "First").then(function () {
+    return print(4000, "Second");
+}).then(function () {
+    print(3000, "Third");
+});
+这种返回值为一个 Promise 对象的函数称作 Promise 函数，它常常用于开发基于异步操作的库。
+
+37.4.回答常见的问题（FAQ）
+Q: then、catch 和 finally 序列能否顺序颠倒？
+
+A: 可以，效果完全一样。但不建议这样做，最好按 then-catch-finally 的顺序编写程序。
+
+Q: 除了 then 块以外，其它两种块能否多次使用？
+
+A: 可以，finally 与 then 一样会按顺序执行，但是 catch 块只会执行第一个，除非 catch 块里有异常。所以最好只安排一个 catch 和 finally 块。
+
+Q: then 块如何中断？
+
+A: then 块默认会向下顺序执行，return 是不能中断的，可以通过 throw 来跳转至 catch 实现中断。
+
+Q: 什么时候适合用 Promise 而不是传统回调函数？
+
+A: 当需要多次顺序执行异步操作的时候，例如，如果想通过异步方法先后检测用户名和密码，需要先异步检测用户名，然后再异步检测密码的情况下就很适合 Promise。
+
+Q: Promise 是一种将异步转换为同步的方法吗？
+
+A: 完全不是。Promise 只不过是一种更良好的编程风格。
+
+Q: 什么时候我们需要再写一个 then 而不是在当前的 then 接着编程？
+
+A: 当你又需要调用一个异步任务的时候。
+
+37.5.异步函数
+异步函数（async function）是 ECMAScript 2017 (ECMA-262) 标准的规范，几乎被所有浏览器所支持，除了 Internet Explorer。
+
+在 Promise 中我们编写过一个 Promise 函数：
+
+实例
+function print(delay, message) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log(message);
+            resolve();
+        }, delay);
+    });
+}
+
+然后用不同的时间间隔输出了三行文本：
+print(1000, "First").then(function () {
+    return print(4000, "Second");
+}).then(function () {
+    print(3000, "Third");
+});
+
+我们可以将这段代码变得更好看：
+async function asyncFunc() {
+    await print(1000, "First");
+    await print(4000, "Second");
+    await print(3000, "Third");
+}
+asyncFunc();
+
+哈！这岂不是将异步操作变得像同步操作一样容易了吗！
+
+这次的回答是肯定的，异步函数 async function 中可以使用 await 指令，await 指令后必须跟着一个 Promise，异步函数会在这个 Promise 运行中暂停，直到其运行结束再继续运行。
+
+异步函数实际上原理与 Promise 原生 API 的机制是一模一样的，只不过更便于程序员阅读。
+
+处理异常的机制将用 try-catch 块实现：
+async function asyncFunc() {
+    try {
+        await new Promise(function (resolve, reject) {
+            throw "Some error"; // 或者 reject("Some error")
+        });
+    } catch (err) {
+        console.log(err);
+        // 会输出 Some error
+    }
+}
+asyncFunc();
+
+如果 Promise 有一个正常的返回值，await 语句也会返回它：
+async function asyncFunc() {
+    let value = await new Promise(
+        function (resolve, reject) {
+            resolve("Return value");
+        }
+    );
+    console.log(value);
+}
+asyncFunc();
+
+程序会输出:
+Return value
+
+
+38.JavaScript 代码规范
+所有的 JavaScript 项目适用同一种规范。
+
+38.1.JavaScript 代码规范
+代码规范通常包括以下几个方面:
+    变量和函数的命名规则
+    空格，缩进，注释的使用规则。
+    其他常用规范……
+    规范的代码可以更易于阅读与维护。
+
+代码规范一般在开发前规定，可以跟你的团队成员来协商设置。
+
+38.2.变量名
+变量名推荐使用驼峰法来命名(camelCase):
+
+firstName = "John";
+lastName = "Doe";
+
+price = 19.90;
+tax = 0.20;
+
+fullPrice = price + (price * tax);
+
+38.3.空格与运算符
+通常运算符 ( = + - * / ) 前后需要添加空格:
+
+实例:
+var x = y + z;
+var values = ["Volvo", "Saab", "Fiat"];
+
+38.4.代码缩进
+通常使用 4 个空格符号来缩进代码块：
+
+函数:
+function toCelsius(fahrenheit) {
+    return (5 / 9) * (fahrenheit - 32);
+}
+不推荐使用 TAB 键来缩进，因为不同编辑器 TAB 键的解析不一样。
+
+38.5.语句规则
+简单语句的通用规则:
+
+一条语句通常以分号作为结束符。
+实例:
+var values = ["Volvo", "Saab", "Fiat"];
+
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+};
+复杂语句的通用规则:
+    将左花括号放在第一行的结尾。
+    左花括号前添加一空格。
+    将右花括号独立放在一行。
+    以分号结束一个复杂的声明。
+
+函数:
+function toCelsius(fahrenheit) {
+    return (5 / 9) * (fahrenheit - 32);
+}
+循环:
+for (i = 0; i < 5; i++) {
+    x += i;
+}
+条件语句:
+if (time < 20) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}
+
+38.6.对象规则
+对象定义的规则:
+
+将左花括号与类名放在同一行。
+冒号与属性值间有个空格。
+字符串使用双引号，数字不需要。
+最后一个属性-值对后面不要添加逗号。
+将右花括号独立放在一行，并以分号作为结束符号。
+实例:
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+};
+
+短的对象代码可以直接写成一行:
+
+实例:
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+38.7.每行代码字符小于 80
+为了便于阅读每行字符建议小于数 80 个。
+
+如果一个 JavaScript 语句超过了 80 个字符，建议在 运算符或者逗号后换行。
+
+实例:
+document.getElementById("demo").innerHTML =
+    "Hello Runoob.";
+
+38.8.命名规则
+一般很多代码语言的命名规则都是类似的，例如:
+
+变量和函数为小驼峰法标识, 即除第一个单词之外，其他单词首字母大写（ lowerCamelCase）
+全局变量为大写 (UPPERCASE )
+常量 (如 PI) 为大写 (UPPERCASE )
+变量命名你是否使用这几种规则： hyp-hens, camelCase, 或 under_scores ?
+
+HTML 和 CSS 的横杠(-)字符:
+
+HTML5 属性可以以 data- (如：data-quantity, data-price) 作为前缀。
+
+CSS 使用 - 来连接属性名 (font-size)。
+    通常在 JavaScript 中被认为是减法，所以不允许使用。
+
+下划线:
+
+很多程序员比较喜欢使用下划线(如：date_of_birth), 特别是在 SQL 数据库中。
+
+PHP 语言通常都使用下划线。
+
+帕斯卡拼写法(PascalCase):
+
+帕斯卡拼写法(PascalCase) 在 C 语言中语言较多。
+
+驼峰法：
+
+JavaScript 中通常推荐使用驼峰法，jQuery 及其他 JavaScript 库都使用驼峰法。
+    变量名不要以 $ 作为开始标记，会与很多 JavaScript 库冲突。
+
+38.9.HTML 载入外部 JavaScript 文件
+使用简洁的格式载入 JavaScript 文件 ( type 属性不是必须的):
+script src="myscript.js"
+
+38.10.使用 JavaScript 访问 HTML 元素
+一个糟糕的 HTML 格式可能会导致 JavaScript 执行错误。
+
+以下两个 JavaScript 语句会输出不同结果:
+
+实例
+var obj = getElementById("Demo")
+
+var obj = getElementById("demo")
+
+38.11.文件扩展名
+HTML 文件后缀可以是 .html (或 .htm)。
+
+CSS 文件后缀是 .css 。
+
+JavaScript 文件后缀是 .js 。
+
+38.12.使用小写文件名
+大多 Web 服务器 (Apache, Unix) 对大小写敏感： london.jpg 不能通过 London.jpg 访问。
+
+其他 Web 服务器 (Microsoft, IIS) 对大小写不敏感： london.jpg 可以通过 London.jpg 或 london.jpg 访问。
+
+你必须保持统一的风格，我们建议统一使用小写的文件名。
