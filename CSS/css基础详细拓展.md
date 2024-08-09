@@ -752,7 +752,7 @@ CSS 盒子模型(Box Model)
 **盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。**
 
 下面的图片说明了盒子模型(Box Model)：
-![Alt](img/box-model.gif=40*60)
+![Alt](img/box-model.gif)
 不同部分的说明：
 ```
 Margin(外边距) - 清除边框外的区域，外边距是透明的。
