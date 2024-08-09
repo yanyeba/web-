@@ -11,11 +11,14 @@ CSS参考手册：https://www.runoob.com/cssref/css-reference.html#text
 	  多个样式定义可层叠为一个
 
   
-2.CSS语法
+# 2.CSS语法
+
+```css
 p {color:red;text-align:center;}
   CSS主要有两部分：选择器以及一条或者多条声明组成
   <!--P标签是一个选择器-->
   <!--color:red表示一个声明，color与red为属性-->
+```
 
 3.CSS id 和 class
 id 和 class 选择器
