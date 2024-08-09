@@ -175,21 +175,27 @@ background-attachment
 background-position
 ```
 
-5.1背景颜色
+## 5.1 背景颜色
 background-color 属性定义了元素的背景颜色.
 
 页面的背景颜色使用在body的选择器中:
+```css
     <style>
         body{
            background-color:#b0c4de; /*设置网页背景颜色*/
         }
     </style>
-  CSS中，颜色值通常以以下方式定义:
-  
+```
+
+CSS中，颜色值通常以以下方式定义:
+  ```
   十六进制 - 如："#ff0000"
   RGB - 如："rgb(255,0,0)"
   颜色名称 - 如："red"
+```
+
   以下实例中, h1, p, 和 div 元素拥有不同的背景颜色:
+```css
  <body>
     <style>
         body{
@@ -204,80 +210,94 @@ background-color 属性定义了元素的背景颜色.
   <h1>背景颜色设置</h1>
   <p>段落背景颜色设置</p>
   <div>模块背景颜色设置</div>
-  
   </body>
+```
 
-5.2背景图像
+## 5.2 背景图像
 background-image 属性描述了元素的背景图像.
 
-默认情况下，背景图像进行平铺重复显示，以覆盖整个元素实体.
+**默认情况下，背景图像进行平铺重复显示，以覆盖整个元素实体**.
 
 页面背景图片设置实例:
 
 实例
-body {background-image:url('paper.gif');}
+```css
+body {background-image:url('paper.gif');
+	background-image:url("background-image:url('../../xx.jpg');") ;  /*路径写法，从当前文件夹开始写，向上或者向下开始找图*/
+}
 
-5.3背景图像 - 水平或垂直平铺
+```
+
+## 5.3 背景图像 - 水平或垂直平铺
+
 默认情况下 background-image 属性会在页面的水平或者垂直方向平铺。
 
 一些图像如果在水平方向与垂直方向平铺，这样看起来很不协调，如下所示: 
 如果图像只在水平方向平铺 (repeat-x), 页面背景会更好些:
 
 实例
+```css
 body
 {
 background-image:url('gradient2.png');
 background-repeat:repeat-x;
 }
-
-5.4背景图像- 设置定位与不平铺
+```
+## 5.4 背景图像- 设置定位与不平铺
 Remark 让背景图像不影响文本的排版
 
 如果你不想让图像平铺，你可以使用 background-repeat 属性:
+```css
 body
 {
 background-image:url('img_tree.png');
 background-repeat:no-repeat;
 }
+```
 以上实例中，背景图像与文本显示在同一个位置，为了让页面排版更加合理，不影响文本的阅读，我们可以改变图像的位置。
 
 可以利用 background-position 属性改变图像在背景中的位置:
-
+```css
 body
 {
 background-image:url('img_tree.png');
 background-repeat:no-repeat;
 background-position:right top;
 }
+```
 
-5.5背景- 简写属性
+## 5.5 背景- 简写属性
+
 在以上实例中我们可以看到页面的背景颜色通过了很多的属性来控制。
 
 为了简化这些属性的代码，我们可以将这些属性合并在同一个属性中.
 
 背景颜色的简写属性为 "background":
 案例
+```css
 body {background:#ffffff url('img_tree.png') no-repeat right top;}
 当使用简写属性时，属性值的顺序为：:
-
 background-color
 background-image
 background-repeat
 background-attachment
 background-position
+```
 以上属性无需全部使用，你可以按照页面的实际需要使用.
 
-5.6 CSS 背景属性
-Property	  描述
-background	简写属性，作用是将背景属性设置在一个声明中。
-background-attachment	背景图像是否固定或者随着页面的其余部分滚动。
-background-color	设置元素的背景颜色。
-background-image	把图像设置为背景。
-background-position	设置背景图像的起始位置。
-background-repeat	设置背景图像是否及如何重复。
+## 5.6 CSS 背景属性
 
-6.文本颜色
-颜色属性被用来设置文字的颜色。
+Property	|  描述
+-|-
+background	|简写属性，作用是将置在背景属性设一个声明中。
+background-attachment|	背景图像是否固定或者随着页面的其余部分滚动。
+background-color	|设置元素的背景颜色。
+background-image|	把图像设置为背景。
+background-position|	设置背景图像的起始位置。
+background-repeat|	设置背景图像是否及如何重复。
+
+# 6 文本颜色
+**颜色属性被用来设置文字的颜色。**
 
 颜色是通过CSS最经常的指定：
 
@@ -287,6 +307,7 @@ background-repeat	设置背景图像是否及如何重复。
 参阅 CSS 颜色值 查看完整的颜色值。
 
 一个网页的背景颜色是指在主体内的选择：
+```css
 <head>
     <meta charset="UTF-8">
     <title>文本篇</title>
@@ -297,62 +318,76 @@ background-repeat	设置背景图像是否及如何重复。
         p.ex{color:black}/*定义文本段落颜色，可以调用*/
     </style>
 </head>
+
 <body>
+
 <p class="ex">在头部定义特定段落为黑色，class调用</p>
 <p>这是一个普通的段落。请注意,本文是红色的。页面中定义默认的文本颜色选择器。</p>
 <h1>标题1渲染上颜色</h1>
 <h2>标题2渲染为蓝色</h2>
 
 </body>
+```
 
-6.1文本的对齐方式
-文本排列属性是用来设置文本的水平对齐方式。
+## 6.1 文本的对齐方式
+**文本排列属性是用来设置文本的水平对齐方式。**
 
-文本可居中或对齐到左或右,两端对齐.
+**文本可居中或对齐到左或右,两端对齐.**
 
-当text-align设置为"justify"，每一行被展开为宽度相等，左，右外边距是对齐（如杂志和报纸）。
+**当text-align设置为"justify"，每一行被展开为宽度相等，左，右外边距是对齐（如杂志和报纸）。**
+```css
 h1 {text-align:center;}
 p.date {text-align:right;}
 p.main {text-align:justify;}
+```
 
-6.2文本修饰
-text-decoration 属性用来设置或删除文本的装饰。
+## 6.2 文本修饰
 
-从设计的角度看 text-decoration属性主要是用来删除链接的下划线：
+**text-decoration 属性用来设置或删除文本的装饰。**
+
+从设计的角度看 **text-decoration**属性主要是用来删除链接的下划线：
 
 a {text-decoration:none;}
 也可以这样装饰文字：
 
 实例
+```css
  /*text-decoration 属性用来设置或删除文本的装饰。*/
         p.main{text-decoration: overline}/*添加上划线*/
         h1{text-decoration: line-through}/*添加中划线*/
         h2{text-decoration: underline}/*添加下划线*？
+```
 
-6.3文本转换
-文本转换属性是用来指定在一个文本中的大写和小写字母。
+## 6.3 文本转换
+**文本转换属性是用来指定在一个文本中的大写和小写字母。**
 
 可用于所有字句变成大写或小写字母，或每个单词的首字母大写。
+```
 p.uppercase {text-transform:uppercase;} 将文本全变成大写
 p.lowercase {text-transform:lowercase;}  将文本全变成小写
 p.capitalize {text-transform:capitalize;}  将文本每个字首字母变成大写
+```
 
-6.4文本缩进
+## 6.4 文本缩进
+
 文本缩进属性是用来指定文本的第一行的缩进
+
 p.px{text-indent: 50px}
 
-7.CSS 字体
+## 7 CSS 字体
+
 CSS字体属性定义字体，加粗，大小，文字样式。
 
 serif和sans-serif字体之间的区别
 Serif vs. Sans-serif
 Remark 在计算机屏幕上，sans-serif字体被认为是比serif字体容易阅读
 
-7.1CSS字型
+## 7.1 CSS字型
 在CSS中，有两种类型的字体系列名称：
 
 通用字体系列 - 拥有相似外观的字体系统组合（如 "Serif" 或 "Monospace"）
 特定字体系列 - 一个特定的字体系列（如 "Times" 或 "Courier"）
+
 
 Generic     family	字体系列	说明
 Serif	      Times New Roman
@@ -362,41 +397,24 @@ Verdana	"  Sans"是指无 - 这些字体在末端没有额外的装饰
 Monospace	  Courier New
 Lucida     Console	所有的等宽字符具有相同的宽度
 
-7.2CSS 字体
-CSS字体属性定义字体，加粗，大小，文字样式。
 
-serif和sans-serif字体之间的区别
-Serif vs. Sans-serif
-Remark 在计算机屏幕上，sans-serif字体被认为是比serif字体容易阅读
-
-CSS字型
-在CSS中，有两种类型的字体系列名称：
-
-通用字体系列 - 拥有相似外观的字体系统组合（如 "Serif" 或 "Monospace"）
-特定字体系列 - 一个特定的字体系列（如 "Times" 或 "Courier"）
-Generic family	字体系列	说明
-Serif	Times New Roman
-Georgia	Serif字体中字符在行的末端拥有额外的装饰
-Sans-serif	Arial
-Verdana	"Sans"是指无 - 这些字体在末端没有额外的装饰
-Monospace	Courier New
-Lucida Console	所有的等宽字符具有相同的宽度
-
-7.3字体系列
+## 7.2 字体系列
 font-family 属性设置文本的字体系列。
 
 font-family 属性应该设置几个字体名称作为一种"后备"机制，如果浏览器不支持第一种字体，他将尝试下一种字体。
 
-注意: 如果字体系列的名称超过一个字，它必须用引号，如Font Family："宋体"。
+**注意: 如果字体系列的名称超过一个字，它必须用引号，如Font Family："宋体"。**
 
 多个字体系列是用一个逗号分隔指明：
+```
  p.ex{font-family:"Times New Roman", Times, serif;}
+```
 
-7.4字体样式
+## 7.3 字体样式
 主要是用于指定斜体文字的字体样式属性。
 
 这个属性有三个值：
-
+```css
 正常 - 正常显示文本
 斜体 - 以斜体字显示的文字
 倾斜的文字 - 文字向一边倾斜（和斜体非常类似，但不太支持）
@@ -404,76 +422,87 @@ font-family 属性应该设置几个字体名称作为一种"后备"机制，如
     p.normal {font-style:normal;} /*正常体*/
     p.italic {font-style:italic;} /*斜体*/
     p.oblique {font-style:oblique;} 
+```
 
+## 7.4 字体大小
 
-7.5字体大小
-font-size 属性设置文本的大小。
+**font-size 属性设置文本的大小。**
 
 能否管理文字的大小，在网页设计中是非常重要的。但是，你不能通过调整字体大小使段落看上去像标题，或者使标题看上去像段落。
 
-请务必使用正确的HTML标签，就<h1> - <h6>表示标题和<p>表示段落：
+请务必使用正确的HTML标签，就\<h1> - \<h6>表示标题和\<p>表示段落：
 
 字体大小的值可以是绝对或相对的大小。
 
-绝对大小：
-
+**绝对大小：**
+```
 设置一个指定大小的文本
 不允许用户在所有浏览器中改变文本大小
+```
 
-7.6设置字体大小像素
+## 7.5 设置字体大小像素
+
 设置文字的大小与像素，让您完全控制文字大小：
 
 实例
+```css
 h1 {font-size:40px;}
 h2 {font-size:30px;}
 p {font-size:14px;}
+```
 
-7.7用em来设置字体大小
+## 7.6 用em来设置字体大小
 为了避免Internet Explorer 中无法调整文本的问题，许多开发者使用 em 单位代替像素。
 
 em的尺寸单位由W3C建议。
 
-1em和当前字体大小相等。在浏览器中默认的文字大小是16px。
+**1em和当前字体大小相等。在浏览器中默认的文字大小是16px。**
 
-因此，1em的默认大小是16px。可以通过下面这个公式将像素转换为em：px/16=em
+**因此，1em的默认大小是16px。可以通过下面这个公式将像素转换为em：px/16=em**
 
 实例
+```css
 h1 {font-size:2.5em;} /* 40px/16=2.5em */
 h2 {font-size:1.875em;} /* 30px/16=1.875em */
 p {font-size:0.875em;} /* 14px/16=0.875em */
+```
 
-在上面的例子，em的文字大小是与前面的例子中像素一样。不过，如果使用 em 单位，则可以在所有浏览器中调整文本大小。
+在上面的例子，em的文字大小是与前面的例子中像素一样。不过，**如果使用 em 单位，则可以在所有浏览器中调整文本大小。**
 
 不幸的是，仍然是IE浏览器的问题。调整文本的大小时，会比正常的尺寸更大或更小。
 上面的例子可以在 Internet Explorer 9, Firefox, Chrome, Opera, 和 Safari 中通过缩放浏览器调整文本大小。
 
 虽然可以通过浏览器的缩放工具调整文本大小，但是，这种调整是整个页面，而不仅仅是文本
 确定了输出的物理尺寸时绝对大小很有用
-相对大小：
 
+相对大小：
+```
 相对于周围的元素来设置大小
 允许用户在浏览器中改变文字大小
 Remark 如果你不指定一个字体的大小，默认大小和普通文本段落一样，是16像素（16px=1em）。
-
-7.8使用百分比和EM组合
-在所有浏览器的解决方案中，设置 <body>元素的默认字体大小的是百分比：
+```
+## 7.7 使用百分比和EM组合
+在所有浏览器的解决方案中，设置 \<body>元素的默认字体大小的是百分比：
 
 实例
+```css
 body {font-size:100%;}
 h1 {font-size:2.5em;}
 h2 {font-size:1.875em;}
 p {font-size:0.875em;}
+```
 
-8.CSS 链接
+# 8 CSS 链接
 不同的链接可以有不同的样式。
 
-链接样式
+**链接样式**
 链接的样式，可以用任何CSS属性（如颜色，字体，背景等）。
 
 特别的链接，可以有不同的样式，这取决于他们是什么状态。
 
 这四个链接状态是：
 
+```css
 a:link - 正常，未访问过的链接
 a:visited - 用户已访问过的链接
 a:hover - 当用户鼠标放在链接上时
@@ -483,44 +512,54 @@ a:link {color:#000000;}      /* 未访问链接*/
 a:visited {color:#00FF00;}  /* 已访问链接 */
 a:hover {color:#FF00FF;}  /* 鼠标移动到链接上 */
 a:active {color:#0000FF;}  /* 鼠标点击时 */
-
+```
 
 当设置为若干链路状态的样式，也有一些顺序规则：
 
 a:hover 必须跟在 a:link 和 a:visited后面
 a:active 必须跟在 a:hover后面
 
-9.CSS 列表
+# 9 CSS 列表
+
 CSS 列表属性作用如下：
 
 设置不同的列表项标记为有序列表
 设置不同的列表项标记为无序列表
 设置列表项标记为图像
 
-9.1表
-在 HTML中，有两种类型的列表：
+## 9.1表
 
+在 HTML中，有两种类型的列表：
+```
 无序列表 ul - 列表项标记用特殊图形（如小黑点、小方框等）
 有序列表 ol - 列表项的标记有数字或字母
 使用 CSS，可以列出进一步的样式，并可用图像作列表项标记。
+```
 
 无序列表如下所示:
+```
 Coffee
 Tea
 Coca Cola
 Coffee
 Tea
 Coca Cola
-有序列表如下所示:
-Coffee
-Tea
-Coca Cola
-Coffee
-Tea
-Coca Cola
+```
 
-9.3不同的列表项标记
+有序列表如下所示:
+```
+Coffee
+Tea
+Coca Cola
+Coffee
+Tea
+Coca Cola
+```
+
+## 9.3 不同的列表项标记
+
 list-style-type属性指定列表项标记的类型是 ：无序列表，以及有些是有序列表。
+```css
 <head>
     <meta charset="UTF-8">
     <title>列表篇</title>
@@ -543,91 +582,106 @@ list-style-type属性指定列表项标记的类型是 ：无序列表，以及�
     <li>coco</li>
 </ol>
 </body>
+```
 
-9.4作为列表项标记的图像
-要指定列表项标记的图像，使用列表样式图像属性：
-作为列表项标记的图像
-要指定列表项标记的图像，使用列表样式图像属性：
+## 9.4 作为列表项标记的图像
+**要指定列表项标记的图像，使用列表样式图像属性：**
+
 
 实例
+```css
 ul
 {
     list-style-image: url('sqpurple.gif');
+}
+```
 
-9.5列表 - 简写属性
-在单个属性中可以指定所有的列表属性。这就是所谓的简写属性。
+## 9.5 列表 - 简写属性
+**在单个属性中可以指定所有的列表属性。这就是所谓的简写属性。**
 
 为列表使用简写属性，列表样式属性设置如下：
 
 实例
+```
 ul
 {
     list-style: square url("sqpurple.gif");
 可以按顺序设置如下属性：
-
 list-style-type
 list-style-position (有关说明，请参见下面的CSS属性表)
 list-style-image
+```
 如果上述值丢失一个，其余仍在指定的顺序，就没关系。
 
-9.6移除默认设置
-list-style-type:none 属性可以用于移除小标记。默认情况下列表 <ul> 或 <ol> 还设置了内边距和外边距，可使用 margin:0 和 padding:0 来移除:
+## 9.6 移除默认设置
+
+list-style-type:none 属性可以用于移除小标记。**默认情况下列表 <ul> 或 <ol> 还设置了内边距和外边距，可使用 margin:0 和 padding:0 来移除:**
 
 实例
+```
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+```
 
-9.7所有的CSS列表属性
-属性	描述
-list-style	简写属性。用于把所有用于列表的属性设置于一个声明中
-list-style-image	将图像设置为列表项标志。
-list-style-position	设置列表中列表项标志的位置。
-list-style-type	设置列表项标志的类型。
+## 9.7 所有的CSS列表属性
 
-10CSS 表格
+属性	|描述
+-|-
+list-style	|	简写属性。用于把所有用于列表的属性设置于一个声明中
+list-style-image|	将图像设置为列表项标志。
+list-style-position|	设置列表中列表项标志的位置。
+list-style-type	|	设置列表项标志的类型。
+
+# 10 CSS 表格
 使用 CSS 可以使 HTML 表格更美观。（https://www.runoob.com/css/css-table.html）
-Company	Contact	Country
-Alfreds Futterkiste	Maria Anders	Germany
-Berglunds snabbköp	Christina Berglund	Sweden
-Centro comercial Moctezuma	Francisco Chang	Mexico
-Ernst Handel	Roland Mendel	Austria
-Island Trading	Helen Bennett	UK
-Königlich Essen	Philip Cramer	Germany
-Laughing Bacchus Winecellars	Yoshi Tannamuri	Canada
-Magazzini Alimentari Riuniti	Giovanni Rovelli	Italy
-North/South	Simon Crowther	UK
-Paris spécialités	Marie Bertrand	France
-The Big Cheese	Liz Nixon	USA
-Vaffeljernet	Palle Ibsen	Denmark
 
-10.1表格边框
-指定CSS表格边框，使用border属性。
+Company|	Contact	|Country
+-|-|-
+Alfreds Futterkiste|	Maria Anders	|Germany
+Berglunds snabbköp	|Christina Berglund|	Sweden
+Centro comercial Moctezuma	|Francisco Chang	|Mexico
+Ernst Handel	|Roland Mendel	|Austria
+Island Trading	|Helen Bennett	|UK
+Königlich Essen	|Philip Cramer	|Germany
+Laughing Bacchus Winecellars	|Yoshi Tannamuri|	Canada
+Magazzini Alimentari Riuniti|	Giovanni Rovelli|	Italy
+North/South|	Simon Crowther|	UK
+Paris spécialités|	Marie Bertrand|	France
+The Big Cheese|	Liz Nixon|	USA
+Vaffeljernet|	Palle Ibsen|	Denmark
+
+## 10.1 表格边框
+**指定CSS表格边框，使用border属性。**
 
 下面的例子指定了一个表格的Th和TD元素的黑色边框：
-
+```css
  table,th,td/*双边框*/
         {       /*指定CSS表格边框，使用border属性，表格的Th和TD元素的黑色边框*/
             border:1px solid black;
         }
-请注意，在上面的例子中的表格有双边框。这是因为表和th/ td元素有独立的边界。
+```
+**请注意，在上面的例子中的表格有双边框。这是因为表和th/ td元素有独立的边界。**
 
-为了显示一个表的单个边框，使用 border-collapse属性。
+**为了显示一个表的单个边框，使用 border-collapse属性。**
 
-10.2折叠边框
+## 10.2 折叠边框
 border-collapse 属性设置表格的边框是否被折叠成一个单一的边框或隔开：
 
 实例
+```css
 /*border-collapse 属性设置表格的边框是否被折叠成一个单一的边框或隔开：*/
           table{  /*添加下面这段变成单边框*/
             border-collapse: collapse;
+```
 
-10.3表格宽度和高度
-Width和height属性定义表格的宽度和高度。
+## 10.3 表格宽度和高度
+**Width和height属性定义表格的宽度和高度。**
 
 下面的例子是设置100％的宽度，50像素的th元素的高度的表格：
+```css
 table 
 {
     width:100%;
@@ -636,40 +690,46 @@ th
 {
     height:50px;
 }
+```
 
-10.3表格文字对齐
+## 10.3 表格文字对齐
 表格中的文本对齐和垂直对齐属性。
 
-text-align属性设置水平对齐方式，向左，右，或中心：
-
+**text-align属性设置水平对齐方式，向左，右，或中心：**
 实例
+```css
 td
 {
     text-align:right;
 }
+```
 
-垂直对齐属性设置垂直对齐，比如顶部，底部或中间：
-
+**垂直对齐属性设置垂直对齐，比如顶部，底部或中间：**
 实例
+```css
 td
 {
     height:50px;
     vertical-align:bottom;
 }
+```
 
-10.4表格填充
-如需控制边框和表格内容之间的间距，应使用td和th元素的填充属性：
+## 10.4 表格填充
+**如需控制边框和表格内容之间的间距，应使用td和th元素的填充属性：**
 
 实例
+```css
 td
 {
     padding:15px;
 }
+```
 
-10.5表格颜色
+## 10.5 表格颜色
 下面的例子指定边框的颜色，和th元素的文本和背景颜色：
 
 实例
+```css
 table, td, th
 {
     border:1px solid green;
@@ -679,9 +739,11 @@ th
     background-color:green;
     color:white;
 }
+```
 
-11.盒子模型
-CSS 盒子模型
+# 11.CSS 盒子模型
+
+
 CSS 盒子模型(Box Model)
 所有HTML元素可以看作盒子，在CSS中，"box model"这一术语是用来设计和布局时使用。
 
