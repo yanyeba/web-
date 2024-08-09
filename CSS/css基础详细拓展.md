@@ -985,24 +985,29 @@ length	|定义一个固定的margin（使用像素，pt，em等）
 
 Remark Margin可以使用负值，重叠的内容。
 
-# 13.1 Margin - 单边外边距属性
+# 14.1 Margin - 单边外边距属性
 在CSS中，它可以指定不同的侧面不同的边距：
 
 实例
+```css
 margin-top:100px;
 margin-bottom:100px;
 margin-right:50px;
 margin-left:50px;
+```
 
-13.2.Margin - 简写属性
+## 14.2 Margin - 简写属性
 为了缩短代码，有可能使用一个属性中margin指定的所有边距属性。这就是所谓的简写属性。
 
 所有边距属性的简写属性是 margin :
 
 实例
+```css
 margin:100px 50px;
+```
 margin属性可以有一到四个值。
 
+```
 margin:25px 50px 75px 100px;
 上边距为25px
 右边距为50px
@@ -1020,63 +1025,69 @@ margin:25px 50px;
 
 margin:25px;
 所有的4个边距都是25px
+```
 
-14.CSS padding（填充）
-CSS padding（填充）是一个简写属性，定义元素边框与元素内容之间的空间，即上下左右的内边距。
+# 15 CSS padding（填充）
+CSS padding（填充）是一个简写属性，**定义元素边框与元素内容之间的空间，即上下左右的内边距**。
 
 padding（填充）
-当元素的 padding（填充）内边距被清除时，所释放的区域将会受到元素背景颜色的填充。
+**当元素的 padding（填充）内边距被清除时，所释放的区域将会受到元素背景颜色的填充。**
+**单独使用 padding 属性可以改变上下左右的填充。**
 
-单独使用 padding 属性可以改变上下左右的填充。
+![alt](img/VlwVi.png)
 
 可能的值
-值	说明
-length	定义一个固定的填充(像素, pt, em,等)
-%	使用百分比值定义一个填充
+值	|说明
+-|-
+length	|定义一个固定的填充(像素, pt, em,等)
+%	|使用百分比值定义一个填充
 
-14.1.填充- 单边内边距属性
-在CSS中，它可以指定不同的侧面不同的填充：
+## 15.1填充- 单边内边距属性
+**在CSS中，它可以指定不同的侧面不同的填充**：
 
 实例
+```css
 padding-top:25px;
 padding-bottom:25px;
 padding-right:50px;
 padding-left:50px;
-
-14.2.填充 - 简写属性
+```
+## 15.2 填充 - 简写属性
 为了缩短代码，它可以在一个属性中指定的所有填充属性。
 
 这就是所谓的简写属性。所有的填充属性的简写属性是 padding :
 
 实例
+```css
 padding:25px 50px;
+```
 
 
 
-15.CSS 分组 和 嵌套 选择器
-分组选择器
+# 16 CSS 分组 和 嵌套 选择器
+**分组选择器**
 在样式表中有很多具有相同样式的元素。
-分组选择器
-在样式表中有很多具有相同样式的元素。
-
+```
 h1 {
     color:green;
 }
 h2 {
-
-嵌套选择器
-它可能适用于选择器内部的选择器的样式。
+    color:green;
+}
+p {
+    color:green;
+}
+```
+**嵌套选择器**
+**它可能适用于选择器内部的选择器的样式。**
 
 在下面的例子设置了四个样式：
 
-p{ }: 为所有 p 元素指定一个样式。
-.marked{ }: 为所有 class="marked" 的元素指定一个样式。
-.marked p{ }: 为所有 class="marked" 元素内的 p 元素指定一个样式。
-p.marked{ }: 为所有 class="marked" 的 p 元素指定一个样式。
-    color:green;
-
-
-}
+- p{ }: 为所有 p 元素指定一个样式。
+- marked{ }: 为所有 class="marked" 的元素指定一个样式。
+- marked p{ }: 为所有 class="marked" 元素内的 p 元素指定一个样式。
+- p.marked{ }: 为所有 class="marked" 的 p 元素指定一个样式。
+   
 p {
     color:green;
 }
