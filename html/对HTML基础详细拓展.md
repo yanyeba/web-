@@ -23,11 +23,12 @@
     格式：<p>这是一个段落。</p>
 
  ## 1.3Web 浏览器
+   
     Web浏览器（如谷歌浏览器，Internet Explorer，Firefox，Safari）是用于读取HTML文件，并将其作为网页显示。
-    
     浏览器并不是直接显示的HTML标签，但可以使用标签来决定如何展现HTML页面的内容给用户：
 
  ## 1.4<!DOCTYPE> 声明
+  
   <!DOCTYPE>声明有助于浏览器中正确显示网页。
   网络上有很多不同的文件，如果能够正确声明HTML的版本，浏览器就能正确显示网页内容。
   doctype 声明是不区分大小写的，以下方式均可：
@@ -75,35 +76,39 @@
     <h1> 元素定义一个大标题
     <p> 元素定义一个段落
     
+    
 
  # 2.HTML编辑器
    HTML 编辑器推荐
    VS Code：https://code.visualstudio.com/<br>
    Sublime Text：http://www.sublimetext.com/<br>
    在线编辑器：https://www.jyshare.com/front-end/61/<br>
+   
     
 
 # 3.HTML基础
 ## 3.1HTML 标题
-  HTML 标题（Heading）是通过<h1> - <h6> 标签来定义的。
+    HTML 标题（Heading）是通过<h1> - <h6> 标签来定义的。
     <h1>这里的h1是第1标题哦</h1>
     <h2>这里的h2是第2标题哦</h2>
     <h3>这里的h3是第3标题哦</h3>
     
-3.2HTML 段落
-HTML 段落是通过标签 <p> 来定义的。
+## 3.2HTML 段落
+  
+  HTML 段落是通过标签 <p> 来定义的。
   <p>这是一个段落。</p>
   <p>这是另外一个段落。</p>
 
-3.3HTML 链接
+## 3.3HTML 链接
+
 HTML 链接是通过标签 <a> 来定义的。
-<a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web">这是个超链接</a>
+\<a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web">这是个超链接</a>
 
 提示:在 href 属性中指定链接的地址。
 
-3.4 HTML 图像
-HTML 图像是通过标签 <img> 来定义的.
-
+## 3.4 HTML 图像
+    
+    HTML 图像是通过标签 <img> 来定义的.
     <img src="/1.jpeg" width="258" height="300"/>
     <img src="2.jpeg"  width="258" height="333"/>
 
