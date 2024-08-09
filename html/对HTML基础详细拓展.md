@@ -248,10 +248,12 @@
       但不要依赖这种做法。忘记使用结束标签会产生意想不到的结果和错误
 
 ## 7.1HTML 折行
+
     如果您希望在不产生一个新段落的情况下进行换行（新行），请使用 <br> 标签：
     <p>演示<br>段落<br>分行的效果</p>
     
-    7.2HTML 输出- 使用提醒
+##7.2HTML 输出- 使用提醒
+
     我们无法确定 HTML 被显示的确切效果。屏幕的大小，以及对窗口的调整都可能导致不同的结果。
     
     对于 HTML，您无法通过在 HTML 代码中添加额外的空格或换行来改变输出的效果。
@@ -389,7 +391,7 @@
       </body>
       </html>
 
-  ## 10.3HTML <base> 元素
+  ## 10.3HTML \<base> 元素
       <base> 标签描述了基本的链接地址/链接目标，该标签作为HTML文档中所有的链接标签的默认链接:
         <head>
             <meta charset="UTF-8">
@@ -397,7 +399,7 @@
             <base href="https://www.runoob.com/html/html-head.html" target="_blank">
         </head>
 
-  ## 10.4 HTML <link> 元素
+  ## 10.4 HTML \<link> 元素
       <link> 标签定义了文档与外部资源之间的关系。
       
       <link> 标签通常用于链接到样式表:
@@ -419,7 +421,7 @@
         </style>
     </head>
 
-## 10.6 HTML <meta> 元素
+## 10.6 HTML \<meta> 元素
     meta标签描述了一些基本的元数据。
     <meta> 标签提供了元数据.元数据也不显示在页面上，但会被浏览器解析。
     META 元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者，和其他元数据。
@@ -452,207 +454,227 @@
     <script>	定义了客户端的脚本文件
     <style>	定义了HTML文档的样式文件
 
-11.HTML CSS
+# 11 HTML CSS
+
 CSS (Cascading Style Sheets) 用于渲染HTML元素标签的样式。
 
-11.1如何使用CSS
+## 11.1 如何使用CSS
 CSS 是在 HTML 4 开始使用的,是为了更好的渲染HTML元素而引入的.
+
 CSS 可以通过以下方式添加到HTML中:
   内联样式- 在HTML元素中使用"style" 属性
   内部样式表 -在HTML文档头部 <head> 区域使用<style> 元素 来包含CSS
   外部引用 - 使用外部 CSS 文件
+  
 最好的方式是通过外部引用CSS文件
 
-11.2内联样式
-当特殊的样式需要应用到个别元素时，就可以使用内联样式。 使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何 CSS 属性。以下实例显示出如何改变段落的颜色和左外边距。
-<p style="color:blue;margin-left: 20px;">段落渲染为蓝色，20的像素</p>
+## 11.2 内联样式
 
-11.3HTML样式实例 - 背景颜色
+当特殊的样式需要应用到个别元素时，就可以使用内联样式。 使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何 CSS 属性。
+以下实例显示出如何改变段落的颜色和左外边距。
+  \<p style="color:blue;margin-left: 20px;">段落渲染为蓝色，20的像素</p>
+
+## 11.3HTML样式实例 - 背景颜色
 背景色属性（background-color）定义一个元素的背景颜色：
-<body style="background-color:yellow">  <!--背景渲染-->
-    CSS (Cascading Style Sheets) 用于渲染HTML元素标签的样式。<br>
-    <h2 style="background-color: red">标题背景渲染为红色</h2
-</body>
+    <body style="background-color:yellow">  <!--背景渲染-->
+        CSS (Cascading Style Sheets) 用于渲染HTML元素标签的样式。<br>
+        <h2 style="background-color: red">标题背景渲染为红色</h2
+    </body>
 
-11.4HTML 样式实例 - 字体, 字体颜色 ，字体大小
+## 11.4HTML 样式实例 - 字体, 字体颜色 ，字体大小
+
 我们可以使用font-family（字体），color（颜色），和font-size（字体大小）属性来定义字体的样式:
-<body style="background-color:yellow">  <!--背景渲染-->
-    <h1 style="font-family:Verdana;">HTML 样式实例 - 字体, 字体颜色 ，字体大小</h1><br>
-    <p style="font-family: Arial;color: red;font-size: 20px ">HTML 样式实例 - 字体, 字体颜色 ，字体大小</p><br>
-</body>
+
+    <body style="background-color:yellow">  <!--背景渲染-->
+        <h1 style="font-family:Verdana;">HTML 样式实例 - 字体, 字体颜色 ，字体大小</h1><br>
+        <p style="font-family: Arial;color: red;font-size: 20px ">HTML 样式实例 - 字体, 字体颜色 ，字体大小</p><br>
+    </body>
+
 现在通常使用font-family（字体），color（颜色），和font-size（字体大小）属性来定义文本样式，而不是使用<font>标签。
 
-11.5HTML 样式实例 - 文本对齐方式
+## 11.5 HTML 样式实例 - 文本对齐方式
 使用 text-align（文字对齐）属性指定文本的水平与垂直对齐方式：
-</body>
-    <h3 style="text-align: center">标题居中对齐</h3><br>
-    <p>段落</p>
-</body>
-文本对齐属性 text-align取代了旧标签 <center> 。
+    </body>
+        <h3 style="text-align: center">标题居中对齐</h3><br>
+        <p>段落</p>
+    </body>
+    
+    文本对齐属性 text-align取代了旧标签 <center> 。
 
-11.5内部样式表
-当单个文件需要特别样式时，就可以使用内部样式表。你可以在<head> 部分通过 <style>标签定义内部样式表:
-<head>
-<style type="text/css">
-body {background-color:yellow;}
-p {color:blue;}
-</style>
-</head>
+## 11.5 内部样式表
+当单个文件需要特别样式时，就可以使用内部样式表。你可以在\<head> 部分通过 \<style>标签定义内部样式表:
+    <head>
+    <style type="text/css">
+    body {background-color:yellow;}
+    p {color:blue;}
+    </style>
+    </head>
 
-11.6外部样式表
+## 11.6 外部样式表
 当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用外部样式表，你就可以通过更改一个文件来改变整个站点的外观。
-<head>
-<link rel="stylesheet" type="text/css" href="mystyle.css">
-</head>
+    <head>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    </head>
 
-11.7HTML 样式标签
-标签	  描述
-<style>	定义文本样式
-<link>	定义资源引用地址
+## 11.7 HTML 样式标签
 
-12.HTML 图像
-HTML 图像- 图像标签（ <img>）和源属性（Src）
-在 HTML 中，图像由<img> 标签定义。
+标签	|  描述
+-|-
+\<style> |	定义文本样式
+\<link>	| 定义资源引用地址
 
-<img> 是空标签，意思是说，它只包含属性，并且没有闭合标签。
+# 12.HTML 图像
 
-要在页面上显示图像，你需要使用源属性（src）。src 指 "source"。源属性的值是图像的 URL 地址。
+HTML 图像- 图像标签（ \<img>）和源属性（Src）
+在 HTML 中，图像由\<img> 标签定义。
+
+\<img> 是空标签，意思是说，**它只包含属性，并且没有闭合标签**。
+
+要在页面上显示图像，**你需要使用源属性（src）,src 指 "source"。源属性的值是图像的 URL 地址**。
+
 
 定义图像的语法是：
 
-<img src="url" alt="some_text">
+\<img src="url" alt="some_text">
 URL 指存储图像的位置。如果名为 "pulpit.jpg" 的图像位于 www.runoob.com 的 images 目录中，那么其 URL 为 http://www.runoob.com/images/pulpit.jpg。
 
-浏览器将图像显示在文档中图像标签出现的地方。如果你将图像标签置于两个段落之间，那么浏览器会首先显示第一个段落，然后显示图片，最后显示第二段。
+浏览器将图像显示在文档中图像标签出现的地方。
+如果你将图像标签置于两个段落之间，那么浏览器会首先显示第一个段落，然后显示图片，最后显示第二段。
 
-12.1HTML 图像- Alt属性
-alt 属性用来为图像定义一串预备的可替换的文本。
+## 12.1 HTML 图像- Alt属性
 
+alt 属性用来为图像**定义一串预备的可替换的文本**。
 替换文本属性的值是用户定义的。
 
-<img src="boat.gif" alt="Big Boat">
+\<img src="boat.gif" alt="Big Boat">
 在浏览器无法载入图像时，替换文本属性告诉读者她们失去的信息。此时，浏览器将显示这个替代性的文本而不是图像。为页面上的图像都加上替换文本属性是个好习惯，这样有助于更好的显示信息，并且对于那些使用纯文本浏览器的人来说是非常有用的。
 
-12.2HTML 图像- 设置图像的高度与宽度
+## 12.2 HTML 图像- 设置图像的高度与宽度
+
 height（高度） 与 width（宽度）属性用于设置图像的高度与宽度。
 
-属性值默认单位为像素:
-
-<img src="pulpit.jpg" alt="Pulpit rock" width="304" height="228">
+    属性值默认单位为像素:
+    \<img src="pulpit.jpg" alt="Pulpit rock" width="304" height="228">
 提示: 指定图像的高度和宽度是一个很好的习惯。如果图像指定了高度宽度，页面加载时就会保留指定的尺寸。如果没有指定图片的大小，加载页面时有可能会破坏HTML页面的整体布局。
 
-12.3基本的注意事项 - 有用的提示：
+## 12.3 基本的注意事项 - 有用的提示：
+
 注意: 假如某个 HTML 文件包含十个图像，那么为了正确显示这个页面，需要加载 11 个文件。加载图片是需要时间的，所以我们的建议是：慎用图片。
 
 注意: 加载页面时，要注意插入页面图像的路径，如果不能正确设置图像的位置，浏览器无法加载图片，图像标签就会显示一个破碎的图片。
 
-13.HTML 表格
-HTML 表格由 <table> 标签来定义。
+# 13 HTML 表格
+HTML 表格由 \<table> 标签来定义。
 HTML 表格是一种用于展示结构化数据的标记语言元素。
-每个表格均有若干行（由 <tr> 标签定义），每行被分割为若干单元格（由 <td> 标签定义），表格可以包含标题行（<th>）用于定义列的标题。
+每个表格均**有若干行（由 \<tr> 标签定义），每行被分割为若干单元格（由 \<td> 标签定义）**，表格可以包含**标题行（\<th>）用于定义列的标题**。
 
-  tr：tr 是 table row 的缩写，表示表格的一行。
-  td：td 是 table data 的缩写，表示表格的数据单元格。
-  th：th 是 table header的缩写，表示表格的表头单元格。
+      tr：tr 是 table row 的缩写，表示表格的一行。
+      td：td 是 table data 的缩写，表示表格的数据单元格。
+      th：th 是 table header的缩写，表示表格的表头单元格。
   
-数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。
-简单表格示例：
-<body>
-    <table>
-        <thead>
-         <tr>
-            <th>列标题1</th>
-            <th>列标题2</th>
-            <th>列标题3</th>
-         </tr>
-        </thead>
-        <tbody>
-         <tr>
-            <td>行1，列1</td>
-            <td>行1，列2</td>
-            <td>行1，列3</td>
-         </tr>
-         <tr>
-             <td>行2，列1</td>
-             <td>行2，列2</td>
-             <td>行2，列3</td>
-         </tr>
-        </tbody>
-    </table>
+    数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。
+    简单表格示例：
+    <body>
+        <table>
+            <thead>
+             <tr>
+                <th>列标题1</th>
+                <th>列标题2</th>
+                <th>列标题3</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+                <td>行1，列1</td>
+                <td>行1，列2</td>
+                <td>行1，列3</td>
+             </tr>
+             <tr>
+                 <td>行2，列1</td>
+                 <td>行2，列2</td>
+                 <td>行2，列3</td>
+             </tr>
+            </tbody>
+        </table>
+    
+    </body>
 
-</body>
-以上的表格实例代码中，<table> 元素表示整个表格，它包含两个主要部分：<thead> 和 <tbody>。
+以上的表格实例代码中，**\<table> 元素表示整个表格，它包含两个主要部分：\<thead> 和 \<tbody>**。
 
-<thead > 用于定义表格的标题部分: 在 <thead > 中，使用 <th > 元素定义列的标题，以上实例中列标题分别为"列标题1"，"列标题2"和"列标题3"。
+**\<thead > 用于定义表格的标题部分**: 在 \<thead > 中，使用 \<th > 元素定义列的标题，以上实例中列标题分别为"列标题1"，"列标题2"和"列标题3"。
 
-<tbody > 用于定义表格的主体部分: 在 <tbody > 中，使用 <tr > 元素定义行，并在每行中使用 <td > 元素定义单元格数据，以上实例中有两行数据，每行包含三个单元格。
+**\<tbody > 用于定义表格的主体部分**: 在 \<tbody > 中，使用 \<tr > 元素定义行，并在每行中使用 \<td > 元素定义单元格数据，以上实例中有两行数据，每行包含三个单元格。
 
-通过使用 <th > 元素定义列标题，可以使其在表格中以粗体显示，与普通单元格区分开来。
+通过使用 **\<th > 元素定义列标题，可以使其在表格中以粗体显示，与普通单元格区分开来**。
 
-HTML 表格还可以具有其他部分，如 <tfoot > （表格页脚）和 <caption > （表格标题），<tfoot > 可用于在表格的底部定义摘要、统计信息等内容。 <caption > 可用于为整个表格定义标题。
+HTML 表格还可以具有其他部分，如 **\<tfoot > （表格页脚）和 \<caption > （表格标题），\<tfoot > 可用于在表格的底部定义摘要、统计信息等内容。 \<caption > 可用于为整个表格定义标题**。
 
-HTML 表格还支持合并单元格和跨行/跨列的操作，以及其他样式和属性的应用，以满足各种需求。
+
+**HTML 表格还支持合并单元格和跨行/跨列的操作，以及其他样式和属性的应用**，以满足各种需求。
 
 我们也可以使用 CSS 来进一步自定义表格的样式和外观。
-       <p>
-            每一个表格都需要table标签开始；
-            每一个表格行从tr标签开始；
-            每一个表格的数据从td标签开始。
-        </p>
-
-    <h4>1列</h4>
-<table border="1"><!-- border="1"表示表格添加一个框框   -->
-        <tr>
-            <td>1</td>
-        </tr>
-</table>
-
-    <h4>1列3行</h4>
-    <tanle>
-        <tr>
-            <td>1.1</td>
-            <td>1.2</td>
-            <td>1.3</td>
-        </tr>
-    </tanle>
-
-    <h4>2列3行</h4>
-    <table>
-        <tr>
-            <td>第一列，第一行</td>
-            <td>第一列，第二行</td>
-            <td>第一列，第三行</td>
-        </tr>
-        <tr>
-            <td>第二列，第一行</td>
-            <td>第二列，第二行</td>
-            <td>第二列，第三行</td>
-        </tr>
+           <p>
+                每一个表格都需要table标签开始；
+                每一个表格行从tr标签开始；
+                每一个表格的数据从td标签开始。
+            </p>
+    
+        <h4>1列</h4>
+    <table border="1"><!-- border="1"表示表格添加一个框框   -->
+            <tr>
+                <td>1</td>
+            </tr>
     </table>
+    
+        <h4>1列3行</h4>
+        <table>
+            <tr>
+                <td>1.1</td>
+                <td>1.2</td>
+                <td>1.3</td>
+            </tr>
+        </table>
+    
+        <h4>2列3行</h4>
+        <table>
+            <tr>
+                <td>第一列，第一行</td>
+                <td>第一列，第二行</td>
+                <td>第一列，第三行</td>
+            </tr>
+            <tr>
+                <td>第二列，第一行</td>
+                <td>第二列，第二行</td>
+                <td>第二列，第三行</td>
+            </tr>
+        </table>
 
-  13.1HTML 表格和边框属性
+  ## 13.1 HTML 表格和边框属性
+  
   如果不定义边框属性，表格将不显示边框。有时这很有用，但是大多数时候，我们希望显示边框。
   
   使用边框属性来显示一个带有边框的表格：
-    <table border="1"><!-- border="1"表示表格添加一个框框   -->
-          <tr>
-              <td>1，1</td>
-              <td>1，2</td>
-          </tr>
-    </table>
+        <table border="1"><!-- border="1"表示表格添加一个框框   -->
+              <tr>
+                  <td>1，1</td>
+                  <td>1，2</td>
+              </tr>
+        </table>
 
-    13.2HTML 表格标签（总结）
-      标签	描述
-      <table>	定义表格
-      <th>	定义表格的表头
-      <tr>	定义表格的行
-      <td>	定义表格单元
-      <caption>	定义表格标题
-      <colgroup>	定义表格列的组
-      <col>	定义用于表格列的属性
-      <thead>	定义表格的页眉
-      <tbody>	定义表格的主体
-      <tfoot>	定义表格的页脚
+    ## 13.2 HTML 表格标签（总结）
+    
+    标签|描述
+      -|-
+    <table>	定义表格
+    <th>	定义表格的表头
+    <tr>	定义表格的行
+    <td>	定义表格单元
+    <caption>	定义表格标题
+    <colgroup>	定义表格列的组
+    <col>	定义用于表格列的属性
+    <thead>	定义表格的页眉
+    <tbody>	定义表格的主体
+    <tfoot>	定义表格的页脚
 
   14HTML 列表
     HTML 支持有序、无序和定义列表:
