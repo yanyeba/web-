@@ -704,11 +704,11 @@ HTML 支持有序、无序和定义列表:
 ## 14.2 HTML 有序列表
 同样，有序列表也是一列项目，列表项目使用数字进行标记。 有序列表始于 \<ol> 标签。每个列表项始于 \<li> 标签。
 
-列表项使用数字来标记。
-      \<ol><!--有序列表--><br>
-              \<li>100</li><br>
-              \<li>200</li><br>
-      \</ol><br>
+列表项使用数字来标记。<br>
+  \<ol><!--有序列表--><br>
+          \<li>100</li><br>
+          \<li>200</li><br>
+  \</ol><br>
 
 ## 14.3 HTML 自定义列表
 自定义列表不仅仅是一列项目，而是项目及其注释的组合。
@@ -721,7 +721,7 @@ HTML 支持有序、无序和定义列表:
           \<dd>-2</dd><br>
           \</dl><br>
 # 15 HTML区块div    
-HTML <div> 和 <span>
+HTML \<div> 和 \<span>
 HTML 可以通过 \<div> 和 \<span>将元素组合起来。
 
 ## 15.1 HTML 区块元素
@@ -737,10 +737,10 @@ HTML 可以通过 \<div> 和 \<span>将元素组合起来。
 实例: \<b>, \<td>, \<a>, \<img>
 
 ## 15.3 HTML \<div> 元素
-**HTML \<div> 元素是块级元素，它可用于组合其他 HTML 元素的容器**.
-\<div> 元素没有特定的含义。除此之外，由于它属于块级元素，**浏览器会在其前后显示折行。**
-如果与 CSS 一同使用，\<div> 元素可用于**对块的内容块设置样式属性**
-\<div> 元素的另一个常见的**用途是文档布局**。它取代了使用表格定义布局的老式方法。**使用 \<table> 元素进行文档布局不是表格的正确用法。\<table> 元素的作用是显示表格化的数据**。
+**HTML \<div> 元素是块级元素，它可用于组合其他 HTML 元素的容器**.<br>
+\<div> 元素没有特定的含义。除此之外，由于它属于块级元素，**浏览器会在其前后显示折行。**<br>
+如果与 CSS 一同使用，\<div> 元素可用于**对块的内容块设置样式属性**<br>
+\<div> 元素的另一个常见的**用途是文档布局**。它取代了使用表格定义布局的老式方法。**使用 \<table> 元素进行文档布局不是表格的正确用法。\<table> 元素的作用是显示表格化的数据**。<br>
       
 ## 15.4 HTML \<span> 元素
 **HTML \<span> 元素是内联元素，可用作文本的容器**
@@ -760,29 +760,29 @@ HTML 可以通过 \<div> 和 \<span>将元素组合起来。
 请慎重设计您的网页布局。
 
 ## 16.1 HTML 布局 - 使用\<div> 元素
-div 元素是用于分组 HTML 元素的块级元素。
-        <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <title>布局区块</title>
-      </head>
-      <body>
-          <div id="contaier" style="width: 500px">
-          <div id="header" style="background-color:#FFA500;">
-              <h1 style="margin-bottom: 0;">主要的网页标题布局</h1></div>
-      
-          <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left">
-              <b>菜单</b><br>
-              HTML<br>
-              CSS<br>
-              JavaAcript</div>
-      
-              <div id="contnt" style="background-color:#EEEEEE;height:200px;width:400px;float:left">区块内容在这里写</div>
-              <div id="footer" style="background-color:#FFA500;clear:both;text-align:center">哈哈哈</div>
-      
-      </body>
-      </html>
+          div 元素是用于分组 HTML 元素的块级元素。
+            <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <title>布局区块</title>
+          </head>
+          <body>
+              <div id="contaier" style="width: 500px">
+              <div id="header" style="background-color:#FFA500;">
+                  <h1 style="margin-bottom: 0;">主要的网页标题布局</h1></div>
+          
+              <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left">
+                  <b>菜单</b><br>
+                  HTML<br>
+                  CSS<br>
+                  JavaAcript</div>
+          
+                  <div id="contnt" style="background-color:#EEEEEE;height:200px;width:400px;float:left">区块内容在这里写</div>
+                  <div id="footer" style="background-color:#FFA500;clear:both;text-align:center">哈哈哈</div>
+          
+          </body>
+          </html>
 
 
 HTML 布局标签
