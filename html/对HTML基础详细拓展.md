@@ -78,9 +78,10 @@
 
  # 2.HTML编辑器
    HTML 编辑器推荐
-    VS Code：https://code.visualstudio.com/
-    Sublime Text：http://www.sublimetext.com/
-    在线编辑器：https://www.jyshare.com/front-end/61/
+   VS Code：https://code.visualstudio.com/<br>
+   Sublime Text：http://www.sublimetext.com/<br>
+   在线编辑器：https://www.jyshare.com/front-end/61/<br>
+    
 
 # 3.HTML基础
 ## 3.1HTML 标题
