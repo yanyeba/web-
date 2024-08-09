@@ -20,7 +20,7 @@
    "HTML 标签" 和 "HTML 元素" 通常都是描述同样的意思.
     但是严格来讲, 一个 HTML 元素包含了开始标签与结束标签，如下实例:
     HTML 元素:
-    格式：<p>这是一个段落。</p>
+    格式：\<p>这是一个段落。</p>
 
  ## 1.3Web 浏览器
    
@@ -32,23 +32,23 @@
   <!DOCTYPE>声明有助于浏览器中正确显示网页。
   网络上有很多不同的文件，如果能够正确声明HTML的版本，浏览器就能正确显示网页内容。
   doctype 声明是不区分大小写的，以下方式均可：
-  <!DOCTYPE html>
+    \<!DOCTYPE html>
+    
+    \<!DOCTYPE HTML>
+    
+    \<!doctype html>
+    
+    \<!Doctype Html>
   
-  <!DOCTYPE HTML>
-  
-  <!doctype html>
-  
-  <!Doctype Html>
-
-    通用声明
-  HTML5
-  <!DOCTYPE html>
-  HTML 4.01
-  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-  "http://www.w3.org/TR/html4/loose.dtd">
-  XHTML 1.0
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+      通用声明
+    HTML5
+    \<!DOCTYPE html>
+    HTML 4.01
+    \<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+    XHTML 1.0
+    \<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
 
@@ -136,41 +136,43 @@
     空元素在开始标签中进行关闭（以开始标签的结束而结束）
     大多数 HTML 元素可拥有属性
 
-4.2嵌套的 HTML 元素
-  大多数 HTML 元素可以嵌套（HTML 元素可以包含其他 HTML 元素）。
-  HTML 文档由相互嵌套的 HTML 元素构成。
+## 4.2嵌套的 HTML 元素
 
-    HTML 文档实例
-      <!DOCTYPE html>
-      <html>
-      
-      <body>
-      <p>这是第一个段落。</p>
-      </body>
-      
-      </html>
-      以上实例包含了三个 HTML 元素。
+    大多数 HTML 元素可以嵌套（HTML 元素可以包含其他 HTML 元素）。
+    HTML 文档由相互嵌套的 HTML 元素构成。
+  
+      HTML 文档实例
+        <!DOCTYPE html>
+        <html>
+        
+        <body>
+        <p>这是第一个段落。</p>
+        </body>
+        
+        </html>
+        以上实例包含了三个 HTML 元素。
 
-4.3HTML 空元素
-  没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。
-  
-  <br> 就是没有关闭标签的空元素（<br> 标签定义换行）。
-  
-  在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。
-  
-  在开始标签中添加斜杠，比如 <br />，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。
-  
-  即使 <br> 在所有浏览器中都是有效的，但使用 <br /> 其实是更长远的保障。
+## 4.3HTML 空元素
 
-5.HTML属性
-  属性是 HTML 元素提供的附加信息。
-  HTML 元素可以设置属性
-  属性可以在元素中添加附加信息
-  属性一般描述于开始标签
-  属性总是以名称/值对的形式出现，比如：name="value"。
+    没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。
+    
+    <br> 就是没有关闭标签的空元素（<br> 标签定义换行）。
+    
+    在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。
+    
+    在开始标签中添加斜杠，比如 <br />，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。
+    
+    即使 <br> 在所有浏览器中都是有效的，但使用 <br /> 其实是更长远的保障。
 
-  HTML 链接由 <a> 标签定义。链接的地址在 href 属性中指定：
-  <a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web">这是个超链接</a>
+# 5.HTML属性
+    属性是 HTML 元素提供的附加信息。
+    HTML 元素可以设置属性
+    属性可以在元素中添加附加信息
+    属性一般描述于开始标签
+    属性总是以名称/值对的形式出现，比如：name="value"。
+  
+    HTML 链接由 <a> 标签定义。链接的地址在 href 属性中指定：
+    \<a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web">这是个超链接</a>
 
  5.2 HTML 属性常用引用属性值
   属性值应该始终被包括在引号内。
