@@ -1,4 +1,3 @@
-一 HTML
 # 1.什么是HMTL?
   HTML 是用来描述网页的一种语言。
     HTML 指的是超文本标记语言: HyperText Markup Language
@@ -75,6 +74,7 @@
     <body> 元素包含了可见的页面内容
     <h1> 元素定义一个大标题
     <p> 元素定义一个段落
+    
 
  # 2.HTML编辑器
    HTML 编辑器推荐
@@ -82,8 +82,8 @@
     Sublime Text：http://www.sublimetext.com/
     在线编辑器：https://www.jyshare.com/front-end/61/
 
-3.HTML基础
-3.1HTML 标题
+# 3.HTML基础
+## 3.1HTML 标题
   HTML 标题（Heading）是通过<h1> - <h6> 标签来定义的。
     <h1>这里的h1是第1标题哦</h1>
     <h2>这里的h2是第2标题哦</h2>
