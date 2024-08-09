@@ -1078,40 +1078,24 @@ p {
     color:green;
 }
 ```
+为了尽量减少代码，你可以使用分组选择器简写。
+```
+h1,h2,p
+{
+    color:green;
+}
+```
+
 **嵌套选择器**
 **它可能适用于选择器内部的选择器的样式。**
 
 在下面的例子设置了四个样式：
 
-- p{ }: 为所有 p 元素指定一个样式。
-- marked{ }: 为所有 class="marked" 的元素指定一个样式。
-- marked p{ }: 为所有 class="marked" 元素内的 p 元素指定一个样式。
-- p.marked{ }: 为所有 class="marked" 的 p 元素指定一个样式。
-   
-p {
-    color:green;
-}
-为了尽量减少代码，你可以使用分组选择器。
-
-每个选择器用逗号分隔。
-
-在下面的例子中，我们对以上代码使用分组选择器：
-实例
-h1,h2,p
-{
-    color:green;
-}
-
-嵌套选择器
-它可能适用于选择器内部的选择器的样式。
-
-在下面的例子设置了四个样式：
-
-p{ }: 为所有 p 元素指定一个样式。
-.marked{ }: 为所有 class="marked" 的元素指定一个样式。
-.marked p{ }: 为所有 class="marked" 元素内的 p 元素指定一个样式。
-p.marked{ }: 为所有 class="marked" 的 p 元素指定一个样式。
-
+- **p{ }: 为所有 p 元素指定一个样式**。
+- **marked{ }: 为所有 class="marked" 的元素指定一个样式。**
+- **marked p{ }: 为所有 class="marked" 元素内的 p 元素指定一个样式。**
+- **p.marked{ }: 为所有 class="marked" 的 p 元素指定一个样式。**
+```css
 p
 {
     color:blue;
@@ -1128,67 +1112,80 @@ p
 p.marked{
     text-decoration:underline;
 }
+```
 
-16.所有CSS 尺寸 (Dimension)属性
-属性	描述
-height	设置元素的高度。
-line-height	设置行高。
-max-height	设置元素的最大高度。
-max-width	设置元素的最大宽度。
-min-height	设置元素的最小高度。
-min-width	设置元素的最小宽度。
-width	设置元素的宽度。
+# 17 所有CSS 尺寸 (Dimension)属性
 
-17.CSS Display(显示) 与 Visibility（可见性）
-display属性设置一个元素应如何显示，visibility属性指定一个元素应可见还是隐藏。
+属性	| 描述
+-|-
+height	|	设置元素的高度。
+line-height	|设置行高。
+max-height|	设置元素的最大高度。
+max-width	|设置元素的最大宽度。
+min-height|	设置元素的最小高度。
+min-width	|设置元素的最小宽度。
+width	|	设置元素的宽度。
 
-17.1隐藏元素 - display:none或visibility:hidden
-隐藏一个元素可以通过把display属性设置为"none"，或把visibility属性设置为"hidden"。但是请注意，这两种方法会产生不同的结果。
+# 18 CSS Display(显示) 与 Visibility（可见性）
+**display属性设置一个元素应如何显示，visibility属性指定一个元素应可见还是隐藏。**
 
-visibility:hidden可以隐藏某个元素，但隐藏的元素仍需占用与未隐藏之前一样的空间。也就是说，该元素虽然被隐藏了，但仍然会影响布局。
+## 18.1 隐藏元素 - display:none或visibility:hidden
+
+**隐藏一个元素可以通过把display属性设置为"none"，或把visibility属性设置为"hidden"。但是请注意，这两种方法会产生不同的结果。**
+
+**visibility:hidden可以隐藏某个元素，但隐藏的元素仍需占用与未隐藏之前一样的空间**。也就是说，该元素虽然被隐藏了，但仍然会影响布局。
+```css
 h1.hidden{visibility:hidden;}
+```
 
-display:none可以隐藏某个元素，且隐藏的元素不会占用任何空间。也就是说，该元素不但被隐藏了，而且该元素原本占用的空间也会从页面布局中消失。
+**display:none可以隐藏某个元素，且隐藏的元素不会占用任何空间**。也就是说，该元素不但被隐藏了，而且该元素原本占用的空间也会从页面布局中消失。
 
 实例
+```css
 h1.hidden {display:none;}
+```
 
-17.1CSS Display - 块和内联元素
-块元素是一个元素，占用了全部宽度，在前后都是换行符。
+## 18.2 CSS Display - 块和内联元素
+**块元素是一个元素，占用了全部宽度，在前后都是换行符。**
 
 块元素的例子：
-
+```
 <h1>
 <p>
 <div>
-内联元素只需要必要的宽度，不强制换行。
+```
+
+**内联元素只需要必要的宽度，不强制换行。**
 
 内联元素的例子：
-
+```
 <span>
 <a>
+```
 
-17.2如何改变一个元素显示
-可以更改内联元素和块元素，反之亦然，可以使页面看起来是以一种特定的方式组合，并仍然遵循web标准。
+## 18.3 如何改变一个元素显示
+
+可以更改内联元素和块元素，反之亦然，**可以使页面看起来是以一种特定的方式组合，并仍然遵循web标准。**
 
 下面的示例把列表项显示为内联元素：
-
 实例
+```
 li {display:inline;}
+```
 
 下面的示例把span元素作为块元素：
-
 实例
+```
 span {display:block;}
+```
 
-注意：变更元素的显示类型看该元素是如何显示，它是什么样的元素。例如：一个内联元素设置为display:block是不允许有它内部的嵌套块元素。
+**注意：变更元素的显示类型看该元素是如何显示，它是什么样的元素。例如：一个内联元素设置为display:block是不允许有它内部的嵌套块元素。**
 
-18.position 属性指定了元素的定位类型。
+# 19 position 属性指定了元素的定位类型。
 
 position 属性的五个值：
-
-static
-relative
+-static
+-relative
 fixed
 absolute
 sticky
