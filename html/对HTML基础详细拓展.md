@@ -494,12 +494,12 @@ CSS 可以通过以下方式添加到HTML中:
 
 ## 11.5 HTML 样式实例 - 文本对齐方式
 使用 text-align（文字对齐）属性指定文本的水平与垂直对齐方式：
-    </body>
-        <h3 style="text-align: center">标题居中对齐</h3><br>
-        <p>段落</p>
-    </body>
-    
-    文本对齐属性 text-align取代了旧标签 <center> 。
+      </body>
+          <h3 style="text-align: center">标题居中对齐</h3><br>
+          <p>段落</p>
+      </body>
+      
+      文本对齐属性 text-align取代了旧标签 <center> 。
 
 ## 11.5 内部样式表
 当单个文件需要特别样式时，就可以使用内部样式表。你可以在\<head> 部分通过 \<style>标签定义内部样式表:
@@ -661,20 +661,20 @@ HTML 表格还可以具有其他部分，如 **\<tfoot > （表格页脚）和 \
               </tr>
         </table>
 
-    ## 13.2 HTML 表格标签（总结）
+## 13.2 HTML 表格标签（总结）
     
-    标签|描述
-      -|-
-    <table>	定义表格
-    <th>	定义表格的表头
-    <tr>	定义表格的行
-    <td>	定义表格单元
-    <caption>	定义表格标题
-    <colgroup>	定义表格列的组
-    <col>	定义用于表格列的属性
-    <thead>	定义表格的页眉
-    <tbody>	定义表格的主体
-    <tfoot>	定义表格的页脚
+标签 |描述
+  -|-
+<table>|	定义表格
+<th>	定义表格的表头
+<tr>	定义表格的行
+<td>	定义表格单元
+<caption>	定义表格标题
+<colgroup>	定义表格列的组
+<col>	定义用于表格列的属性
+<thead>	定义表格的页眉
+<tbody>	定义表格的主体
+<tfoot>	定义表格的页脚
 
   14HTML 列表
     HTML 支持有序、无序和定义列表:
