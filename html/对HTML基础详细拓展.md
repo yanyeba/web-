@@ -987,9 +987,9 @@ height 和 width 属性用来定义iframe标签的高度与宽度。
 属性默认以像素为单位, 但是你可以指定其按比例显示 (如："80%")。
 
 案例
+
       <body>
       <iframe src="https://www.runoob.com/html/html-iframes.html" width="1000" heigtt="2800"></iframe>
-      
       </body>
 
 ## 18.2 iframe - 移除边框
