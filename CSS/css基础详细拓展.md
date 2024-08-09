@@ -973,7 +973,7 @@ margin 清除周围的（外边框）元素区域。
 margin 没有背景颜色，是完全透明的。
 margin 可以单独改变元素的上，下，左，右边距，也可以一次改变所有的属性。
 
-![alt](img/VlwVi.ong)
+![alt](img/VlwVi.png)
 
 可能的值
 
