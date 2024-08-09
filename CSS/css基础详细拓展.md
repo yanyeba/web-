@@ -20,15 +20,17 @@ p {color:red;text-align:center;}
   <!--color:red表示一个声明，color与red为属性-->
 ```
 
-3.CSS id 和 class
+# 3 CSS id 和 class
 id 和 class 选择器
-如果你要在HTML元素中设置CSS样式，你需要在元素中设置"id" 和 "class"选择器。
+**如果你要在HTML元素中设置CSS样式，你需要在元素中设置"id" 和 "class"选择器。**
 
-3.1id 选择器
-id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式。
-HTML元素以id属性来设置id选择器,CSS 中 id 选择器以 "#" 来定义。
+## 3.1 id 选择器
+**id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式。**
+**HTML元素以id属性来设置id选择器,CSS 中 id 选择器以 "#" 来定义**。
 以下的样式规则应用于元素属性 id="para1":
+
 演示
+```css
 <head>
     <meta charset="UTF-8">
     <title>CSS id和Class选择器</title>
@@ -44,13 +46,16 @@ HTML元素以id属性来设置id选择器,CSS 中 id 选择器以 "#" 来定义�
 <p id="para1">用id选择CSS渲染</p>
 <p>这是正常段落演示</p>
 </body>
+```
 
-3.2class 选择器
-class 选择器用于描述一组元素的样式，class 选择器有别于id选择器，class可以在多个元素中使用。
+## 3.2 class 选择器
+**class 选择器用于描述一组元素的样式，class 选择器有别于id选择器，class可以在多个元素中使用**。
 
-class 选择器在 HTML 中以 class 属性表示, 在 CSS 中，类选择器以一个点 . 号显示：
+**class 选择器在 HTML 中以 class 属性表示, 在 CSS 中，类选择器以一个点 . 号显示**：
 
 在以下的例子中，所有拥有 center 类的 HTML 元素均为居中。
+```css
+ <style>
     .center
     {
         text-align: center;
@@ -58,16 +63,18 @@ class 选择器在 HTML 中以 class 属性表示, 在 CSS 中，类选择器以
     </style>
 <h1 class="center">标题居中利用classs选择器展示</h1>
 <p class="center">段落居中利用classs选择器展示</p>
+```
 
-4.CSS 创建
+# 4.CSS 创建
+
 当读到一个样式表时，浏览器会根据它来格式化 HTML 文档。
 
 如何插入样式表
 插入样式表的方法有三种:
 
-外部样式表(External style sheet)
-内部样式表(Internal style sheet)
-内联样式(Inline style)
+	外部样式表(External style sheet)
+	内部样式表(Internal style sheet)
+	内联样式(Inline style)
 
 4.1外部样式表
 当样式需要应用于很多页面时，外部样式表将是理想的选择。在使用外部样式表的情况下，你可以通过改变一个文件来改变整个站点的外观。每个页面使用 <link> 标签链接到样式表。 <link> 标签在（文档的）头部：
