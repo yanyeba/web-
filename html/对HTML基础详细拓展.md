@@ -1148,23 +1148,24 @@ Remark提示： 使用实体名而不是数字的好处是，名称易于记忆�
   ## 22.4 HTML字符实体	
  **实体名称对大小写敏感！**
  
-      显示结果	  描述	  实体名称	  实体编号
-       	        空格	  &nbsp;	&#160;
-      <	        小于号	&  lt;	  &#60;
-      >	        大于号    	&gt;	&#62;
-      &	          和号	&amp;	  &#38;
-      "	        引号	&  quot;	  &#34;
-      '	撇号 	    &apos; (IE不支持)	&#39;
-      ￠	      分	&cent;	    &#162;
-      £	        镑	&pound;	    &#163;
-      ¥	      人民币/日元	&yen;	  &#165;
-      €	        欧元	    &euro;	&#8364;
-      §	        小节	    &sect;	&#167;
-      ©	        版权	    &copy;	&#169;
-      ®	        注册商标	    &reg;	&#174;
-      ™	        商标	    &trade;	&#8482;
-      ×        	乘号	    &times;	&#215;
-      ÷        	除号	&divide;	&#247;
+显示结果	  |描述	  |实体名称	|  实体编号
+-|-|-|-
+          |空格	|  &nbsp;	|&#160;
+<	        |小于号	|&lt;	 | &#60;
+>	      |  大于号   | 	&gt;|	&#62;
+&	      |    和号	|&amp;	 | &#38;
+"	      |  引号	|&quot;	 | &#34;
+'	|撇号 	  |  &apos; (IE不支持)|	&#39;
+￠	   |   分|	&cent;	|    &#162;
+£	   |     镑|	&pound;	 |   &#163;
+¥	      |人民币/日元|	&yen;	|  &#165;
+€	     |   欧元	|    &euro;	|&#8364;
+§	      |  小节	  |  &sect;	|&#167;
+©	      |  版权	 |   &copy;|	&#169;
+®	       | 注册商标	|    &reg;	|&#174;
+™	      |  商标	  |  &trade;	|&#8482;
+×        |	乘号	|    &times;	|&#215;
+÷       | 	除号|	&divide;	|&#247;
 
 
 虽然 html 不区分大小写，但实体字符对大小写敏感。
@@ -1202,7 +1203,7 @@ scheme://host.domain:port/path/filename
   Scheme	   | 访问	       |       用于
   -|-|-
   http	 | 超文本传输协议	|        以 http:// 开头的普通网页。不加密。
-  https	 | 安全超文本传输协议	    安全网页，加密所有信息交换。
+  https	 | 安全超文本传输协议	|    安全网页，加密所有信息交换。
   ftp	  |  文件传输协议	   |         用于将文件下载或上传至网站。
   file	 	|               |           您计算机上的文件。
 
@@ -1231,6 +1232,7 @@ URL| 编码
 Ã	   |   %C3
 Ä	    |  %C4
 Å	   |   %C5
+
 HTML URL 编码参考手册：https://www.runoob.com/tags/html-urlencode.html
 
 
@@ -1336,22 +1338,22 @@ HTML URL 编码参考手册：https://www.runoob.com/tags/html-urlencode.html
   \<iframe src="demo_iframe.htm"></iframe>
 
   ## 24.12 表单（Forms）
-  \<form action="demo_form.php" method="post/get">
-  \<input type="text" name="email" size="40" maxlength="50">
-  \<input type="password">
-  \<input type="checkbox" checked="checked">
-  \<input type="radio" checked="checked">
-  \<input type="submit" value="Send">
-  \<input type="reset">
-  \<input type="hidden">
-  \<select>
-  \<option>苹果</option>
-  \<option selected="selected">香蕉</option>
-  \<option>樱桃</option>
-  \</select>
-  \<textarea name="comment" rows="60" cols="20"></textarea>
+  \<form action="demo_form.php" method="post/get"<br>
+  \<input type="text" name="email" size="40" maxlength="50"><br>
+  \<input type="password"><br>
+  \<input type="checkbox" checked="checked"><br>
+  \<input type="radio" checked="checked"><br>
+  \<input type="submit" value="Send"><br>
+  \<input type="reset"><br>
+  \<input type="hidden"><br>
+  \<select><br>
+  \<option>苹果</option><br>
+  \<option selected="selected">香蕉</option><br>
+  \<option>樱桃</option><br>
+  \</select><br>
+  \<textarea name="comment" rows="60" cols="20"></textarea><br>
    
-  \</form>
+  \</form><br>
 
   ## 24.13 实体（Entities）
     &lt; 等同于 <
