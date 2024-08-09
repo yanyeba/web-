@@ -660,6 +660,12 @@ HTML 表格还可以具有其他部分，如 **\<tfoot > （表格页脚）和 \
                   <td>1，2</td>
               </tr>
         </table>
+   \<table border="1"><!-- border="1"表示表格添加一个框框   -->
+            \<tr>
+                \<td>1，1</td>
+                \<td>1，2</td>
+            \</tr>
+      \</table>
 
 ## 13.2 HTML 表格标签（总结）
     
@@ -676,342 +682,365 @@ HTML 表格还可以具有其他部分，如 **\<tfoot > （表格页脚）和 \
 \<tbody>|	定义表格的主体
 \<tfoot>|	定义表格的页脚
 
-  14HTML 列表
-    HTML 支持有序、无序和定义列表:
+# 14 HTML 列表
+HTML 支持有序、无序和定义列表:
+    
+    HTML 列表         
+    
+    有序列表                无序列表
+    第一个列表项            列表项
+    第二个列表项            列表项
+    第三个列表项     |      列表项
 
-      HTML 列表            
-      有序列表                无序列表
-      第一个列表项            列表项
-      第二个列表项            列表项
-      第三个列表项            列表项
+## 14.1 HTML无序列表
+无序列表是一个项目的列表，此列项目使用粗体圆点（典型的小黑圆圈）进行标记。
 
-  14.1HTML无序列表
-  无序列表是一个项目的列表，此列项目使用粗体圆点（典型的小黑圆圈）进行标记。
-  
-  无序列表使用 <ul> 标签
+无序列表使用 <ul> 标签
       <ul><!--无序列表-->
         <li>100</li>
         <li>200</li>
       </ul>
-  14.2HTML 有序列表
-  同样，有序列表也是一列项目，列表项目使用数字进行标记。 有序列表始于 <ol> 标签。每个列表项始于 <li> 标签。
-  
-  列表项使用数字来标记。
-  <ol><!--有序列表-->
-          <li>100</li>
-          <li>200</li>
-  </ol>
+      
+## 14.2 HTML 有序列表
+同样，有序列表也是一列项目，列表项目使用数字进行标记。 有序列表始于 <ol> 标签。每个列表项始于 <li> 标签。
 
-  14.3HTML 自定义列表
+列表项使用数字来标记。
+      <ol><!--有序列表-->
+              <li>100</li>
+              <li>200</li>
+      </ol>
+
+## 14.3 HTML 自定义列表
 自定义列表不仅仅是一列项目，而是项目及其注释的组合。
 
 自定义列表以 <dl> 标签开始。每个自定义列表项以 <dt> 开始。每个自定义列表项的定义以 <dd> 开始。
-    <dl><!--自定义列表-->
-        <dt>1</dt>
-        <dd>=1</dd>
-        <dt>2</dt>
-        <dd>-2</dd>
-    </dl>
-  15.HTML区块div    
-  HTML <div> 和<span>
-  HTML 可以通过 <div> 和 <span>将元素组合起来。
+      <dl><!--自定义列表-->
+          <dt>1</dt>
+          <dd>=1</dd>
+          <dt>2</dt>
+          <dd>-2</dd>
+      </dl>
+# 15 HTML区块div    
+HTML <div> 和 <span>
+HTML 可以通过 \<div> 和 \<span>将元素组合起来。
 
-  15.1HTML 区块元素
-  大多数 HTML 元素被定义为块级元素或内联元素。
-  
-  块级元素在浏览器显示时，通常会以新行来开始（和结束）。
+## 15.1 HTML 区块元素
+大多数 HTML 元素被定义为块级元素或内联元素。
 
-  实例: <h1>, <p>, <ul>, <table>
-  
-  15.2HTML 内联元素
-  内联元素在显示时通常不会以新行开始。
-  
-  实例: <b>, <td>, <a>, <img>
+**块级元素在浏览器显示时，通常会以新行来开始（和结束）**。
 
-  15.3HTML <div> 元素
-  HTML <div> 元素是块级元素，它可用于组合其他 HTML 元素的容器
-  <div> 元素没有特定的含义。除此之外，由于它属于块级元素，浏览器会在其前后显示折行。
-  如果与 CSS 一同使用，<div> 元素可用于对大的内容块设置样式属性
-  <div> 元素的另一个常见的用途是文档布局。它取代了使用表格定义布局的老式方法。使用 <table> 元素进行文档布局不是表格的正确用法。<table> 元素的作用是显示表格化的数据。
+实例: \<h1>, \<p>, \<ul>, \<table>
+  
+## 15.2 HTML 内联元素
+**内联元素在显示时通常不会以新行开始**。
+
+实例: \<b>, \<td>, \<a>, \<img>
+
+## 15.3 HTML \<div> 元素
+**HTML \<div> 元素是块级元素，它可用于组合其他 HTML 元素的容器**.
+\<div> 元素没有特定的含义。除此之外，由于它属于块级元素，**浏览器会在其前后显示折行。**
+如果与 CSS 一同使用，\<div> 元素可用于**对块的内容块设置样式属性**
+\<div> 元素的另一个常见的**用途是文档布局**。它取代了使用表格定义布局的老式方法。**使用 \<table> 元素进行文档布局不是表格的正确用法。\<table> 元素的作用是显示表格化的数据**。
       
-  15.4HTML <span> 元素
-  HTML <span> 元素是内联元素，可用作文本的容器
-  <span> 元素也没有特定的含义。
-  当与 CSS 一同使用时，<span> 元素可用于为部分文本设置样式属性。
+## 15.4 HTML \<span> 元素
+**HTML \<span> 元素是内联元素，可用作文本的容器**
+<span> 元素也没有特定的含义。
+当与 CSS 一同使用时，<span> 元素可用于为**部分文本设置样式属性**。
 
-  15.5HTML 分组标签
-  标签	描述
-  <div>	定义了文档的区域，块级 (block-level)
-  <span>	用来组合文档中的行内元素， 内联元素(inline)
+## 15.5 HTML 分组标签
 
-  16HTML 布局
-  网页布局对改善网站的外观非常重要。
-  
-  请慎重设计您的网页布局。
+标签	|描述
+-|-
+\<div>	|定义了文档的区域，块级 (block-level)
+\<span>	|用来组合文档中的行内元素， 内联元素(inline)
 
-  16.1HTML 布局 - 使用<div> 元素
-  div 元素是用于分组 HTML 元素的块级元素。
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>布局区块</title>
-</head>
-<body>
-    <div id="contaier" style="width: 500px">
-    <div id="header" style="background-color:#FFA500;">
-        <h1 style="margin-bottom: 0;">主要的网页标题布局</h1></div>
+# 16 HTML 布局
+网页布局对改善网站的外观非常重要。
 
-    <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left">
-        <b>菜单</b><br>
-        HTML<br>
-        CSS<br>
-        JavaAcript</div>
+请慎重设计您的网页布局。
 
-        <div id="contnt" style="background-color:#EEEEEE;height:200px;width:400px;float:left">区块内容在这里写</div>
-        <div id="footer" style="background-color:#FFA500;clear:both;text-align:center">哈哈哈</div>
+## 16.1 HTML 布局 - 使用\<div> 元素
+div 元素是用于分组 HTML 元素的块级元素。
+        <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <title>布局区块</title>
+      </head>
+      <body>
+          <div id="contaier" style="width: 500px">
+          <div id="header" style="background-color:#FFA500;">
+              <h1 style="margin-bottom: 0;">主要的网页标题布局</h1></div>
+      
+          <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left">
+              <b>菜单</b><br>
+              HTML<br>
+              CSS<br>
+              JavaAcript</div>
+      
+              <div id="contnt" style="background-color:#EEEEEE;height:200px;width:400px;float:left">区块内容在这里写</div>
+              <div id="footer" style="background-color:#FFA500;clear:both;text-align:center">哈哈哈</div>
+      
+      </body>
+      </html>
 
-</body>
-</html>
 
 HTML 布局标签
-标签	描述
-<div>	定义文档区块，块级(block-level)
-<span>	定义 span，用来组合文档中的行内元素。
+标签	|描述
+-|-
+\<div>	|定义文档区块，块级(block-level)
+\<span>	|定义 span，用来组合文档中的行内元素。
 
-17.HTML 表单和输入
-HTML 表单用于收集用户的输入信息。
+# 17 HTML 表单和输入
 
-HTML 表单表示文档中的一个区域，此区域包含交互控件，将用户收集到的信息发送到 Web 服务器。
+HTML 表单--用于收集用户的输入信息**。
 
-HTML 表单通常包含各种输入字段、复选框、单选按钮、下拉列表等元素。
+HTML 表单**表示文档中的一个区域，此区域包含交互控件，将用户收集到的信息发送到 Web 服务器**。
+
+HTML 表单**通常包含各种输入字段、复选框、单选按钮、下拉列表等元素**。
 
 以下是一个简单的HTML表单的例子：
 
-<form> 元素用于创建表单，action 属性定义了表单数据提交的目标 URL，method 属性定义了提交数据的 HTTP 方法（这里使用的是 "post"）。
-<label> 元素用于为表单元素添加标签，提高可访问性。
-<input> 元素是最常用的表单元素之一，它可以创建文本输入框、密码框、单选按钮、复选框等。type 属性定义了输入框的类型，id 属性用于关联 <label> 元素，name 属性用于标识表单字段。
-<select> 元素用于创建下拉列表，而 <option> 元素用于定义下拉列表中的选项。
+\<form> 元素用于创建表单，**action 属性定义了表单数据提交的目标 URL，method 属性定义了提交数据的 HTTP 方法（这里使用的是 "post"）**。
+\<label> 元素**用于为表单元素添加标签，提高可访问性**。
+\<input> 元素是最常用的表单元素之一，它可以**创建文本输入框、密码框、单选按钮、复选框等。type 属性定义了输入框的类型，id 属性用于关联 \<label> 元素，name 属性用于标识表单字段**。
+\<select> 元素用于**创建下拉列表，而 \<option> 元素用于定义下拉列表中的选项**。
+
+
 案例：
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>表单</title>
-</head>
-<body>
-<form action="./" method="post">
-<!--    文本输出框-->
-    <label foe="name">用户名：</label>
-    <input type="text" id="name" name="name" required>
-    <br>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <title>表单</title>
+      </head>
+      <body>
+      <form action="./" method="post">
+      <!--    文本输出框-->
+          <label foe="name">用户名：</label>
+          <input type="text" id="name" name="name" required>
+          <br>
+      
+      <!--    密码输入框-->
+          <label for="password">密码：</label>
+          <input type="pasword" id="password" name="password" required>
+          <br>
+      
+      <!--    单选按钮-->
+          <label>性别：</label>
+          <input type="radio" id="male" name="gender" value="male" checked>
+          <label for="male">男</label>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">女</label>
+      
+          <br>
+      <!--    复选框-->
+          <input type="checkbox" id="subscribe" name="subscribe" checked>
+          <label for="subscribe">订阅推送</label>
+          <br>
+      
+      <!--    下拉列表-->
+          <label for="country">国家</label>
+          <select id="country" name="country">
+              <option value="cn">CN</option>
+              <option value="nsa">USA</option>
+              <option value="uk">UK</option>
+          </select>
+      
+          <br>
+      <!--    提交按钮-->
+          <input type="submit" value="提交">
+      </form>
+      
+      </body>
+      </html>
 
-<!--    密码输入框-->
-    <label for="password">密码：</label>
-    <input type="pasword" id="password" name="password" required>
-    <br>
-
-<!--    单选按钮-->
-    <label>性别：</label>
-    <input type="radio" id="male" name="gender" value="male" checked>
-    <label for="male">男</label>
-    <input type="radio" id="female" name="gender" value="female">
-    <label for="female">女</label>
-
-    <br>
-<!--    复选框-->
-    <input type="checkbox" id="subscribe" name="subscribe" checked>
-    <label for="subscribe">订阅推送</label>
-    <br>
-
-<!--    下拉列表-->
-    <label for="country">国家</label>
-    <select id="country" name="country">
-        <option value="cn">CN</option>
-        <option value="nsa">USA</option>
-        <option value="uk">UK</option>
-    </select>
-
-    <br>
-<!--    提交按钮-->
-    <input type="submit" value="提交">
-</form>
-
-</body>
-</html>
-
-17.1HTML 表单
-表单是一个包含表单元素的区域。
+## 17.1 HTML 表单\<form>
+**表单是一个包含表单元素的区域。**
 
 表单元素是允许用户在表单中输入内容，比如：文本域（textarea）、下拉列表（select）、单选框（radio-buttons）、复选框（checkbox） 等等。
 
-我们可以使用 <form> 标签来创建表单:
+我们可以**使用 \<form> 标签来创建表单**:
+
 案例：
-<form>
-...
-input
-...
-</form>
+    <form>
+    ...
+    input
+    ...
+    </form>
 
-17.2HTML 表单 - 输入元素
-多数情况下被用到的表单标签是输入标签 <input>。
+## 17.2 HTML 表单 - 输入元素\<input>
+多数情况下被用到的表单标签是**输入标签 \<input>**。
 
-输入类型是由 type 属性定义。
+**输入类型是由 type 属性定义**。
 
 接下来我们介绍几种常用的输入类型。
 
-17.2.1文本域（Text Fields）
-文本域通过 <input type="text"> 标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本域。
+### 17.2.1 文本域（Text Fields）\<input type="text">
+文本域通过 \<input type="text"> 标签来设定，当用户要在表单中键入字母、数字等内容时，就会用到文本域。
 如下
-<form>
-First name: <input type="text" name="firstname"><br>
-Last name: <input type="text" name="lastname">
-</form>
-浏览器显示如下：
-First name: 
-Last name: 
-注意:表单本身并不可见。同时，在大多数浏览器中，文本域的默认宽度是 20 个字符
+      <form>
+      First name: <input type="text" name="firstname"><br>
+      Last name: <input type="text" name="lastname">
+      </form>
+      浏览器显示如下：
+      First name: 
+      Last name: 
+      注意:表单本身并不可见。同时，在大多数浏览器中，文本域的默认宽度是 20 个字符
 
-17.2.2密码字段
-密码字段通过标签 <input type="password"> 来定义:
+### 17.2.2 密码字段\<input type="password"> 
+密码字段通过标签 \<input type="password"> 来定义:
 
-实例
-<form>
-Password: <input type="password" name="pwd">
-</form>
-浏览器显示效果如下:
-Password: 
-注意：密码字段字符不会明文显示，而是以星号 * 或圆点 . 替代。
+      实例
+      <form>
+      Password: <input type="password" name="pwd">
+      </form>
+      浏览器显示效果如下:
+      Password: 
+      注意：密码字段字符不会明文显示，而是以星号 * 或圆点 . 替代。
+      
 
-17.2.3单选按钮（Radio Buttons）
-<input type="radio"> 标签定义了表单的单选框选项:
+### 17.2.3 单选按钮（Radio Buttons）\<input type="radio">
+\<input type="radio"> 标签定义了表单的单选框选项:
 
-实例
-<form action="">
-<input type="radio" name="sex" value="male">男<br>
-<input type="radio" name="sex" value="female">女
-</form>
-浏览器显示效果如下:
+  实例
+      <form action="">
+      <input type="radio" name="sex" value="male">男<br>
+      <input type="radio" name="sex" value="female">女
+      </form>
+      
+      浏览器显示效果如下:
+      
+      男
+      女
 
-男
-女
-
-17.2.4复选框（Checkboxes）
-<input type="checkbox"> 定义了复选框。
+### 17.2.4复选框（Checkboxes）\<input type="checkbox">
+\<input type="checkbox"> 定义了复选框。
 
 复选框可以选取一个或多个选项：
-
 实例
-<form>
-<input type="checkbox" name="vehicle" value="Bike">我喜欢自行车<br>
-<input type="checkbox" name="vehicle" value="Car">我喜欢小汽车
-</form>
-浏览器显示效果如下:
+      <form>
+      <input type="checkbox" name="vehicle" value="Bike">我喜欢自行车<br>
+      <input type="checkbox" name="vehicle" value="Car">我喜欢小汽车
+      </form>
+      浏览器显示效果如下:
+      
+      我喜欢自行车
+      我喜欢小汽车
 
-我喜欢自行车
-我喜欢小汽车
-
-17.2.5提交按钮(Submit)
-<input type="submit"> 定义了提交按钮。
+### 17.2.5 提交按钮(Submit)\<input type="submit">
+\<input type="submit"> 定义了提交按钮。
 
 当用户单击确认按钮时，表单的内容会被传送到服务器。表单的动作属性 action 定义了服务端的文件名。
 
 action 属性会对接收到的用户输入数据进行相关的处理:
 
-实例
-<form name="input" action="html_form_action.php" method="get">
-Username: <input type="text" name="user">
-<input type="submit" value="Submit">
-</form>
-浏览器显示效果如下:
+      实例
+      <form name="input" action="html_form_action.php" method="get">
+      Username: <input type="text" name="user">
+      <input type="submit" value="Submit">
+      </form>
+      浏览器显示效果如下:
+      
+      Username: 
+      假如您在上面的文本框内键入几个字母，然后点击确认按钮，那么输入数据会传送到 html_form_action.php 文件，该页面将显示出输入的结果。
+      
+      以上实例中有一个 method 属性，它用于定义表单数据的提交方式，可以是以下值：
+      
+      post：指的是 HTTP POST 方法，表单数据会包含在表单体内然后发送给服务器，用于提交敏感数据，如用户名与密码等。
+      
+      get：默认值，指的是 HTTP GET 方法，表单数据会附加在 action 属性的 URL 中，并以 ?作为分隔符，一般用于不敏感信息，如分页等。例如：https://www.runoob.com/?page=1，这里的 page=1 就是 get 方法提交的数据。
 
-Username: 
-假如您在上面的文本框内键入几个字母，然后点击确认按钮，那么输入数据会传送到 html_form_action.php 文件，该页面将显示出输入的结果。
 
-以上实例中有一个 method 属性，它用于定义表单数据的提交方式，可以是以下值：
+## 17.3 HTML 表单标签
 
-post：指的是 HTTP POST 方法，表单数据会包含在表单体内然后发送给服务器，用于提交敏感数据，如用户名与密码等。
-
-get：默认值，指的是 HTTP GET 方法，表单数据会附加在 action 属性的 URL 中，并以 ?作为分隔符，一般用于不敏感信息，如分页等。例如：https://www.runoob.com/?page=1，这里的 page=1 就是 get 方法提交的数据。
-
-
-17.3.HTML 表单标签
 New : HTML5新标签
 
-标签	  描述
-<form>	定义供用户输入的表单
-<input>	定义输入域
-<textarea>	定义文本域 (一个多行的输入控件)
-<label>	定义了 <input> 元素的标签，一般为输入标题
-<fieldset>	定义了一组相关的表单元素，并使用外框包含起来
-<legend>	定义了 <fieldset> 元素的标题
-<select>	定义了下拉选项列表
-<optgroup>	定义选项组
-<option>	定义下拉列表中的选项
-<button>	定义一个点击按钮
-<datalist>New	指定一个预先定义的输入控件选项列表
-<keygen>New	定义了表单的密钥对生成器字段
-<output>New	定义一个计算结果
+标签	 | 描述
+-|-
+\<form>	 |定义供用户输入的表单
+\<input>	 |定义输入域
+\<textarea>	 |定义文本域 (一个多行的输入控件)
+\<label>	 |定义了 <input> 元素的标签，一般为输入标题
+\<fieldset>	 |定义了一组相关的表单元素，并使用外框包含起来
+\<legend>	 |定义了 <fieldset> 元素的标题
+\<select>	 |定义了下拉选项列表
+\<optgroup>	 |定义选项组
+\<option>	 |定义下拉列表中的选项
+\<button>	 |定义一个点击按钮
+\<datalist>New |	指定一个预先定义的输入控件选项列表
+\<keygen>New	 |定义了表单的密钥对生成器字段
+\<output>New |	定义一个计算结果
 
-18.HTML 框架
+# 18 HTML 框架
 通过使用框架，你可以在同一个浏览器窗口中显示不止一个页面。
 语法：
-iframe语法:
+    iframe语法:
+    
+    <iframe src="URL"></iframe>
+    该URL指向不同的网页。
+    
+## 18.1 iframe标签 - 设置高度与宽度
 
-<iframe src="URL"></iframe>
-该URL指向不同的网页。
-18.1.iframe - 设置高度与宽度
 height 和 width 属性用来定义iframe标签的高度与宽度。
 
 属性默认以像素为单位, 但是你可以指定其按比例显示 (如："80%")。
+
 案例
-<body>
-<iframe src="https://www.runoob.com/html/html-iframes.html" width="1000" heigtt="2800"></iframe>
+      <body>
+      <iframe src="https://www.runoob.com/html/html-iframes.html" width="1000" heigtt="2800"></iframe>
+      
+      </body>
 
-</body>
+## 18.2 iframe - 移除边框
 
-18.2.iframe - 移除边框
-frameborder 属性用于定义iframe表示是否显示边框。
+  frameborder 属性用于定义iframe表示是否显示边框。
+  
+  设置属性值为 "0" 移除iframe的边框:
 
-设置属性值为 "0" 移除iframe的边框:
+## 18.3 使用 iframe 来显示目标链接页面
 
-18.3使用 iframe 来显示目标链接页面
 iframe 可以显示一个目标链接的页面
 
 目标链接的属性必须使用 iframe 的属性，如下实例:
-<body>
-<iframe src="https://www.runoob.com/.html" name="iframe_a"></iframe>
-<p><a href="https://www.runoob.com/html/html-iframes.html" target="iframe_a" rel="noopener">菜鸟教程</a></p>
-</body>
+      <body>
+      <iframe src="https://www.runoob.com/.html" name="iframe_a"></iframe>
+      <p><a href="https://www.runoob.com/html/html-iframes.html" target="iframe_a" rel="noopener">菜鸟教程</a></p>
+      </body>
 
 注意： 因为 a 标签的 target 属性是名为 iframe_a 的 iframe 框架，所以在点击链接时页面会显示在 iframe框架中。
 
+
 HTML iframe 标签
-标签	说明
-<iframe>	定义一个内联的iframe
 
-19.HTML 颜色
-HTML 颜色由红色、绿色、蓝色混合而成。
+标签	|说明
+-|-
+\<iframe>	|定义一个内联的iframe
 
-颜色值
+# 19 HTML 颜色
+
+**HTML 颜色由红色、绿色、蓝色混合而成。**
+
+## 颜色值
 HTML 颜色由一个十六进制符号来定义，这个符号由红色、绿色和蓝色的值组成（RGB）。
 
-每种颜色的最小值是0（十六进制：#00）。最大值是255（十六进制：#FF）。
+**每种颜色的最小值是0（十六进制：#00）。最大值是255（十六进制：#FF）**。
 
 这个表格给出了由三种颜色混合而成的具体效果：
 颜色值
-颜色(Color)	颜色十六进制(Color HEX)	颜色RGB(Color RGB)
- 	#000000	rgb(0,0,0)
- 	#FF0000	rgb(255,0,0)
- 	#00FF00	rgb(0,255,0)
- 	#0000FF	rgb(0,0,255)
- 	#FFFF00	rgb(255,255,0)
- 	#00FFFF	rgb(0,255,255)
- 	#FF00FF	rgb(255,0,255)
- 	#C0C0C0	rgb(192,192,192)
- 	#FFFFFF	rgb(255,255,255)
+      颜色(Color)	颜色十六进制(Color HEX)	颜色RGB(Color RGB)
+       	#000000	rgb(0,0,0)
+       	#FF0000	rgb(255,0,0)
+       	#00FF00	rgb(0,255,0)
+       	#0000FF	rgb(0,0,255)
+       	#FFFF00	rgb(255,255,0)
+       	#00FFFF	rgb(0,255,255)
+       	#FF00FF	rgb(255,0,255)
+       	#C0C0C0	rgb(192,192,192)
+       	#FFFFFF	rgb(255,255,255)
 
 1600万种不同颜色
+
 三种颜色 红，绿，蓝的组合从0到255，一共有1600万种不同颜色(256 x 256 x 256)。
 
 在下面的颜色表中你会看到不同的结果，从0到255的红色，同时设置绿色和蓝色的值为0,随着红色的值变化，不同的值都显示了不同的颜色
@@ -1020,6 +1049,7 @@ HTML 颜色由一个十六进制符号来定义，这个符号由红色、绿色
 
 
 Web安全色?
+
 数年以前，当大多数计算机仅支持 256 种颜色的时候，一系列 216 种 Web 安全色作为 Web 标准被建议使用。其中的原因是，微软和 Mac 操作系统使用了 40 种不同的保留的固定系统颜色（双方大约各使用 20 种）。
 
 我们不确定如今这么做的意义有多大，因为越来越多的计算机有能力处理数百万种颜色，不过做选择还是你自己。
@@ -1027,73 +1057,75 @@ Web安全色?
 最初，216 跨平台 web 安全色被用来确保：当计算机使用 256 色调色板时，所有的计算机能够正确地显示所有的颜色。
 
 
-20.HTML颜色名
+## 20.HTML 颜色名
+
 目前所有浏览器都支持以下颜色名称。
+
 141 个颜色名称是 HTML 和 CSS 颜色规范定义的（17 个标准颜色，加上 124 个）。下面列出了所有颜色的值，包括十六个恢复值。
 
 评论 提示: 17标准颜色：黑色，蓝色，水，紫红色，灰色，绿色，石灰，栗色，海军，橄榄色，橙色，紫色，红色，白色，银色，蓝绿色，。点击其中一个颜色名称（或一个十六进制值）就可以查看与不同文字颜色搭配的背景颜色。
 
-20.1按颜色名排序
+## 20.1 按颜色名排序
 重点关注的价值排序
 
 点击一个颜色名或者16个亮度值，就可以查看与不同文字颜色搭配的背景颜色。
 https://www.runoob.com/html/html-colorvalues.html
 
-21.HTML脚本
+## 21 HTML脚本
 JavaScript 使 HTML 页面具有更强的动态和交互性。
 
-21.1HTML <script> 标签
-<script> 标签用于定义客户端脚本，比如 JavaScript。
+## 21.1 HTML \<script> 标签
+\<script> 标签用于定义客户端脚本，比如 JavaScript。
 
-<script> 元素既可包含脚本语句，也可通过 src 属性指向外部脚本文件。
+\<script> 元素既可包含脚本语句，也可通过 src 属性指向外部脚本文件。
 
-JavaScript 最常用于图片操作、表单验证以及内容动态更新。
+**JavaScript 最常用于图片操作、表单验证以及内容动态更新。**
 
 下面的脚本会向浏览器输出"Hello World!"：
 
-<!--利用JavaScript脚本在浏览器输出-->
-<script>
-    document.write("hallo world");
-</script>
+    <!--利用JavaScript脚本在浏览器输出-->
+    <script>
+        document.write("hallo world");
+    </script>
 
 
-21.2HTML<noscript> 标签
-<noscript> 标签提供无法使用脚本时的替代内容，比方在浏览器禁用脚本时，或浏览器不支持客户端脚本时。
+## 21.2 HTML<noscript> 标签
+\<noscript> 标签提供无法使用脚本时的替代内容，比方在浏览器禁用脚本时，或浏览器不支持客户端脚本时。
 
-<noscript>元素可包含普通 HTML 页面的 body 元素中能够找到的所有元素。
+\<noscript>元素可包含普通 HTML 页面的 body 元素中能够找到的所有元素。
 
-只有在浏览器不支持脚本或者禁用脚本时，才会显示 <noscript> 元素中的内容：
+只有在浏览器不支持脚本或者禁用脚本时，才会显示 \<noscript> 元素中的内容：
 <!--不支持，就显示不出来，用文本来代替-->
-<noscript>你的浏览器不支持JavaScript</noscript>
+\<noscript>你的浏览器不支持JavaScript</noscript>
 
-<p>不支持 JavaScript 的浏览器会使用 &lt;noscript&gt; 元素中定义的内容（文本）来替代。</p>
+\<p>不支持 JavaScript 的浏览器会使用 &lt;noscript&gt; 元素中定义的内容（文本）来替代。</p>
 
-22.HTML 字符实体
-HTML 中的预留字符必须被替换为字符实体。
+## 22 HTML 字符实体
+**HTML 中的预留字符必须被替换为字符实体。**
 
 一些在键盘上找不到的字符也可以使用字符实体来替换
 
-22.1HTML 实体
+## 22.1 HTML 实体
 在 HTML 中，某些字符是预留的。
 
 在 HTML 中不能使用小于号（<）和大于号（>），这是因为浏览器会误认为它们是标签。
 
 如果希望正确地显示预留字符，我们必须在 HTML 源代码中使用字符实体（character entities）。 字符实体类似这样：
-&entity_name;
-或
-
-&#entity_number;
-
-如需显示小于号，我们必须这样写：&lt; 或 &#60; 或 &#060;
+    &entity_name;
+    或
+    
+    &#entity_number;
+    
+    如需显示小于号，我们必须这样写：&lt; 或 &#60; 或 &#060;
 
 Remark提示： 使用实体名而不是数字的好处是，名称易于记忆。不过坏处是，浏览器也许并不支持所有实体名称（对实体数字的支持却很好）
 
-22.2不间断空格(Non-breaking Space)
-HTML 中的常用字符实体是不间断空格(&nbsp;)。
+## 22.2 不间断空格(Non-breaking Space)
+**HTML 中的常用字符实体是不间断空格(&nbsp;)。**
 
-浏览器总是会截短 HTML 页面中的空格。如果您在文本中写 10 个空格，在显示该页面之前，浏览器会删除它们中的 9 个。如需在页面中增加空格的数量，您需要使用 &nbsp; 字符实体。
+浏览器总是会截短 HTML 页面中的空格。如果您在文本中写 10 个空格，在显示该页面之前，浏览器会删除它们中的 9 个。**如需在页面中增加空格的数量，您需要使用 &nbsp; 字符实体**。
 
-22.3结合音标符
+## 22.3结合音标符
 发音符号是加到字母上的一个"glyph(字形)"。
 
 一些变音符号, 如 尖音符 (  ̀) 和 抑音符 (  ́) 。
@@ -1103,297 +1135,233 @@ HTML 中的常用字符实体是不间断空格(&nbsp;)。
 变音符号可以与字母、数字字符的组合来使用。
 
 以下是一些实例:
+    音标符	字符	Construct	输出结果
+      ̀	  a	  a&#768;	    à
+      ́	  a	  a&#769;    	á
+    ̂	    a	  a&#770;	    â
+      ̃	  a	  a&#771;	    ã
+      ̀	  O	  O&#768;	    Ò
+      ́	  O	  O&#769;    	Ó
+    ̂	    O	  O&#770;	    Ô
+      ̃	  O	  O&#771;	    Õ
 
-
-音标符	字符	Construct	输出结果
-  ̀	  a	  a&#768;	    à
-  ́	  a	  a&#769;    	á
-̂	    a	  a&#770;	    â
-  ̃	  a	  a&#771;	    ã
-  ̀	  O	  O&#768;	    Ò
-  ́	  O	  O&#769;    	Ó
-̂	    O	  O&#770;	    Ô
-  ̃	  O	  O&#771;	    Õ
-
-  22.4HTML字符实体	
- 实体名称对大小写敏感！
+  ## 22.4 HTML字符实体	
+ **实体名称对大小写敏感！**
  
-显示结果	  描述	  实体名称	  实体编号
- 	        空格	  &nbsp;	&#160;
-<	        小于号	&  lt;	  &#60;
->	        大于号    	&gt;	&#62;
-&	          和号	&amp;	  &#38;
-"	        引号	&  quot;	  &#34;
-'	撇号 	    &apos; (IE不支持)	&#39;
-￠	      分	&cent;	    &#162;
-£	        镑	&pound;	    &#163;
-¥	      人民币/日元	&yen;	  &#165;
-€	        欧元	    &euro;	&#8364;
-§	        小节	    &sect;	&#167;
-©	        版权	    &copy;	&#169;
-®	        注册商标	    &reg;	&#174;
-™	        商标	    &trade;	&#8482;
-×        	乘号	    &times;	&#215;
-÷        	除号	&divide;	&#247;
+      显示结果	  描述	  实体名称	  实体编号
+       	        空格	  &nbsp;	&#160;
+      <	        小于号	&  lt;	  &#60;
+      >	        大于号    	&gt;	&#62;
+      &	          和号	&amp;	  &#38;
+      "	        引号	&  quot;	  &#34;
+      '	撇号 	    &apos; (IE不支持)	&#39;
+      ￠	      分	&cent;	    &#162;
+      £	        镑	&pound;	    &#163;
+      ¥	      人民币/日元	&yen;	  &#165;
+      €	        欧元	    &euro;	&#8364;
+      §	        小节	    &sect;	&#167;
+      ©	        版权	    &copy;	&#169;
+      ®	        注册商标	    &reg;	&#174;
+      ™	        商标	    &trade;	&#8482;
+      ×        	乘号	    &times;	&#215;
+      ÷        	除号	&divide;	&#247;
 
- HTML 脚本HTML URL 
-HTML 字符实体
-HTML 中的预留字符必须被替换为字符实体。
-
-一些在键盘上找不到的字符也可以使用字符实体来替换。
-
-HTML 实体
-在 HTML 中，某些字符是预留的。
-
-在 HTML 中不能使用小于号（<）和大于号（>），这是因为浏览器会误认为它们是标签。
-
-如果希望正确地显示预留字符，我们必须在 HTML 源代码中使用字符实体（character entities）。 字符实体类似这样：
-
-&entity_name;
-或
-
-&#entity_number;
-如需显示小于号，我们必须这样写：&lt; 或 &#60; 或 &#060;
-
-Remark提示： 使用实体名而不是数字的好处是，名称易于记忆。不过坏处是，浏览器也许并不支持所有实体名称（对实体数字的支持却很好）。
-
-不间断空格(Non-breaking Space)
-HTML 中的常用字符实体是不间断空格(&nbsp;)。
-
-浏览器总是会截短 HTML 页面中的空格。如果您在文本中写 10 个空格，在显示该页面之前，浏览器会删除它们中的 9 个。如需在页面中增加空格的数量，您需要使用 &nbsp; 字符实体。
-
-结合音标符
-发音符号是加到字母上的一个"glyph(字形)"。
-
-一些变音符号, 如 尖音符 (  ̀) 和 抑音符 (  ́) 。
-
-变音符号可以出现字母的上面和下面，或者字母里面，或者两个字母间。
-
-变音符号可以与字母、数字字符的组合来使用。
-
-以下是一些实例:
-
-音标符	字符	Construct	输出结果
-  ̀	a	a&#768;	à
-  ́	a	a&#769;	á
-̂	a	a&#770;	â
-  ̃	a	a&#771;	ã
-  ̀	O	O&#768;	Ò
-  ́	O	O&#769;	Ó
-̂	O	O&#770;	Ô
-  ̃	O	O&#771;	Õ
-
-HTML字符实体
-Note	
- 实体名称对大小写敏感！
-
-
-显示结果	描述	实体名称	实体编号
- 	空格	&nbsp;	&#160;
-<	小于号	&lt;	&#60;
->	大于号	&gt;	&#62;
-&	和号	&amp;	&#38;
-"	引号	&quot;	&#34;
-'	撇号 	&apos; (IE不支持)	&#39;
-￠	分	&cent;	&#162;
-£	镑	&pound;	&#163;
-¥	人民币/日元	&yen;	&#165;
-€	欧元	&euro;	&#8364;
-§	小节	&sect;	&#167;
-©	版权	&copy;	&#169;
-®	注册商标	&reg;	&#174;
-™	商标	&trade;	&#8482;
-×	乘号	&times;	&#215;
-÷	除号	&divide;	&#247;
 
 虽然 html 不区分大小写，但实体字符对大小写敏感。
 参考完整字符：https://www.runoob.com/tags/ref-entities.html
 
 
-23.HTML 统一资源定位器(Uniform Resource Locators)
+# 23 HTML 统一资源定位器(Uniform Resource Locators)
 URL 是一个网页地址。
 
 URL可以由字母组成，如"runoob.com"，或互联网协议（IP）地址： 192.68.20.50。大多数人进入网站使用网站域名来访问，因为 名字比数字更容易记住。
 
-23.1URL - 统一资源定位器
+## 23.1 URL - 统一资源定位器
 Web浏览器通过URL从Web服务器请求页面。
 
-当您点击 HTML 页面中的某个链接时，对应的 <a> 标签指向万维网上的一个地址。
+当您点击 HTML 页面中的某个链接时，对应的 \<a> 标签指向万维网上的一个地址。
 
 一个统一资源定位器(URL) 用于定位万维网上的文档。
 
 一个网页地址实例: http://www.runoob.com/html/html-tutorial.html 语法规则:
 scheme://host.domain:port/path/filename
-说明:
-  scheme - 定义因特网服务的类型。最常见的类型是 http
-  host - 定义域主机（http 的默认主机是 www）
-  domain - 定义因特网域名，比如 runoob.com
-  :port - 定义主机上的端口号（http 的默认端口号是 80）
-  path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。
-  filename - 定义文档/资源的名称
+
+    说明:
+      scheme - 定义因特网服务的类型。最常见的类型是 http
+      host - 定义域主机（http 的默认主机是 www）
+      domain - 定义因特网域名，比如 runoob.com
+      :port - 定义主机上的端口号（http 的默认端口号是 80）
+      path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。
+      filename - 定义文档/资源的名称
 
 
-  23.2.常见的 URL Scheme
+  ## 23.2.常见的 URL Scheme
+  
   以下是一些URL scheme：
   
-  Scheme	    访问	              用于...
-  http	  超文本传输协议	        以 http:// 开头的普通网页。不加密。
-  https	  安全超文本传输协议	    安全网页，加密所有信息交换。
-  ftp	    文件传输协议	            用于将文件下载或上传至网站。
-  file	 	                          您计算机上的文件。
+  Scheme	   | 访问	       |       用于
+  -|-|-
+  http	 | 超文本传输协议	|        以 http:// 开头的普通网页。不加密。
+  https	 | 安全超文本传输协议	    安全网页，加密所有信息交换。
+  ftp	  |  文件传输协议	   |         用于将文件下载或上传至网站。
+  file	 	|               |           您计算机上的文件。
 
-  23.3.URL 字符编码
-URL 只能使用 ASCII 字符集.
-来通过因特网进行发送。由于 URL 常常会包含 ASCII 集合之外的字符，URL 必须转换为有效的 ASCII 格式。
+ ##  23.3 URL 字符编码
+**URL 只能使用 ASCII 字符集**.
+  来通过因特网进行发送。由于 URL 常常会包含 ASCII 集合之外的字符，URL 必须转换为有效的 ASCII 格式。
 
-URL 编码使用 "%" 其后跟随两位的十六进制数来替换非 ASCII 字符。
+**URL 编码使用 "%" 其后跟随两位的十六进制数来替换非 ASCII 字符。**
 
-URL 不能包含空格。URL 编码通常使用 + 来替换空格。
+**URL 不能包含空格。URL 编码通常使用 + 来替换空格。**
 HTML ASCII 参考手册：https://www.runoob.com/tags/html-ascii.html
 
 
 23.4URL 编码实例
-字符	URL 编码
-€	      %80
-£	      %A3
-©	      %A9
-®	      %AE
-À	      %C0
-Á	      %C1
-Â	      %C2
-Ã	      %C3
-Ä	      %C4
-Å	      %C5
+字符	
+
+URL| 编码
+-|-
+€	   |   %80
+£	  |    %A3
+©	  |    %A9
+®	  |    %AE
+À	  |    %C0
+Á	   |   %C1
+Â	   |   %C2
+Ã	   |   %C3
+Ä	    |  %C4
+Å	   |   %C5
 HTML URL 编码参考手册：https://www.runoob.com/tags/html-urlencode.html
 
 
-24.HTML速查列表
-24.1HTML 基本文档
-  <!DOCTYPE html>
-  <html>
-  <head>
-  <title>文档标题</title>
-  </head>
-  <body>
-  可见文本...
-  </body>
-  </html>
+# 24 HTML速查列表
+
+## 24.1 HTML 基本文档
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <title>文档标题</title>
+      </head>
+      <body>
+      可见文本...
+      </body>
+      </html>
 
   
-  24.2基本标签（Basic Tags）
-  <h1>最大的标题</h1>
-<h2> . . . </h2>
-<h3> . . . </h3>
-<h4> . . . </h4>
-<h5> . . . </h5>
-<h6>最小的标题</h6>
+  ## 24.2 基本标签（Basic Tags）
+        <h1>最大的标题</h1>
+      <h2> . . . </h2>
+      <h3> . . . </h3>
+      <h4> . . . </h4>
+      <h5> . . . </h5>
+      <h6>最小的标题</h6>
  
-<p>这是一个段落。</p>
-<br> （换行）
-<hr> （水平线）
-<!-- 这是注释 -->
+      <p>这是一个段落。</p>
+      <br> （换行）
+      <hr> （水平线）
+      <!-- 这是注释 -->
 
-24.3文本格式化（Formatting）
-<b>粗体文本</b>
-<code>计算机代码</code>
-<em>强调文本</em>
-<i>斜体文本</i>
-<kbd>键盘输入</kbd> 
-<pre>预格式化文本</pre>
-<small>更小的文本</small>
-<strong>重要的文本</strong>
- 
-<abbr> （缩写）
-<address> （联系信息）
-<bdo> （文字方向）
-<blockquote> （从另一个源引用的部分）
-<cite> （工作的名称）
-<del> （删除的文本）
-<ins> （插入的文本）
-<sub> （下标文本）
-<sup> （上标文本）
+## 24.3 文本格式化（Formatting）
+      <b>粗体文本</b>
+      <code>计算机代码</code>
+      <em>强调文本</em>
+      <i>斜体文本</i>
+      <kbd>键盘输入</kbd> 
+      <pre>预格式化文本</pre>
+      <small>更小的文本</small>
+      <strong>重要的文本</strong>
+       
+      <abbr> （缩写）
+      <address> （联系信息）
+      <bdo> （文字方向）
+      <blockquote> （从另一个源引用的部分）
+      <cite> （工作的名称）
+      <del> （删除的文本）
+      <ins> （插入的文本）
+      <sub> （下标文本）
+      <sup> （上标文本）
 
-24.4链接（Links）
-  普通的链接：<a href="http://www.example.com/">链接文本</a>
-  图像链接： <a href="http://www.example.com/"><img src="URL" alt="替换文本"></a>
-  邮件链接： <a href="mailto:webmaster@example.com">发送e-mail</a>
+## 24.4 链接（Links）
+  普通的链接：\<a href="http://www.example.com/">链接文本</a>
+  图像链接： \<a href="http://www.example.com/"><img src="URL" alt="替换文本"></a>
+  邮件链接： \<a href="mailto:webmaster@example.com">发送e-mail</a>
   书签：
-  <a id="tips">提示部分</a>
-  <a href="#tips">跳到提示部分</a>
+    \<a id="tips">提示部分</a>
+    \<a href="#tips">跳到提示部分</a>
 
-  24.5图片（Images）
-  <img src="URL" alt="替换文本" height="42" width="42">
+  ## 24.5 图片（Images）
+  \<img src="URL" alt="替换文本" height="42" width="42">
 
-  24.6样式/区块（Styles/Sections）
-  <style type="text/css">
+  ## 24.6 样式/区块（Styles/Sections）
+  \<style type="text/css">
   h1 {color:red;}
   p {color:blue;}
-  </style>
-  <div>文档中的块级元素</div>
-  <span>文档中的内联元素</span>
+  \</style>
+  \<div>文档中的块级元素</div>
+ \<span>文档中的内联元素</span>
 
-  24.7无序列表
-  <ul>
-    <li>项目</li>
-    <li>项目</li>
-  </ul>
+  ## 24.7 无序列表
+  \<ul>
+    \<li>项目</li>
+    \<li>项目</li>
+  \</ul>
 
-  24.8有序列表
-  <ol>
-    <li>第一项</li>
-    <li>第二项</li>
-  </ol>
+  ## 24.8 有序列表
+  \<ol>
+    \<li>第一项</li>
+    \<li>第二项</li>
+  \</ol>
 
-  24.9定义列表
-  <dl>
-  <dt>项目 1</dt>
-    <dd>描述项目 1</dd>
-  <dt>项目 2</dt>
-    <dd>描述项目 2</dd>
-  </dl>
+  ## 24.9 定义列表
+  \<dl>
+  \<dt>项目 1</dt>
+    \<dd>描述项目 1</dd>
+  \<dt>项目 2</dt>
+    \<dd>描述项目 2</dd>
+  \</dl>
   
-  24.10表格（Tables）
-  <table border="1">
-    <tr>
-      <th>表格标题</th>
-      <th>表格标题</th>
-    </tr>
-    <tr>
-      <td>表格数据</td>
-      <td>表格数据</td>
-    </tr>
-  </table>
+  ## 24.10 表格（Tables）
+  \<table border="1">
+    \<tr>
+      \<th>表格标题</th>
+      \<th>表格标题</th>
+    \</tr>
+    \<tr>
+      \<td>表格数据</td>
+      \<td>表格数据</td>
+    \</tr>
+  \</table>
 
-  24.11框架（Iframe）
-  <iframe src="demo_iframe.htm"></iframe>
+  ## 24.11 框架（Iframe）
+  \<iframe src="demo_iframe.htm"></iframe>
 
-  24.12表单（Forms）
-  <form action="demo_form.php" method="post/get">
-  <input type="text" name="email" size="40" maxlength="50">
-  <input type="password">
-  <input type="checkbox" checked="checked">
-  <input type="radio" checked="checked">
-  <input type="submit" value="Send">
-  <input type="reset">
-  <input type="hidden">
-  <select>
-  <option>苹果</option>
-  <option selected="selected">香蕉</option>
-  <option>樱桃</option>
-  </select>
-  <textarea name="comment" rows="60" cols="20"></textarea>
+  ## 24.12 表单（Forms）
+  \<form action="demo_form.php" method="post/get">
+  \<input type="text" name="email" size="40" maxlength="50">
+  \<input type="password">
+  \<input type="checkbox" checked="checked">
+  \<input type="radio" checked="checked">
+  \<input type="submit" value="Send">
+  \<input type="reset">
+  \<input type="hidden">
+  \<select>
+  \<option>苹果</option>
+  \<option selected="selected">香蕉</option>
+  \<option>樱桃</option>
+  \</select>
+  \<textarea name="comment" rows="60" cols="20"></textarea>
    
-  </form>
+  \</form>
 
-  24.13实体（Entities）
+  ## 24.13 实体（Entities）
     &lt; 等同于 <
     &gt; 等同于 >
     &#169; 等同于 ©
 
-  25.HTML 标签简写及全称
+  # 25.HTML 标签简写及全称
   https://www.runoob.com/html/html-tag-name.html
 
-  26.HTML 总结
+  # 26.HTML 总结
 本教程已教你如何使用 HTML 创建站点。
 HTML 是一种在 Web 上使用的通用标记语言。HTML 允许你格式化文本，添加图片，创建链接、输入表单、框架和表格等等，并可将之存为文本文件，浏览器即可读取和显示。
 HTML 的关键是标签，其作用是指示将出现的内容。
