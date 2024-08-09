@@ -1,5 +1,5 @@
 一 HTML
-1.什么是HMTL?
+# 1.什么是HMTL?
   HTML 是用来描述网页的一种语言。
     HTML 指的是超文本标记语言: HyperText Markup Language
     HTML 不是一种编程语言，而是一种标记语言
@@ -8,7 +8,7 @@
     HTML 文档包含了HTML 标签及文本内容
     HTML文档也叫做 web 页面
 
- 1.1HTML标签
+ ## 1.1HTML标签
  HTML 标记标签通常被称为 HTML 标签 (HTML tag)。
 
     HTML 标签是由尖括号包围的关键词，比如 <html>
@@ -17,18 +17,18 @@
     开始和结束标签也被称为开放标签和闭合标签
     格式：<标签>内容</标签>
 
- 1.2 HTML 元素
+ ## 1.2 HTML 元素
    "HTML 标签" 和 "HTML 元素" 通常都是描述同样的意思.
     但是严格来讲, 一个 HTML 元素包含了开始标签与结束标签，如下实例:
     HTML 元素:
     格式：<p>这是一个段落。</p>
 
- 1.3Web 浏览器
+ ## 1.3Web 浏览器
     Web浏览器（如谷歌浏览器，Internet Explorer，Firefox，Safari）是用于读取HTML文件，并将其作为网页显示。
     
     浏览器并不是直接显示的HTML标签，但可以使用标签来决定如何展现HTML页面的内容给用户：
 
- 1.4<!DOCTYPE> 声明
+ ## 1.4<!DOCTYPE> 声明
   <!DOCTYPE>声明有助于浏览器中正确显示网页。
   网络上有很多不同的文件，如果能够正确声明HTML的版本，浏览器就能正确显示网页内容。
   doctype 声明是不区分大小写的，以下方式均可：
@@ -52,7 +52,7 @@
 
 
 
- 1.5基本网页结构及其解析
+ ## 1.5基本网页结构及其解析
        <!DOCTYPE html>  
       <html lang="en">
       
@@ -76,7 +76,7 @@
     <h1> 元素定义一个大标题
     <p> 元素定义一个段落
 
- 2.HTML编辑器
+ # 2.HTML编辑器
    HTML 编辑器推荐
     VS Code：https://code.visualstudio.com/
     Sublime Text：http://www.sublimetext.com/
