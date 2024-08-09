@@ -741,7 +741,7 @@ th
 }
 ```
 
-# 11.CSS 盒子模型
+# 11 CSS 盒子模型
 
 CSS 盒子模型(Box Model)
 
@@ -752,7 +752,9 @@ CSS 盒子模型(Box Model)
 **盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。**
 
 下面的图片说明了盒子模型(Box Model)：
+
 ![Alt](img/box-model.gif)
+
 不同部分的说明：
 ```
 Margin(外边距) - 清除边框外的区域，外边距是透明的。
@@ -762,47 +764,55 @@ Content(内容) - 盒子的内容，显示文本和图像。
 为了正确设置元素在所有浏览器中的宽度和高度，你需要知道的盒模型是如何工作的。
 ```
 
-11.1元素的宽度和高度
-Remark重要: 当您指定一个 CSS 元素的宽度和高度属性时，你只是设置内容区域的宽度和高度。要知道，完整大小的元素，你还必须添加内边距，边框和外边距。
+## 11.1 元素的宽度和高度
+**Remark重要: 当您指定一个 CSS 元素的宽度和高度属性时，你只是设置内容区域的宽度和高度。要知道，完整大小的元素，你还必须添加内边距，边框和外边距。**
 
 下面的例子中的元素的总宽度为 450px
+```
 div {
     width: 300px;
     border: 25px solid green;
     padding: 25px;
     margin: 25px;
 }
+
 <body>
 <p>CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。</p>
 <div>这里是盒子内的实际内容。有 25px 内间距，25px 外间距、25px 绿色边框。</div>
 </body>
 
+```
+
 让我们自己算算：
+```
 300px (宽)
 + 50px (左 + 右填充)
 + 50px (左 + 右边框)
 + 50px (左 + 右边距)
 = 450px
+```
 
 试想一下，你只有 250 像素的空间。让我们设置总宽度为 250 像素的元素:
+```css
 div {
     width: 220px;
     padding: 10px;
     border: 5px solid gray;
     margin: 0; 
 }
-最终元素的总宽度计算公式是这样的：
+```
+**最终元素的总宽度计算公式是这样的：**
 
-总元素的宽度=宽度+左填充+右填充+左边框+右边框+左边距+右边距
+**总元素的宽度=宽度+左填充+右填充+左边框+右边框+左边距+右边距**
 
-元素的总高度最终计算公式是这样的：
+**元素的总高度最终计算公式是这样的：**
 
-总元素的高度=高度+顶部填充+底部填充+上边框+下边框+上边距+下边距
+**总元素的高度=高度+顶部填充+底部填充+上边框+下边框+上边距+下边距**
 
-12.CSS 边框
-12.1CSS 边框属性
-CSS边框属性允许你指定一个元素边框的样式和颜色。
-
+# 12 CSS 边框
+## 12.1 CSS 边框属性
+**CSS边框属性允许你指定一个元素边框的样式和颜色。**
+```
   在四边都有边框
   
   
@@ -813,55 +823,63 @@ CSS边框属性允许你指定一个元素边框的样式和颜色。
   
   
   左侧边框带宽度，颜色为蓝色
+```
 
-12.2边框样式
-边框样式属性指定要显示什么样的边界。
+## 12.2 边框样式
 
-Remark border-style属性用来定义边框的样式
+**边框样式属性指定要显示什么样的边界**。
 
-12.2.1border-style 值:
-none: 默认无边框
+**Remark border-style属性用来定义边框的样式**
 
-dotted: 定义一个点线边框
+### 12.2.1 border-style 值:
 
-dashed: 定义一个虚线边框
+none: 默认无边<br>
 
-solid: 定义实线边框
+**dotted: 定义一个点线边框**<br>
 
-double: 定义两个边框。 两个边框的宽度和 border-width 的值相同
+**dashed: 定义一个虚线边框**<br>
 
-groove: 定义3D沟槽边框。效果取决于边框的颜色值
+**solid: 定义实线边框**<br>
 
-ridge: 定义3D脊边框。效果取决于边框的颜色值
+**double: 定义两个边框**。 两个边框的宽度和 border-width 的值相同<br>
 
-inset:定义一个3D的嵌入边框。效果取决于边框的颜色值
+groove: 定义3D沟槽边框。效果取决于边框的颜色值<br>
 
-outset: 定义一个3D突出边框。 效果取决于边框的颜色值
+ridge: 定义3D脊边框。效果取决于边框的颜色值<br>
 
-12.3边框宽度
-您可以通过 border-width 属性为边框指定宽度。
+inset:定义一个3D的嵌入边框。效果取决于边框的颜色值<br>
 
-为边框指定宽度有两种方法：可以指定长度值，比如 2px 或 0.1em(单位为 px, pt, cm, em 等)，或者使用 3 个关键字之一，它们分别是 thick 、medium（默认值） 和 thin。
+outset: 定义一个3D突出边框。 效果取决于边框的颜色值<br>
+
+## 12.3 边框宽度
+
+您可以通过 **border-width 属性为边框指定宽度**。
+
+**为边框指定宽度有两种方法：可以指定长度值，比如 2px 或 0.1em(单位为 px, pt, cm, em 等)，或者使用 3 个关键字之一，它们分别是 thick 、medium（默认值） 和 thin。**
 
 注意：CSS 没有定义 3 个关键字的具体宽度，所以一个用户可能把 thick 、medium 和 thin 分别设置为等于 5px、3px 和 2px，而另一个用户则分别设置为 3px、2px 和 1px。
+```css
 p.one
 {
     border-style:solid;
     border-width:5px;
 }
+```
 
-12.4.边框颜色
-border-color属性用于设置边框的颜色。可以设置的颜色：
+## 12.4 边框颜色
+**border-color属性用于设置边框的颜色**。可以设置的颜色：
 
+```
 name - 指定颜色的名称，如 "red"
 RGB - 指定 RGB 值, 如 "rgb(255,0,0)"
 Hex - 指定16进制值, 如 "#ff0000"
 您还可以设置边框的颜色为"transparent"。
-
+```
 p.one
 
-12.5.边框-单独设置各边
+## 12.5 边框-单独设置各边
 在CSS中，可以指定不同的侧面不同的边框：
+```css
 p
 {
     border-top-style:dotted;
@@ -880,9 +898,10 @@ border-style:dotted solid double dashed;
     border-style:solid;
     border-color:red;
 }
+```
+**注意： border-color单独使用是不起作用的，必须得先使用border-style来设置边框样式。**
 
-注意： border-color单独使用是不起作用的，必须得先使用border-style来设置边框样式。
-
+```
 border-style:dotted solid double;
 上边框是 dotted
 左、右边框是 solid
@@ -894,69 +913,79 @@ border-style:dotted solid;
 
 border-style:dotted;
 四面边框是 dotted
-
+```
 上面的例子用了border-style。然而，它也可以和border-width 、 border-color一起使用。
 
-12.6.边框-简写属性
+## 12.6 边框-简写属性
+
 上面的例子用了很多属性来设置边框。
 
 你也可以在一个属性中设置边框。
 
 你可以在"border"属性中设置：
-
+```
 border-width
 border-style (required)
 border-color
+```
 
 实例
+
 border:5px solid red;
 
-CSS 边框属性
-属性	描述
-border	简写属性，用于把针对四个边的属性设置在一个声明。
-border-style	用于设置元素所有边框的样式，或者单独地为各边设置边框样式。
-border-width	简写属性，用于为元素的所有边框设置宽度，或者单独地为各边边框设置宽度。
-border-color	简写属性，设置元素的所有边框中可见部分的颜色，或为 4 个边分别设置颜色。
-border-bottom	简写属性，用于把下边框的所有属性设置到一个声明中。
-border-bottom-color	设置元素的下边框的颜色。
-border-bottom-style	设置元素的下边框的样式。
-border-bottom-width	设置元素的下边框的宽度。
-border-left	简写属性，用于把左边框的所有属性设置到一个声明中。
-border-left-color	设置元素的左边框的颜色。
-border-left-style	设置元素的左边框的样式。
-border-left-width	设置元素的左边框的宽度。
-border-right	简写属性，用于把右边框的所有属性设置到一个声明中。
-border-right-color	设置元素的右边框的颜色。
-border-right-style	设置元素的右边框的样式。
-border-right-width	设置元素的右边框的宽度。
-border-top	简写属性，用于把上边框的所有属性设置到一个声明中。
-border-top-color	设置元素的上边框的颜色。
-border-top-style	设置元素的上边框的样式。
-border-top-width	设置元素的上边框的宽度。
-border-radius	设置圆角的边框。
+## 12.7 CSS 边框属性
 
-13.CSS 轮廓（outline）
-轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+属性	|	描述
+-|-
+border	|	简写属性，用于把针对四个边的属性设置在一个声明。
+border-style|	用于设置元素所有边框的样式，或者单独地为各边设置边框样式。
+border-width|	简写属性，用于为元素的所有边框设置宽度，或者单独地为各边边框设置宽度。
+border-color|	简写属性，设置元素的所有边框中可见部分的颜色，或为 4 个边分别设置颜色。
+border-bottom|	简写属性，用于把下边框的所有属性设置到一个声明中。
+border-bottom-color|	设置元素的下边框的颜色。
+border-bottom-style|	设置元素的下边框的样式。
+border-bottom-width|	设置元素的下边框的宽度。
+border-left	|	简写属性，用于把左边框的所有属性设置到一个声明中。
+border-left-color|	设置元素的左边框的颜色。
+border-left-style|	设置元素的左边框的样式。
+border-left-width|	设置元素的左边框的宽度。
+border-right	|	简写属性，用于把右边框的所有属性设置到一个声明中。
+border-right-color|	设置元素的右边框的颜色。
+border-right-style|	设置元素的右边框的样式。
+border-right-width|	设置元素的右边框的宽度。
+border-top	|	简写属性，用于把上边框的所有属性设置到一个声明中。
+border-top-color|	设置元素的上边框的颜色。
+border-top-style|	设置元素的上边框的样式。
+border-top-width|	设置元素的上边框的宽度。
+border-radius	|	设置圆角的边框。
+
+# 13 CSS 轮廓（outline）
+**轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。**
 
 轮廓（outline）属性指定元素轮廓的样式、颜色和宽度。
 
-14.CSS margin(外边距)
-CSS margin(外边距)属性定义元素周围的空间。
+# 14 CSS margin(外边距)
+**CSS margin(外边距)属性定义元素周围的空间。**
 
 margin
-margin 清除周围的（外边框）元素区域。margin 没有背景颜色，是完全透明的。
 
+margin 清除周围的（外边框）元素区域。
+margin 没有背景颜色，是完全透明的。
 margin 可以单独改变元素的上，下，左，右边距，也可以一次改变所有的属性。
 
+![alt](img/VlwVi.ong)
+
 可能的值
-值	说明
-auto	设置浏览器边距。
-这样做的结果会依赖于浏览器
-length	定义一个固定的margin（使用像素，pt，em等）
-%	定义一个使用百分比的边距
+
+值	|说明
+-|-
+auto	|设置浏览器边距。这样做的结果会依赖于浏览器
+length	|定义一个固定的margin（使用像素，pt，em等）
+%	|定义一个使用百分比的边距
+
 Remark Margin可以使用负值，重叠的内容。
 
-13.1Margin - 单边外边距属性
+# 13.1 Margin - 单边外边距属性
 在CSS中，它可以指定不同的侧面不同的边距：
 
 实例
