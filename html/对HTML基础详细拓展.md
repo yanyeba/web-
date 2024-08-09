@@ -493,30 +493,30 @@ CSS 可以通过以下方式添加到HTML中:
 现在通常使用font-family（字体），color（颜色），和font-size（字体大小）属性来定义文本样式，而不是使用<font>标签。
 
 ## 11.5 HTML 样式实例 - 文本对齐方式
-使用 text-align（文字对齐）属性指定文本的水平与垂直对齐方式：
-      </body>
-          <h3 style="text-align: center">标题居中对齐</h3><br>
-          <p>段落</p>
-      </body>
+使用 text-align（文字对齐）属性指定文本的水平与垂直对齐方式：<br>
+      \</body><br>
+          \<h3 style="text-align: center">标题居中对齐</h3><br><br>
+          \<p>段落</p><br>
+      \</body><br>
       
       文本对齐属性 text-align取代了旧标签 <center> 。
 
-## 11.5 内部样式表
+## 11.6 内部样式表
 当单个文件需要特别样式时，就可以使用内部样式表。你可以在\<head> 部分通过 \<style>标签定义内部样式表:
-    <head>
-    <style type="text/css">
-    body {background-color:yellow;}
-    p {color:blue;}
-    </style>
-    </head>
+    \<head> <br>
+    \<style type="text/css"><br>
+    body {background-color:yellow;}<br>
+    p {color:blue;}<br>
+    \</style><br>
+    \</head><br>
 
-## 11.6 外部样式表
+## 11.7 外部样式表
 当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用外部样式表，你就可以通过更改一个文件来改变整个站点的外观。
     <head>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     </head>
 
-## 11.7 HTML 样式标签
+## 11.8 HTML 样式标签
 
 标签	|  描述
 -|-
