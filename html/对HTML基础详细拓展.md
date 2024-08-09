@@ -101,10 +101,10 @@
 
 ## 3.3HTML 链接
 
-HTML 链接是通过标签 <a> 来定义的。
-\<a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web">这是个超链接</a>
-
-提示:在 href 属性中指定链接的地址。
+    HTML 链接是通过标签 <a> 来定义的。
+    \<a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web">这是个超链接</a>
+    
+    提示:在 href 属性中指定链接的地址。
 
 ## 3.4 HTML 图像
     
@@ -115,15 +115,17 @@ HTML 链接是通过标签 <a> 来定义的。
 # 4.HTML 元素
 
     HTML 文档由 HTML 元素定义。
-    
-    HTML 元素
-    
-    \开始标签 *	|                  元素内容	    |        结束标签 *
-    -|-|
-    \<p>	|                        这是一个段落	    |    </p>
-    \<a href="default.htm">	 |   这是一个链接	    |    </a>
-    <br>	         |             换行	 |
     开始标签常被称为起始标签（opening tag），结束标签常称为闭合标签（closing tag）。
+     
+  
+  HTML 元素
+  
+  \开始标签 *	|                  元素内容	    |        结束标签 *
+  -|-|
+  \<p>	|                        这是一个段落	    |    </p>
+  \<a href="default.htm">	 |   这是一个链接	    |    </a>
+  <br>	         |             换行	 |
+   
 
 ## 4.1HTML 元素语法
 
