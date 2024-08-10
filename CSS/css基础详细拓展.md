@@ -1184,40 +1184,47 @@ span {display:block;}
 # 19 position 属性指定了元素的定位类型。
 
 position 属性的五个值：
--static
--relative
-fixed
-absolute
-sticky
-元素可以使用的顶部，底部，左侧和右侧属性定位。然而，这些属性无法工作，除非是先设定position属性。他们也有不同的工作方式，这取决于定位方法。
+- static
+- relative
+- fixed
+- absolute
+- sticky
+**元素可以使用的顶部，底部，左侧和右侧属性定位**。然而，这些属性无法工作，除非是先设定position属性。他们也有不同的工作方式，这取决于定位方法。
 
-18.2static 定位
-HTML 元素的默认值，即没有定位，遵循正常的文档流对象。
+## 19.1 static 定位
+
+**HTML 元素的默认值，即没有定位，遵循正常的文档流对象**。
 
 静态定位的元素不会受到 top, bottom, left, right影响。
+```ccss
 div.static {
     position: static;
     border: 3px solid #73AD21;
 }
+```
 
-18.3fixed 定位
-元素的位置相对于浏览器窗口是固定位置。
+## 19.2 fixed 定位
+**元素的位置相对于浏览器窗口是固定位置**。
 
-即使窗口是滚动的它也不会移动：
+**即使窗口是滚动的它也不会移动**：
+```css
 p.pos_fixed
 {
     position:fixed;
     top:30px;
     right:5px;
 }
+```
 注意： Fixed 定位在 IE7 和 IE8 下需要描述 !DOCTYPE 才能支持。
 
-Fixed定位使元素的位置与文档流无关，因此不占据空间。
+**Fixed定位使元素的位置与文档流无关，因此不占据空间。**
 
-Fixed定位的元素和其他元素重叠。
+**Fixed定位的元素和其他元素重叠。**
 
-18.4relative 定位
-相对定位元素的定位是相对其正常位置。
+
+## 19.3 relative 定位
+**相对定位元素的定位是相对其正常位置。**
+```css
 h2.pos_left
 {
     position:relative;
@@ -1228,35 +1235,48 @@ h2.pos_right
     position:relative;
     left:20px;
 }
-移动相对定位元素，但它原本所占的空间不会改变。
-相对定位元素经常被用来作为绝对定位元素的容器块。
+```
+**移动相对定位元素，但它原本所占的空间不会改变。**
 
-18.5absolute 定位
-绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<html>:
+```css
+h2.pos_top
+{
+    position:relative;
+    top:-50px;
+}
+```
+**相对定位元素经常被用来作为绝对定位元素的容器块。**
+
+## 19.4 absolute 定位
+
+**绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<html>**:
+```css
 h2
 {
     position:absolute;
     left:100px;
     top:150px;
 }
-absolute 定位使元素的位置与文档流无关，因此不占据空间。
+```
+**absolute 定位使元素的位置与文档流无关，因此不占据空间。**
 
-absolute 定位的元素和其他元素重叠。
+**absolute 定位的元素和其他元素重叠。**
 
-18.6sticky 定位
-sticky 英文字面意思是粘，粘贴，所以可以把它称之为粘性定位。
+## 19.5 sticky 定位
+**sticky 英文字面意思是粘，粘贴，所以可以把它称之为粘性定位**。
 
-position: sticky; 基于用户的滚动位置来定位。
+<kbd>**position: sticky; </kbd>基于用户的滚动位置来定位。**
 
 粘性定位的元素是依赖于用户的滚动，在 position:relative 与 position:fixed 定位之间切换。
 
 它的行为就像 position:relative; 而当页面滚动超出目标区域时，它的表现就像 position:fixed;，它会固定在目标位置。
 
-元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。
+**元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位**。
 
 这个特定阈值指的是 top, right, bottom 或 left 之一，换言之，指定 top, right, bottom 或 left 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同。
 
 注意: Internet Explorer, Edge 15 及更早 IE 版本不支持 sticky 定位。 Safari 需要使用 -webkit- prefix (查看以下实例)。
+```css
 div.sticky {
     position: -webkit-sticky; /* Safari */
     position: sticky;
@@ -1264,13 +1284,15 @@ div.sticky {
     background-color: green;
     border: 2px solid #4CAF50;
 }
+```
 
-18.8重叠的元素
-元素的定位与文档流无关，所以它们可以覆盖页面上的其它元素
+## 19.6 重叠的元素
+**元素的定位与文档流无关，所以它们可以覆盖页面上的其它元素**
 
-z-index属性指定了一个元素的堆叠顺序（哪个元素应该放在前面，或后面）
+**z-index属性**指定了一个元素的堆叠顺序（哪个元素应该放在前面，或后面）
 
-一个元素可以有正数或负数的堆叠顺序：
+**一个元素可以有正数或负数的堆叠顺序：**
+```css
 img
 {
     position:absolute;
@@ -1278,101 +1300,272 @@ img
     top:0px;
     z-index:-1;
 }
+```
 具有更高堆叠顺序的元素总是在较低的堆叠顺序元素的前面。
 
-注意： 如果两个定位元素重叠，没有指定z - index，最后定位在HTML代码中的元素将被显示在最前面。
+**注意： 如果两个定位元素重叠，没有指定z - index，最后定位在HTML代码中的元素将被显示在最前面。**
 
-18.9所有的CSS定位属性
+## 19.7 所有的CSS定位属性
 "CSS" 列中的数字表示哪个CSS(CSS1 或者CSS2)版本定义了该属性。
 
-属性	说明	值	CSS
-bottom	定义了定位元素下外边距边界与其包含块下边界之间的偏移。	auto
-length
-%
-inherit	2
-clip	剪辑一个绝对定位的元素	shape
-auto
-inherit	2
-cursor	显示光标移动到指定的类型	url
-auto
-crosshair
-default
-pointer
-move
-e-resize
-ne-resize
-nw-resize
-n-resize
-se-resize
-sw-resize
-s-resize
-w-resize
-text
-wait
-help	2
-left	定义了定位元素左外边距边界与其包含块左边界之间的偏移。	auto
-length
-%
-inherit	2
-overflow
-设置当元素的内容溢出其区域时发生的事情。	auto
-hidden
-scroll
-visible
-inherit	2
-overflow-y
-指定如何处理顶部/底部边缘的内容溢出元素的内容区域	auto
-hidden
-scroll
-visible
-no-display
-no-content	2
-overflow-x
-指定如何处理右边/左边边缘的内容溢出元素的内容区域	auto
-hidden
-scroll
-visible
-no-display
-no-content	2
-position	指定元素的定位类型	absolute
-fixed
-relative
-static
-inherit	2
-right	定义了定位元素右外边距边界与其包含块右边界之间的偏移。	auto
-length
-%
-inherit	2
-top	定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。	auto
-length
-%
-inherit	2
-z-index	设置元素的堆叠顺序	number
-auto
-inherit	2
+    <table border="1">
+    	<caption>所有的CSS定位属性</caption>
+	<tr>
+		<th>属性</th>
+		<th>说明</th>
+		<th>值</th>
+		<th>CSS</th>
+	</tr>
+	<tr>
+		<td rowspan="4">bettom</td>
+		<td rowspan="4">定义了定位元素下外边距边界与其包含块下边界之间的偏移。</td>
+		<td >auto</td>
+		<td rowspan="4">2</td>
+	</tr>
+    <tr>
+        <td>length</td>
+    </tr>
+    <tr>
+        <td>%</td>
+    </tr>
+    <tr>
+        <td>inherit</td>
+    </tr>
 
-19.CSS Overflow
-CSS overflow 属性可以控制内容溢出元素框时在对应的元素区间内添加滚动条。
+    <tr>
+        <td rowspan="3">clip</td>
+        <td rowspan="3">剪辑一个绝对定位的元素</td>
+        <td >shape</td>
+        <td rowspan="3">2</td>
+    </tr>
+    <tr>
+        <td>auto</td>>
+    </tr>
+    <tr>
+        <td>inherit</td>>
+    </tr>
+
+    <tr>
+        <td rowspan="17">cursor</td>
+        <td rowspan="17">显示光标移动到指定的类型</td>
+        <td >url</td>
+        <td rowspan="17">2</td>
+    </tr>
+    <tr>
+        <td>auto</td>
+    </tr>
+    <tr>
+        <td>crosshair</td>
+    </tr>
+    <tr>
+        <td>default</td>
+    </tr>
+    <tr>
+        <td>pointer</td>
+    </tr>
+    <tr>
+        <td>move</td>
+    </tr>
+    <tr>
+        <td>e-resize</td>
+    </tr>
+    <tr>
+        <td>ne-resize</td>
+    </tr>
+    <tr>
+        <td>nw-resize</td>
+    </tr>
+    <tr>
+        <td>n-resize</td>
+    </tr>
+    <tr>
+        <td>se-resize</td>
+    </tr>
+    <tr>
+        <td>sw-resize</td>
+    </tr>
+    <tr>
+        <td>s-resize</td>
+    </tr>
+    <tr>
+        <td>w-resize</td>
+    </tr>
+    <tr>
+        <td>text</td>
+    </tr>
+    <tr>
+        <td>wait</td>
+    </tr>
+    <tr>
+        <td>help</td>
+    </tr>
+
+    <tr>
+        <td rowspan="4">left</td>
+        <td rowspan="4">定义了定位元素左外边距边界与其包含块左边界之间的偏移。</td>
+        <td >auto</td>
+        <td rowspan="4">2</td>
+    </tr>
+    <tr>
+        <td>length</td>
+    </tr>
+    <tr>
+        <td>%</td>
+    </tr>
+    <tr>
+        <td>inherit</td>
+    </tr>
+
+    <tr>
+        <td rowspan="5">overflow</td>
+        <td rowspan="5">设置当元素的内容溢出其区域时发生的事情。</td>
+        <td >auto</td>
+        <td rowspan="5">2</td>
+    </tr>
+    <tr>
+        <td>hidden</td>
+    </tr>
+    <tr>
+        <td>scroll</td>
+    </tr>
+    <tr>
+        <td>visible</td>
+    </tr>
+    <tr>
+        <td>inherit</td>
+    </tr>
+
+    <tr>
+        <td rowspan="6">overflow-y</td>
+        <td rowspan="6">指定如何处理顶部/底部边缘的内容溢出元素的内容区域</td>
+        <td >auto</td>
+        <td rowspan="6">2</td>
+    </tr>
+    <tr>
+        <td>hidden</td>
+    </tr>
+    <tr>
+        <td>scroll</td>
+    </tr>
+    <tr>
+        <td>visible</td>
+    </tr>
+    <tr>
+        <td>no-display</td>
+    </tr>
+    <tr>
+        <td>no-content</td>
+    </tr>
+
+    <tr>
+        <td rowspan="6">overflow-x</td>
+        <td rowspan="6">指定如何处理右边/左边边缘的内容溢出元素的内容区域</td>
+        <td >auto</td>
+        <td rowspan="6">2</td>
+    </tr>
+    <tr>
+        <td>hidden</td>
+    </tr>
+    <tr>
+        <td>scroll</td>
+    </tr>
+    <tr>
+        <td>visible</td>
+    </tr>
+    <tr>
+        <td>no-display</td>
+    </tr>
+    <tr>
+        <td>no-content</td>
+    </tr>
+
+    <tr>
+    <td rowspan="5">position</td>
+    <td rowspan="5">指定元素的定位类型</td>
+    <td >absolute</td>
+    <td rowspan="5">2</td>
+    </tr>
+    <tr>
+        <td>fixed</td>
+    </tr>
+    <tr>
+        <td>relative</td>
+    </tr>
+    <tr>
+        <td>static</td>
+    </tr>
+    <tr>
+        <td>inherit</td>
+    </tr>
+
+    <tr>
+    <td rowspan="4">right</td>
+    <td rowspan="4">定义了定位元素右外边距边界与其包含块右边界之间的偏移。</td>
+    <td >auto</td>
+    <td rowspan="4">2</td>
+    </tr>
+    <tr>
+        <td>length</td>
+    </tr>
+    <tr>
+        <td>%</td>
+    </tr>
+    <tr>
+        <td>inherit</td>
+    </tr>
+
+    <tr>
+    <td rowspan="4">top</td>
+    <td rowspan="4">定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。</td>
+    <td >auto</td>
+    <td rowspan="4">2</td>
+    </tr>
+    <tr>
+        <td>length</td>
+    </tr>
+    <tr>
+        <td>%</td>
+    </tr>
+    <tr>
+        <td>inherit</td>
+    </tr>
+
+    <tr>
+        <td rowspan="3">z-index</td>
+        <td rowspan="3">设置元素的堆叠顺序</td>
+        <td >number</td>
+        <td rowspan="3">2</td>
+
+    </tr>
+    <tr>
+        <td>auto</td>
+    </tr>
+    <tr>
+        <td>inherit</td>
+    </tr>
+
+</table>
+
+
+# 20 CSS Overflow（制作滚动条）
+CSS overflow 属性**可以控制内容溢出元素框时在对应的元素区间内添加滚动条。**
 
 overflow属性有以下值：
 
-19.1CSS Overflow
-CSS overflow 属性可以控制内容溢出元素框时在对应的元素区间内添加滚动条。
+值	|描述
+-|-
+visible	|默认值。内容不会被修剪，会呈现在元素框之外。
+hidden	|内容会被修剪，并且其余内容是不可见的。
+scroll	|内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+auto	|如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+inherit	|规定应该从父元素继承 overflow 属性的值。
 
-overflow属性有以下值：
+**注意:overflow 属性只工作于指定高度的块元素上。**
 
-值	描述
-visible	默认值。内容不会被修剪，会呈现在元素框之外。
-hidden	内容会被修剪，并且其余内容是不可见的。
-scroll	内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
-auto	如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
-inherit	规定应该从父元素继承 overflow 属性的值。
-注意:overflow 属性只工作于指定高度的块元素上。
-
-注意: 在 OS X Lion ( Mac 系统) 系统上，滚动条默认是隐藏的，使用的时候才会显示 (设置 "overflow:scroll" 也是一样的)。
+**注意: 在 OS X Lion ( Mac 系统) 系统上，滚动条默认是隐藏的，使用的时候才会显示 (设置 "overflow:scroll" 也是一样的)。**
 
 
-19.2overflow: visible
+## 20.1 overflow: visible
 默认情况下，overflow 的值为 visible， 意思是内容溢出元素框：
 
 这里的文本内容会溢出元素框。
@@ -1383,6 +1576,7 @@ inherit	规定应该从父元素继承 overflow 属性的值。
 
 这里的文本内容会溢出元素框。
 案例：
+```css
 <head>
     <meta charset="UTF-8">
     <title>CSS 布局 - Overflow</title>
@@ -1407,32 +1601,37 @@ inherit	规定应该从父元素继承 overflow 属性的值。
     <p>这里的文本内容会溢出元素框。</p><br>
 </div>
 </body>
+```
 
-20.什么是 CSS Float（浮动）？
+# 21 什么是 CSS Float（浮动）？
 
-CSS 的 Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。
-Float（浮动），往往是用于图像，但它在布局时一样非常有用。
+**CSS 的 Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。**
+**Float（浮动），往往是用于图像，但它在布局时一样非常有用。**
 
-20.1元素怎样浮动
-元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。
+## 21.1 元素怎样浮动
+**元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。**
 
-一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
+**一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。**
 
-浮动元素之后的元素将围绕它。
+**浮动元素之后的元素将围绕它。**
 
-浮动元素之前的元素将不会受到影响。
+**浮动元素之前的元素将不会受到影响。**
 
-如果图像是右浮动，下面的文本流将环绕在它左边：
+**如果图像是右浮动，下面的文本流将环绕在它左边：**
+```css
  img{
         float:right;
     }
+```
 
-20.2彼此相邻的浮动元素
-如果你把几个浮动的元素放到一起，如果有空间的话，它们将彼此相邻。
+## 21.2 彼此相邻的浮动元素
+
+**如果你把几个浮动的元素放到一起，如果有空间的话，它们将彼此相邻。**
 
 在这里，我们对图片廊使用 float 属性：
 
 实例
+```css
 .thumbnail 
 {
     float:left;
@@ -1440,33 +1639,68 @@ Float（浮动），往往是用于图像，但它在布局时一样非常有用
     height:90px;
     margin:5px;
 }
+```
 
-20.3清除浮动 - 使用 clear
-元素浮动之后，周围的元素会重新排列，为了避免这种情况，使用 clear 属性。
+## 21.3 清除浮动 - 使用 clear
+**元素浮动之后，周围的元素会重新排列，为了避免这种情况，使用 clear 属性。**
 
-clear 属性指定元素两侧不能出现浮动元素。
+**clear 属性指定元素两侧不能出现浮动元素。**
 
 使用 clear 属性往文本中添加图片廊：
+```css
 .text_line
 {
     clear:both;
 }
+```
 
-20.4CSS 中所有的浮动属性
+## 21.4 CSS 中所有的浮动属性
 "CSS" 列中的数字表示不同的 CSS 版本（CSS1 或 CSS2）定义了该属性。
 
-属性	描述	值	CSS
-clear	指定不允许元素周围有浮动元素。	left
-right
-both
-none
-inherit	1
-float	指定一个盒子（元素）是否可以浮动。	left
-right
-none
-inherit
+<table>
+	<tr>
+		<th>属性</th>
+		<th>描述</th>
+		<th>值</th>
+		<th>css</th>
+	</tr>
+	<tr>
+		<td rowspan="5">clear</td>
+		<td rowspan="5">指定不允许元素周围有浮动元素。</td>
+		<td >left</td>
+		<td rowspan="5">1</td>
+	</tr>
+	<tr>
+		<td>right</td>
+	</tr>
+	<tr>
+		<td>both</td>
+	</tr>
+	<tr>
+		<td>none</td>
+	</tr>
+	<tr>
+		<td>inherit</td>
+	</tr>
 
-21.CSS 布局 - 水平 & 垂直对齐
+ 	<tr>
+  		<td rowspan="4">float</td>
+    		<td rowspan="4">指定一个盒子（元素）是否可以浮动。</td>
+      		<td >left</td>
+		<td rowspan="4">1</td>
+  	</tr>
+   	<tr>
+  		<td>rigt</td>
+  	</tr>
+   	<tr>
+  		<td>none</td>
+  	</tr>
+   	<tr>
+  		<td>inherit</td>
+  	</tr>
+
+
+# 22 CSS 布局 - 水平 & 垂直对齐
 元素居中对齐
 要水平居中对齐一个元素(如 <div>), 可以使用 margin: auto;。
 设置到元素的宽度将防止它溢出到容器的边缘。
