@@ -1657,7 +1657,11 @@ inherit	|规定应该从父元素继承 overflow 属性的值。
 
 ## 21.4 CSS 中所有的浮动属性
 "CSS" 列中的数字表示不同的 CSS 版本（CSS1 或 CSS2）定义了该属性。
+
 ```html
+<!DOCTYPE html>
+<html>
+
 <body>
 <table>
 	<caption>CSS 中所有的浮动属性</caption>
@@ -1703,6 +1707,8 @@ inherit	|规定应该从父元素继承 overflow 属性的值。
   	</tr>
 </table>
 </body>
+</html>
+
 ```
 
 
