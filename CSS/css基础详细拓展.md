@@ -13,6 +13,8 @@ CSS参考手册：https://www.runoob.com/cssref/css-reference.html#text
   
 # 2.CSS语法
 
+![alt](img/CSS语法jpg)
+
 ```css
 p {color:red;text-align:center;}
   CSS主要有两部分：选择器以及一条或者多条声明组成
