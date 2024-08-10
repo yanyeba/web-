@@ -13,7 +13,7 @@ CSS参考手册：https://www.runoob.com/cssref/css-reference.html#text
   
 # 2.CSS语法
 
-![alt](img/CSS语法jpg)
+![alt](img/CSSyufa.jpg)
 
 ```css
 p {color:red;text-align:center;}
