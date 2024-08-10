@@ -1307,7 +1307,7 @@ img
 
 ## 19.7 所有的CSS定位属性
 "CSS" 列中的数字表示哪个CSS(CSS1 或者CSS2)版本定义了该属性。
-
+```css
     <table border="1">
     	<caption>所有的CSS定位属性</caption>
 	<tr>
@@ -1545,6 +1545,7 @@ img
     </tr>
 
 </table>
+```
 
 
 # 20 CSS Overflow（制作滚动条）
@@ -1656,8 +1657,9 @@ inherit	|规定应该从父元素继承 overflow 属性的值。
 
 ## 21.4 CSS 中所有的浮动属性
 "CSS" 列中的数字表示不同的 CSS 版本（CSS1 或 CSS2）定义了该属性。
-
+```css
 <table>
+	<caption>CSS 中所有的浮动属性</caption>
 	<tr>
 		<th>属性</th>
 		<th>描述</th>
@@ -1698,6 +1700,7 @@ inherit	|规定应该从父元素继承 overflow 属性的值。
    	<tr>
   		<td>inherit</td>
   	</tr>
+```
 
 
 # 22 CSS 布局 - 水平 & 垂直对齐
