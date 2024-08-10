@@ -1866,194 +1866,252 @@ CSS 中有很多方式可以实现垂直居中对齐。 一个简单的方式就
 
 
 
-22.CSS 组合选择符
+# 23 CSS 组合选择符
 CSS 组合选择符
-	组合选择符说明了两个选择器之间的关系。
+	**组合选择符说明了两个选择器之间的关系。**
+ 
 CSS组合选择符包括各种简单选择符的组合方式。
+
 在 CSS3 中包含了四种组合方式:
-  后代选择器(以空格     分隔)
-  子元素选择器(以大于 > 号分隔）
-  相邻兄弟选择器（以加号 + 分隔）
-  普通兄弟选择器（以波浪号 ～ 分隔）
+- 后代选择器(以空格     分隔)
+- 子元素选择器(以大于 > 号分隔）
+- 相邻兄弟选择器（以加号 + 分隔）
+- 普通兄弟选择器（以波浪号 ～ 分隔）
 
-后代选择器
-后代选择器用于选取某元素的后代元素。
+## 23.1 后代选择器
+**后代选择器用于选取某元素的后代元素。**
 
-以下实例选取所有 <p> 元素插入到 <div> 元素中: 
+以下实例**选取所有 \<p> 元素插入到 \<div> 元素中:** 
 
 实例
+```css
 div p
 {
   background-color:yellow;
 }
+```
+## 23.2 子元素选择器
+与后代选择器相比，子元素选择器（Child selectors）**只能选择作为某元素直接/一级子元素的元素**。
 
-22.1子元素选择器
-与后代选择器相比，子元素选择器（Child selectors）只能选择作为某元素直接/一级子元素的元素。
-
-以下实例选择了<div>元素中所有直接子元素 <p> ：
+以下实例选择了\<div>元素中所有直接子元素 \<p> ：
 
 实例
+```css
 div>p
 {
   background-color:yellow;
 }
+```
 
+## 23.3 相邻兄弟选择器
+相邻兄弟选择器（Adjacent sibling selector）**可选择紧接在另一元素后的元素，且二者有相同父元素。**
 
-22.2相邻兄弟选择器
-相邻兄弟选择器（Adjacent sibling selector）可选择紧接在另一元素后的元素，且二者有相同父元素。
+**如果需要选择紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器（Adjacent sibling selector）。**
 
-如果需要选择紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器（Adjacent sibling selector）。
+以下实例选取了所有位于 \<div> 元素后的第一个 \<p> 元素:
+```css
+<sytle>
+div+p
+{
+  background-color:yellow;
+}
+</style>
 
-以下实例选取了所有位于 <div> 元素后的第一个 <p> 元素:
+<body>
+<div>
+<h2>DIV 内部标题</h2>
+<p>DIV 内部段落。</p>
+</div>
 
-22.3后续兄弟选择器
-后续兄弟选择器选取所有指定元素之后的相邻兄弟元素。
+<p>DIV 之后的第一个 P 元素。</p>
 
-以下实例选取了所有 <div> 元素之后的所有相邻兄弟元素 <p> : 
+<p>DIV 之后的第二个 P 元素。</p>
+</body>
+```
+
+## 23.4 后续兄弟选择器
+**后续兄弟选择器选取所有指定元素之后的相邻兄弟元素。**
+
+以下实例选取了所有 \<div> 元素之后的所有相邻兄弟元素 \<p> : 
 
 实例
+```css
 div~p
 {
   background-color:yellow;
 }
+```
 
-23.CSS 伪类(Pseudo-classes)
-CSS伪类是用来添加一些选择器的特殊效果。
+# 24 CSS 伪类(Pseudo-classes)
+**CSS伪类是用来添加一些选择器的特殊效果。**
 
-23.1
-语法
+## 24.1 语法
 伪类的语法：
+```
 selector:pseudo-class {property:value;}
+```
+
 CSS类也可以使用伪类：
+```
 selector.class:pseudo-class {property:value;}
-anchor伪类
-在支持 CSS 的浏览器中，链接的不同状态都可以以不同的方式显示
+```
+
+## 24.2 anchor伪类
+在支持 CSS 的浏览器中，**链接的不同状态都可以以不同的方式显示**
 
 实例
+```css
 a:link {color:#FF0000;} /* 未访问的链接 */
 a:visited {color:#00FF00;} /* 已访问的链接 */
 a:hover {color:#FF00FF;} /* 鼠标划过链接 */
 a:active {color:#0000FF;} /* 已选中的链接 */
+```
 
 注意： 在CSS定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。
 注意： 在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。
-注意：伪类的名称不区分大小写。
+**注意：伪类的名称不区分大小写。**
 
-23.2伪类和CSS类
+## 24.3 伪类和CSS类
+
 伪类可以与 CSS 类配合使用：
+```css
 a.red:visited {color:#FF0000;}
 <a class="red" href="css-syntax.html">CSS 语法</a>
+```
 如果在上面的例子的链接已被访问，它会显示为红色
 
-23.3CSS :first-child 伪类
-您可以使用 :first-child 伪类来选择父元素的第一个子元素。
+## 24.4 CSS :first-child 伪类
+
+**您可以使用 :first-child 伪类来选择父元素的第一个子元素。**
 
 注意：在IE8的之前版本必须声明<!DOCTYPE> ，这样 :first-child 才能生效。
 
-23.4匹配第一个 <p> 元素
-在下面的例子中，选择器匹配作为任何元素的第一个子元素的 <p> 元素：
+### 24.4.1 匹配第一个 \<p> 元素
+在下面的例子中，选择器匹配作为任何元素的第一个子元素的 \<p> 元素：
 
 实例
+```css
 p:first-child
 {
     color:blue;
 }
-23.5匹配所有<p> 元素中的第一个 <i> 元素
+```
+### 24.4.2 匹配所有<p> 元素中的第一个 <i> 元素
 在下面的例子中，选择相匹配的所有<p>元素的第一个 <i> 元素：
 
 实例
+```css
 p > i:first-child
 {
     color:blue;
 }
+```
 
-23.6匹配所有作为第一个子元素的 <p> 元素中的所有 <i> 元素
-在下面的例子中，选择器匹配所有作为元素的第一个子元素的 <p> 元素中的所有 <i> 元素：
+### 24.4.3 匹配所有作为第一个子元素的 \<p> 元素中的所有 \<i> 元素
+在下面的例子中，选择器匹配所有作为元素的第一个子元素的 \<p> 元素中的所有 \<i> 元素：
 
 实例
+```css
 p:first-child i
 {
     color:blue;
 }
-23.7CSS - :lang 伪类
-:lang 伪类使你有能力为不同的语言定义特殊的规则
+```
+
+### 24.5 CSS - :lang 伪类
+**:lang 伪类使你有能力为不同的语言定义特殊的规则**
 
 注意：IE8必须声明<!DOCTYPE>才能支持;lang伪类。
 
 在下面的例子中，:lang 类为属性值为 no 的q元素定义引号的类型：
 
 实例
+```css
 q:lang(no) {quotes: "~" "~";}
+```
 
-24.CSS 伪元素
-CSS 伪元素是用来添加一些选择器的特殊效果。
+### 24.6 所以的伪类/元素
+<a href="https://www.runoob.com/css/css-pseudo-classes.html">菜鸟教程，所有伪类/元素</a>
 
-语法
+## 25 CSS 伪元素
+**CSS 伪元素是用来添加一些选择器的特殊效果。**
+
+## 25.1 语法
 伪元素的语法：
+```
 selector:pseudo-element {property:value;}
+```
 CSS类也可以使用伪元素：
+```
 selector.class:pseudo-element {property:value;}
+```
 
-24.1.:first-line 伪元素
-"first-line" 伪元素用于向文本的首行设置特殊样式。
+## 25.2 :first-line 伪元素
+**"first-line" 伪元素用于向文本的首行设置特殊样式。**
 
 在下面的例子中，浏览器会根据 "first-line" 伪元素中的样式对 p 元素的第一行文本进行格式化：
+```css
 p:first-line 
 {
     color:#ff0000;
     font-variant:small-caps;
 }
-注意："first-line" 伪元素只能用于块级元素。
+```
+**注意："first-line" 伪元素只能用于块级元素。**
 
 注意： 下面的属性可应用于 "first-line" 伪元素：
-font properties
-color properties 
-background properties
-word-spacing
-letter-spacing
-text-decoration
-vertical-align
-text-transform
-line-height
-clear
+- font properties
+- color properties 
+- background properties
+- word-spacing
+- letter-spacing
+- text-decoration
+- vertical-align
+- text-transform
+- line-height
+- clear
 
-24.2.:first-letter 伪元素
-"first-letter" 伪元素用于向文本的首字母设置特殊样式：
-
+## 25.3 :first-letter 伪元素
+**"first-letter" 伪元素用于向文本的首字母设置特殊样式：**
+```css
 p:first-letter 
 {
     color:#ff0000;
     font-size:xx-large;
 }
-注意： "first-letter" 伪元素只能用于块级元素。
+```
+**注意： "first-letter" 伪元素只能用于块级元素。**
 
 注意： 下面的属性可应用于 "first-letter" 伪元素： 
 
-font properties
-color properties 
-background properties
-margin properties
-padding properties
-border properties
-text-decoration
-vertical-align (only if "float" is "none")
-text-transform
-line-height
-float
-clear
+- font properties
+- color properties 
+- background properties
+- margin properties
+- padding properties
+- border properties
+- text-decoration
+- vertical-align (only if "float" is "none")
+- text-transform
+- line-height
+- float
+- clear
 
-24.3.伪元素和CSS类
-伪元素可以结合CSS类： 
+## 25.4 伪元素和CSS类
+**伪元素可以结合CSS类： **
 p.article:first-letter {color:#ff0000;}
+```css
 <p class="article">文章段落</p>
+```
 上面的例子会使所有 class 为 article 的段落的首字母变为红色。
 
-24.4多个伪元素
+## 25.5 多个伪元素
 可以结合多个伪元素来使用。
 
 在下面的例子中，段落的第一个字母将显示为红色，其字体大小为 xx-large。第一行中的其余文本将为蓝色，并以小型大写字母显示。
 
 段落中的其余文本将以默认字体大小和颜色来显示：
+```css
 p:first-letter
 {
     color:#ff0000;
@@ -2064,73 +2122,90 @@ p:first-line
     color:#0000ff;
     font-variant:small-caps;
 }
+```
 
-24.5.CSS - :before 伪元素
-":before" 伪元素可以在元素的内容前面插入新内容。
+## 25.6 CSS - :before 伪元素
+**":before" 伪元素可以在元素的内容前面插入新内容。**
 
 下面的例子在每个 <h1>元素前面插入一幅图片：
+```
 h1:before 
 {
     content:url(smiley.gif);
 }
+```
 
-24.6.所有CSS伪类/元素
-选择器	示例	示例说明
-:link	a:link	选择所有未访问链接
-:visited	a:visited	选择所有访问过的链接
-:active	a:active	选择正在活动链接
-:hover	a:hover	把鼠标放在链接上的状态
-:focus	input:focus	选择元素输入后具有焦点
-:first-letter	p:first-letter	选择每个<p> 元素的第一个字母
-:first-line	p:first-line	选择每个<p> 元素的第一行
-:first-child	p:first-child	选择器匹配属于任意元素的第一个子元素的 <p> 元素
-:before	p:before	在每个<p>元素之前插入内容
-:after	p:after	在每个<p>元素之后插入内容
-:lang(language)	p:lang(it)	为<p>元素的lang属性选择一个开始值
+## 25.7 所有CSS伪类/元素
 
-25.CSS 导航栏
+选择器	|示例	|示例说明
+-|-|-
+:link	|a:link	|选择所有未访问链接
+:visited|	a:visited	|选择所有访问过的链接
+:active|	a:active	|选择正在活动链接
+:hover	|a:hover	|把鼠标放在链接上的状态
+:focus	|input:focus|	选择元素输入后具有焦点
+:first-letter|	p:first-letter|	选择每个\<p> 元素的第一个字母
+:first-line|	p:first-line	|选择每个\<p> 元素的第一行
+:first-child|	p:first-child|	选择器匹配属于任意元素的第一个子元素的 \<p> 元素
+:before|	p:before	|在每个\<p>元素之前插入内容
+:after	|p:after	|在每个\<p>元素之后插入内容
+:lang(language)|	p:lang(it)	|为\<p>元素的lang属性选择一个开始值
+
+# 26 CSS 导航栏
 导航栏
+
 熟练使用导航栏，对于任何网站都非常重要。
+
 使用CSS你可以转换成好看的导航栏而不是枯燥的HTML菜单。
 
-25.1导航栏=链接列表
+## 26.1 导航栏=链接列表
 作为标准的 HTML 基础一个导航栏是必须的。
 
 在我们的例子中我们将建立一个标准的 HTML 列表导航栏。
 
-导航条基本上是一个链接列表，所以使用 <ul> 和 <li>元素非常有意义：
+**导航条基本上是一个链接列表，所以使用 <ul> 和 <li>元素非常有意义：**
+``css
 <ul>
   <li><a href="#home">主页</a></li>
   <li><a href="#news">新闻</a></li>
   <li><a href="#contact">联系</a></li>
   <li><a href="#about">关于</a></li>
 </ul>
+```
 
 现在，让我们从列表中删除边距和填充：
+```css
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+```
 例子解析：
 
-list-style-type:none - 移除列表前小标志。一个导航栏并不需要列表标记
-移除浏览器的默认设置将边距和填充设置为0
+- list-style-type:none - 移除列表前小标志。一个导航栏并不需要列表标记
+- 移除浏览器的默认设置将边距和填充设置为0
+
 上面的例子中的代码是垂直和水平导航栏使用的标准代码。
 
-25.2垂直导航栏
+## 26.2 垂直导航栏
+
 上面的代码，我们只需要 <a>元素的样式，建立一个垂直的导航栏：
+```css
 a
 {
     display:block;
     width:60px;
 }
-display:block - 显示块元素的链接，让整体变为可点击链接区域（不只是文本），它允许我们指定宽度
-width:60px - 块元素默认情况下是最大宽度。我们要指定一个60像素的宽度
+```
+- display:block - 显示块元素的链接，让整体变为可点击链接区域（不只是文本），它允许我们指定宽度
+- width:60px - 块元素默认情况下是最大宽度。我们要指定一个60像素的宽度
+
 注意： 请务必指定 <a>元素在垂直导航栏的的宽度。如果省略宽度，IE6可能产生意想不到的效果。
 
-25.3垂直导航条实例
+## 26.3 垂直导航条实例
 创建一个简单的垂直导航条实例，在鼠标移动到选项时，修改背景颜色：
+```css
 ul {
     list-style-type: none;
     margin: 0;
@@ -2151,18 +2226,23 @@ li a:hover {
     background-color: #555;
     color: white;
 }
+```
 
-25.4激活/当前导航条实例
-在点击了选项后，我们可以添加 "active" 类来标注哪个选项被选中：
+## 26.4 激活/当前导航条实例
+
+在点击了选项后，**我们可以添加 "active" 类来标注哪个选项被选中：**
+```css
 li a.active {
     background-color: #4CAF50;
     color: white;
 }
+```
 
-25.5.创建链接并添加边框
-可以在 <li> or <a> 上添加text-align:center 样式来让链接居中。
+## 26.5 创建链接并添加边框
+可以在 \<li> or \<a> 上添加text-align:center 样式来让链接居中。
 
-可以在 border <ul> 上添加 border 属性来让导航栏有边框。如果要在每个选项上添加边框，可以在每个 <li> 元素上添加border-bottom :
+可以在 border \<ul> 上添加 border 属性来让导航栏有边框。如果要在每个选项上添加边框，可以在每个 \<li> 元素上添加border-bottom :
+```css
 ul {
     border: 1px solid #555;
 }
@@ -2175,9 +2255,10 @@ li {
 li:last-child {
     border-bottom: none;
 }
-
-25.6.全屏高度的固定导航条
+```
+## 26.6 全屏高度的固定导航条
 接下来我们创建一个左边是全屏高度的固定导航条，右边是可滚动的内容。
+```
 ul {
     list-style-type: none;
     margin: 0;
@@ -2188,26 +2269,31 @@ ul {
     position: fixed; 
     overflow: auto; /* 如果导航栏选项多，允许滚动 */
 }
+```
 
-25.7水平导航栏
-有两种方法创建横向导航栏。使用内联(inline)或浮动(float)的列表项。
+## 26.7 水平导航栏
+
+**有两种方法创建横向导航栏。使用内联(inline)或浮动(float)的列表项。**
 
 这两种方法都很好，但如果你想链接到具有相同的大小，你必须使用浮动的方法。
 
-内联列表项
+### 26.7.1 内联列表项
 建立一个横向导航栏的方法之一是指定元素， 下述代码是标准的内联:
+```css
 li
 {
     display:inline;
 }
+```
 实例解析：
 
-display:inline; - 默认情况下，<li> 元素是块元素。在这里，我们删除换行符之前和之后每个列表项，以显示一行。
+- display:inline; - 默认情况下，\<li> 元素是块元素。在这里，我们删除换行符之前和之后每个列表项，以显示一行。
 
-25.8浮动列表项
+### 26.7.2 浮动列表项
 在上面的例子中链接有不同的宽度。
 
-对于所有的链接宽度相等，浮动 <li>元素，并指定为 <a>元素的宽度：
+对于所有的链接宽度相等，浮动 \<li>元素，并指定为 \<a>元素的宽度：
+```css
 li
 {
     float:left;
@@ -2217,12 +2303,15 @@ a
     display:block;
     width:60px;
 }
-float:left - 使用浮动块元素的幻灯片彼此相邻
-display:block - 显示块元素的链接，让整体变为可点击链接区域（不只是文本），它允许我们指定宽度
-width:60px - 块元素默认情况下是最大宽度。我们要指定一个60像素的宽度
+```
+解析
+- float:left - 使用浮动块元素的幻灯片彼此相邻
+- display:block - 显示块元素的链接，让整体变为可点击链接区域（不只是文本），它允许我们指定宽度
+- width:60px - 块元素默认情况下是最大宽度。我们要指定一个60像素的宽度
 
-25.9水平导航条实例
+## 26.8 水平导航条实例
 创建一个水平导航条，在鼠标移动到选项后修改背景颜色。
+```css
 ul {
     list-style-type: none;
     margin: 0;
@@ -2247,24 +2336,28 @@ li a {
 li a:hover {
     background-color: #111;
 }
-
-25.10激活/当前导航条实例
+```
+## 26.9 激活/当前导航条实例
 在点击了选项后，我们可以添加 "active" 类来标准哪个选项被选中：
+```css
 .active {
     background-color: #4CAF50;
 }
+```
 
-25.11.链接右对齐
+## 26.10 链接右对齐
 将导航条最右边的选项设置右对齐 (float:right;)：
+```css
 <ul>
   <li><a href="#home">主页</a></li>
   <li><a href="#news">新闻</a></li>
   <li><a href="#contact">联系</a></li>
   <li style="float:right"><a class="active" href="#about">关于</a></li>
 </ul>
-
-25.12.添加分割线
-<li> 通过 border-right 样式来添加分割线:
+```
+## 26.11 添加分割线
+\<li> 通过 border-right 样式来添加分割线:
+```css
 /* 除了最后一个选项(last-child) 其他的都添加分割线 */
 li {
     border-right: 1px solid #bbb;
@@ -2273,24 +2366,32 @@ li {
 li:last-child {
     border-right: none;
 }
+```
 
-25.13.固定导航条
+## 26.12 固定导航条
 可以设置页面的导航条固定在头部或者底部：
+
 头部
+```css
 ul {
     position: fixed;
     top: 0;
     width: 100%;
 }
+```
+
 底部
+```css
 ul {
     position: fixed;
     bottom: 0;
     width: 100%;
 }
+```
 
-25.14.灰色水平导航条
+## 26.13 灰色水平导航条
 灰色水平导航条
+```css
 ul {
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
@@ -2299,12 +2400,14 @@ ul {
 li a {
     color: #666;
 }
+```
 
-26.CSS 下拉菜单
+# 27 CSS 下拉菜单
 使用 CSS 创建一个鼠标移动上去后显示下拉菜单的效果。
 
-26.1.基本下拉菜单
+## 27.1 基本下拉菜单
 当鼠标移动到指定元素上时，会出现下拉菜单。
+```css
 <style>
 .dropdown {
   position: relative;
@@ -2329,31 +2432,32 @@ li a {
     <p>www.runoob.com</p>
   </div>
 </div>
+```
 
 实例解析
-HTML 部分：
+**HTML 部分：**
 
-我们可以使用任何的 HTML 元素来打开下拉菜单，如：<span>, 或 a <button> 元素。
+我们可以使用任何的 HTML 元素来打开下拉菜单，如：\<span>, 或 a \<button> 元素。
 
-使用容器元素 (如： <div>) 来创建下拉菜单的内容，并放在任何你想放的位置上。
+使用容器元素 (如： \<div>) 来创建下拉菜单的内容，并放在任何你想放的位置上。
 
-使用 <div> 元素来包裹这些元素，并使用 CSS 来设置下拉内容的样式。
+使用 \<div> 元素来包裹这些元素，并使用 CSS 来设置下拉内容的样式。
 
-CSS 部分：
+**CSS 部分：**
 
 .dropdown 类使用 position:relative, 这将设置下拉菜单的内容放置在下拉按钮 (使用 position:absolute) 的右下角位置。
 
-.dropdown-content 类中是实际的下拉菜单。默认是隐藏的，在鼠标移动到指定元素后会显示。 注意 min-width 的值设置为 160px。你可以随意修改它。 注意: 如果你想设置下拉内容与下拉按钮的宽度一致，可设置 width 为 100% ( overflow:auto 设置可以在小尺寸屏幕上滚动)。
+**.dropdown-content 类中是实际的下拉菜单。默认是隐藏的，在鼠标移动到指定元素后会显示。** 注意 min-width 的值设置为 160px。你可以随意修改它。 注意: 如果你想设置下拉内容与下拉按钮的宽度一致，可设置 width 为 100% ( overflow:auto 设置可以在小尺寸屏幕上滚动)。
 
 我们使用 box-shadow 属性让下拉菜单看起来像一个"卡片"。
 
 :hover 选择器用于在用户将鼠标移动到下拉按钮上时显示下拉菜单。
 
-26.2.下拉菜单
+## 27.2 下拉菜单
 创建下拉菜单，并允许用户选取列表中的某一项：
 
-下拉菜单
 这个实例类似前面的实例，当我们在下拉列表中添加了链接，并设置了样式：
+```css
 <style>/* 下拉按钮样式 */.dropbtn {    
 	background-color: #4CAF50;    color: white;    
 	padding: 16px;    font-size: 16px;    
@@ -2374,26 +2478,30 @@ CSS 部分：
 	<div class="dropdown-content">    <a href="#">菜鸟教程 
 	1</a>    
 	<a href="#">菜鸟教程 2</a>    <a href="#">菜鸟教程 3</a>  </div></div>
+```
 
-26.3下拉内容对齐方式
+## 27.3 下拉内容对齐方式
+
 float:left;
 左
 float:right;
 
 如果你想设置右浮动的下拉菜单内容方向是从右到左，而不是从左到右，可以添加以下代码 right: 0;
 
+```css
 .dropdown-content {
     right: 0;
 }
+```
 
-27.CSS 提示工具(Tooltip)
+## 28 CSS 提示工具(Tooltip)
 本文我们为大家介绍如何使用 HTML 与 CSS 来创建提示工具。
 
 提示工具在鼠标移动到指定元素后触发，先看以下四个实例：
 
-27.1.基础提示框(Tooltip)
+## 28.1 基础提示框(Tooltip)
 提示框在鼠标移动到指定元素上显示：
-
+```css
 <style>/* Tooltip 容器 */
 .tooltip {
     position: relative;
@@ -2424,13 +2532,13 @@ float:right;
 <div class="tooltip">鼠标移动到这
   <span class="tooltiptext">提示文本</span>
 </div>
-
+```
 实例解析
-HTML) 使用容器元素 (like <div>) 并添加 "tooltip" 类。在鼠标移动到 <div> 上时显示提示信息。
+**HTML**) 使用容器元素 (like \<div>) 并添加 "tooltip" 类。在鼠标移动到 \<div> 上时显示提示信息。
 
-提示文本放在内联元素上(如 <span>) 并使用class="tooltiptext"。
+提示文本放在内联元素上(如 \<span>) 并使用class="tooltiptext"。
 
-CSS)tooltip 类使用 position:relative, 提示文本需要设置定位值 position:absolute。 注意: 接下来的实例会显示更多的定位效果。
+**CSS**)tooltip 类使用 position:relative, 提示文本需要设置定位值 position:absolute。 注意: 接下来的实例会显示更多的定位效果。
 
 tooltiptext 类用于实际的提示文本。模式是隐藏的，在鼠标移动到元素显示 。设置了一些宽度、背景色、字体色等样式。
 
@@ -2438,7 +2546,7 @@ CSS3 border-radius 属性用于为提示框添加圆角。
 
 :hover 选择器用于在鼠标移动到到指定元素 <div> 上时显示的提示。
 
-27.2定位提示工具
+## 28.2 定位提示工具
 以下实例中，提示工具显示在指定元素的右侧(left:105%) 。
 
 注意 top:-5px 同于定位在容器元素的中间。使用数字 5 因为提示文本的顶部和底部的内边距（padding）是 5px。
@@ -2446,15 +2554,18 @@ CSS3 border-radius 属性用于为提示框添加圆角。
 如果你修改 padding 的值，top 值也要对应修改，这样才可以确保它是居中对齐的。
 
 在提示框显示在左边的情况也是这个原理。
+```css
 .tooltip .tooltiptext {
     top: -5px;
     left: 105%; 
 }
+```
 
-27.3添加箭头
+## 28.3 添加箭头
 我们可以用CSS 伪元素 ::after 及 content 属性为提示工具创建一个小箭头标志，箭头是由边框组成的，但组合起来后提示工具像个语音信息框。
 
 以下实例演示了如何为显示在顶部的提示工具添加底部箭头：
+```css
 .tooltip .tooltiptext::after {
     content: " ";
     position: absolute;
@@ -2465,6 +2576,7 @@ CSS3 border-radius 属性用于为提示框添加圆角。
     border-style: solid;
     border-color: black transparent transparent transparent;
 }
+```
 实例解析
 在提示工具内定位箭头: top: 100% , 箭头将显示在提示工具的底部。left: 50% 用于居中对齐箭头。
 
@@ -2474,8 +2586,9 @@ border-color 用于将内容转换为箭头。设置顶部边框为黑色，其�
 
 以下实例演示了如何在提示工具的头部添加箭头，注意设置边框颜色：
 
-27.4淡入效果
+## 28.4 淡入效果
 我们可以使用 CSS3 transition 属性及 opacity 属性来实现提示工具的淡入效果:
+```css
 .tooltip .tooltiptext {
     opacity: 0;
     transition: opacity 1s;
@@ -2484,17 +2597,19 @@ border-color 用于将内容转换为箭头。设置顶部边框为黑色，其�
 .tooltip:hover .tooltiptext {
     opacity: 1;
 }
+```
 
-28.CSS 媒体类型
-媒体类型允许你指定文件将如何在不同媒体呈现。该文件可以以不同的方式显示在屏幕上，在纸张上，或听觉浏览器等等。 
+# 29 CSS 媒体类型
+**媒体类型允许你指定文件将如何在不同媒体呈现**。该文件可以以不同的方式显示在屏幕上，在纸张上，或听觉浏览器等等。 
 
-媒体类型
+## 29.1 媒体类型
 一些 CSS 属性只设计了某些媒体。例如 voice-family 属性是专为听觉用户代理。其他一些属性可用于不同的媒体类型。例如， font-size 属性可用于屏幕和印刷媒体，但有不同的值。屏幕和纸上的文件不同，通常需要一个更大的字体，sans-serif 字体比较适合在屏幕上阅读，而 serif 字体更容易在纸上阅读。
 
-28.1@media 规则
-@media 规则允许在相同样式表为不同媒体设置不同的样式。
+## 29.2 @media 规则
+**@media 规则允许在相同样式表为不同媒体设置不同的样式。**
 
 在下面的例子告诉我们浏览器屏幕上显示一个 14 像素的 Verdana 字体样式。但是如果页面打印，将是 10 个像素的 Times 字体。请注意，font-weight 在屏幕上和纸上设置为粗体：
+```css
 @media screen
 {
     p.test {font-family:verdana,sans-serif;font-size:14px;}
@@ -2507,112 +2622,192 @@ border-color 用于将内容转换为箭头。设置顶部边框为黑色，其�
 {
     p.test {font-weight:bold;}
 }
-其他媒体类型
-注意：媒体类型名称不区分大小写。
+```
+## 29.3 其他媒体类型
+**注意：媒体类型名称不区分大小写。**
 
-媒体类型	描述
-all	用于所有的媒体设备。
-aural	用于语音和音频合成器。
-braille	用于盲人用点字法触觉回馈设备。
-embossed	用于分页的盲人用点字法打印机。
-handheld	用于小的手持的设备。
-print	用于打印机。
-projection	用于方案展示，比如幻灯片。
-screen	用于电脑显示器。
-tty	用于使用固定密度字母栅格的媒体，比如电传打字机和终端。
-tv	用于电视机类型的设备。
+媒体类型	|描述
+-|-
+all	|用于所有的媒体设备。
+aural	|用于语音和音频合成器。
+braille	|用于盲人用点字法触觉回馈设备。
+embossed	|用于分页的盲人用点字法打印机。
+handheld	|用于小的手持的设备。
+print	|用于打印机。
+projection	|用于方案展示，比如幻灯片。
+screen	|用于电脑显示器。
+tty	|用于使用固定密度字母栅格的媒体，比如电传打字机和终端。
+tv	|用于电视机类型的设备。
 
-29.CSS 属性 选择器
+# 30 CSS 属性 选择器
 具有特定属性的HTML元素样式
-具有特定属性的HTML元素样式不仅仅是class和id。
+**具有特定属性的HTML元素样式不仅仅是class和id。**
 
 注意：IE7和IE8需声明!DOCTYPE才支持属性选择器！IE6和更低的版本不支持属性选择器。
 
-属性选择器
+## 30.1 属性选择器
 下面的例子是把包含标题（title）的所有元素变为蓝色：
+```css
 [title]
 {
     color:blue;
 }
-
-29.1.属性和值选择器
+<body>
+<h2>Will apply to:</h2>
+<h1 title="Hello world">Hello world</h1>
+<a title="runoob.com" href="http://www.runoob.com/">runoob.com</a>
+<hr>
+<h2>Will not apply to:</h2>
+<p>Hello!</p>
+</body>
+```
+## 30.2 属性和值选择器
 下面的实例改变了标题title='runoob'元素的边框样式:
-属性和值的选择器 - 多值
+```css
+[title=runoob]
+{
+    border:5px solid green;
+}
+```
+## 30.3 属性和值的选择器 - 多值
 下面是包含指定值的title属性的元素样式的例子，使用（~）分隔属性和值:
+``css
 [title~=hello] { color:blue; }
+```
 
 下面是包含指定值的lang属性的元素样式的例子，使用（|）分隔属性和值:
-
+```css
 [lang|=en] { color:blue; }
+```
 
 
-29.2表单样式
+## 30.4 表单样式
 属性选择器样式无需使用class或id的形式:
+```css
+input[type="text"]
+{
+    width:150px;
+    display:block;
+    margin-bottom:10px;
+    background-color:yellow;
+}
+input[type="button"]
+{
+    width:120px;
+    margin-left:35px;
+    display:block;
+}
+```
 
 
-30.CSS 表单
-
-30.1输入框(input) 样式(简单的输入)
+# 31 CSS 表单
+一个表单案例，我们使用 CSS 来渲染 HTML 的表单元素：
+```css
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+ 
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+ 
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+ 
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+```
+## 31.1 输入框(input) 样式(简单的输入)
 使用 width 属性来设置输入框的宽度：
+```css
     input{
             width:100%;
         }
+```
 以上实例中设置了所有 <input> 元素的宽度为 100%，如果你只想设置指定类型的输入框可以使用以下属性选择器：
 
-input[type=text] - 选取文本输入框
-input[type=password] - 选择密码的输入框
-input[type=number] - 选择数字的输入框
+- input[type=text] - 选取文本输入框
+- input[type=password] - 选择密码的输入框
+- input[type=number] - 选择数字的输入框
 
-30.2输入框填充
+## 31.2 输入框填充
 使用 padding 属性可以在输入框中添加内边距。
 
 CSS 实例
+```css
 input[type=text] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
+```
 注意我们设置了 box-sizing 属性为 border-box。这样可以确保浏览器呈现出带有指定宽度和高度的输入框是把边框和内边距一起计算进去的。
 
-30.3.输入框(input) 边框
+## 31.3 输入框(input) 边框
 使用 border 属性可以修改 input 边框的大小或颜色，使用 border-radius 属性可以给 input 添加圆角：
 
 CSS 实例
+```css
 input[type=text] {
   border: 2px solid red;
   border-radius: 4px;
 }
+```
 
-30.4.如果你只想添加底部边框可以使用 border-bottom 属性:
+如果你只想添加底部边框可以使用 border-bottom 属性:
 
 CSS 实例
+```css
 input[type=text] {
   border: none;
   border-bottom: 2px solid red;
-
-30.5.输入框(input) 颜色
+```
+## 31.4 输入框(input) 颜色
 可以使用 background-color 属性来设置输入框的背景颜色，color 属性用于修改文本颜色：
 
 CSS 实例
+```css
 input[type=text] {
   background-color: #3CBC8D;
   color: white;
 }
 
-30.6.输入框(input) 聚焦
+```
+
+## 31.5 输入框(input) 聚焦
 默认情况下，一些浏览器在输入框获取焦点时（点击输入框）会有一个蓝色轮廓。我们可以设置 input 样式为 outline: none; 来忽略该效果。
 
 使用 :focus 选择器可以设置输入框在获取焦点时的样式：
 
 CSS 实例
+```css
 input[type=text]:focus {
   background-color: lightblue;
+```
 
-30.7.输入框(input) 图标
+## 31.6 输入框(input) 图标
 如果你想在输入框中添加图标，可以使用 background-image 属性和用于定位的background-position 属性。注意设置图标的左边距，让图标有一定的空间：
 
 CSS 实例
+```css
 input[type=text] {
   background-color: white;
   background-image: url('searchicon.png');
@@ -2620,11 +2815,13 @@ input[type=text] {
   background-repeat: no-repeat;
   padding-left: 40px;
 }
+```
 
-30.9.带动画的搜索框
+## 31.7 带动画的搜索框
 以下实例使用了 CSS transition 属性，该属性设置了输入框在获取焦点时会向右延展。你可以在 CSS 动画 章节查看更多内容。
 
 CSS 实例
+```css
 input[type=text] {
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
@@ -2633,11 +2830,13 @@ input[type=text] {
 input[type=text]:focus {
   width: 100%;
 }
+```
 
-30.10.文本框（textarea）样式
+## 31.8 文本框（textarea）样式
 注意: 使用 resize 属性来禁用文本框可以重置大小的功能（一般拖动右下角可以重置大小）。
 
 CSS 实例
+```css
 textarea {
   width: 100%;
   height: 150px;
@@ -2648,9 +2847,11 @@ textarea {
   background-color: #f8f8f8;
   resize: none;
 }
+```
 
-30.11.下拉菜单（select）样式
+## 31.9 下拉菜单（select）样式
 CSS 实例
+```css
 select {
   width: 100%;
   padding: 16px 20px;
@@ -2658,8 +2859,11 @@ select {
   border-radius: 4px;
   background-color: #f1f1f1;
 }
-30.12按钮样式
+```
+
+## 31.10 按钮样式
 CSS 实例
+```css
 input[type=button], input[type=submit], input[type=reset] {
   background-color: #4CAF50;
   border: none;
@@ -2669,13 +2873,14 @@ input[type=button], input[type=submit], input[type=reset] {
   margin: 4px 2px;
   cursor: pointer;
 }
- 
 /* 提示: 使用 width: 100% 设置全宽按钮 */
+```
 
-30.13.响应式表单
+## 31.11 响应式表单
 响应式表单可以根据浏览器窗口的大小重新布局各个元素，我们可以通过重置浏览器窗口大小来查看效果：
 
 高级: 以下实例使用了CSS3 多媒体查询 来创建一个响应式表单。
+```css
 
 * {
   box-sizing: border-box;
@@ -2740,23 +2945,23 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
+```
+# 32 CSS 计数器
+**CSS 计数器通过一个变量来设置，根据规则递增变量。**
 
-31.CSS 计数器
-CSS 计数器通过一个变量来设置，根据规则递增变量。
-
-使用计数器自动编号
+## 32.1 使用计数器自动编号
 CSS 计数器根据规则来递增变量。
 
 CSS 计数器使用到以下几个属性：
+- counter-reset - 创建或者重置计数器
+- counter-increment - 递增变量
+- content - 插入生成的内容
+- counter() 或 counters() 函数 - 将计数器的值添加到元素
 
-counter-reset - 创建或者重置计数器
-counter-increment - 递增变量
-content - 插入生成的内容
-counter() 或 counters() 函数 - 将计数器的值添加到元素
 要使用 CSS 计数器，得先用 counter-reset 创建：
 
 以下实例在页面创建一个计数器 (在 body 选择器中)，每个 <h2> 元素的计数值都会递增，并在每个 <h2> 元素前添加 "Section <计数值>:"
-
+```css
 body {
   counter-reset: section;
 }
@@ -2765,10 +2970,12 @@ h2::before {
   counter-increment: section;
   content: "Section " counter(section) ": ";
 }
+```
 
-31.1.嵌套计数器
+## 32.2 嵌套计数器
 以下实例在页面创建一个计数器，在每一个 <h1> 元素前添加计数值 "Section <主标题计数值>.", 嵌套的计数值则放在 <h2> 元素的前面，内容为 "<主标题计数值>.<副标题计数值>":
-body {
+```css
+ody {
   counter-reset: section;
 }
  
@@ -2785,7 +2992,10 @@ h2::before {
   counter-increment: subsection;
   content: counter(section) "." counter(subsection) " ";
 }
+```
+
 计数器也可用于列表中，列表的子元素会自动创建。这里我们使用了 counters() 函数在不同的嵌套层级中插入字符串:
+```css
 ol {
   counter-reset: section;
   list-style-type: none;
@@ -2795,24 +3005,34 @@ li::before {
   counter-increment: section;
   content: counters(section,".") " ";
 }
+```
 
-31.2CSS 计数器属性
-属性	描述
-content	使用 ::before 和 ::after 伪元素来插入自动生成的内容
-counter-increment	递增一个或多个值
-counter-reset	创建或重置一个或多个计数器
+## 32.3 CSS 计数器属性
+属性	|描述
+-|-
+content	|使用 ::before 和 ::after 伪元素来插入自动生成的内容
+counter-increment|	递增一个或多个值
+counter-reset|	创建或重置一个或多个计数器
 
-32.CSS 网页布局
+# 33 CSS 网页布局
 网页布局
+
 网页布局有很多种方式，一般分为以下几个部分：头部区域、菜单导航区域、内容区域、底部区域。
+
+![alt](img/bj.jpg)
+
+## 33.1 头部区域
+头部区域位于整个网页的顶部，一般用于设置网页的标题或者网页的 logo：
+```css
 .header {
   background-color: #F1F1F1;
   text-align: center;
   padding: 20px;
 }
-
-32.1.菜单导航区域
+```
+## 33.2 菜单导航区域
 菜单导航条包含了一些链接，可以引导用户浏览其他页面：
+```css
 /* 导航条 */
 .topnav {
   overflow: hidden;
@@ -2834,16 +3054,19 @@ counter-reset	创建或重置一个或多个计数器
   background-color: #ddd;
   color: black;
 }
+```
 
-32.2.内容区域
+## 33.3 内容区域
 内容区域一般有三种形式:
 
-1 列：一般用于移动端
-2 列：一般用于平板设备
-3 列：一般用于 PC 桌面设备
+- 1 列：一般用于移动端
+- 2 列：一般用于平板设备
+- 3 列：一般用于 PC 桌面设备
+
+![alt](img/bj2.jpg)
 
 我们将创建一个 3 列布局，在小的屏幕上将会变成 1 列布局（响应式）：
-
+```css
 /* 创建三个相等的列 */
 .column {
   float: left;
@@ -2863,15 +3086,17 @@ counter-reset	创建或重置一个或多个计数器
     width: 100%;
   }
 }
+```
+```
 提示:要设置两列可以设置 width 为 50%。创建 4 列可以设置为 25%。
 
 提示:如果你想了解更多 @media 的规则可以查看 CSS3 多媒体查询。
 
 提示: 现在更高级的方式是使用 CSS Flexbox 来创建列的布局，但 Internet Explorer 10 及更早的版本不支持该方式， IE6-10 可以使用浮动方式。
-
-32.3.不相等的列
+```
+### 33.3.1 不相等的列
 不相等的列一般是在中间部分设置内容区域，这块也是最大最主要的，左右两次侧可以作为一些导航等相关内容，这三列加起来的宽度是 100％。
-
+```css
 .column {
   float: left;
 }
@@ -2892,20 +3117,132 @@ counter-reset	创建或重置一个或多个计数器
     width: 100%;
   }
 }
+```
+## 33.4 底部区域
 
-32.4.底部区域
 底部区域在网页的最下方，一般包含版权信息和联系方式等。
+```css
 .footer {
   background-color: #F1F1F1;
   text-align: center;
   padding: 10px;
 }
+```
 
-33.CSS !important 规则
-什么是 !important
+## 33.5 响应式网页布局
+
+通过以上等学习我们来创建一个响应式等页面，页面的布局会根据屏幕的大小来调整：
+```css
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+ 
+/* 头部标题 */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+ 
+.header h1 {
+  font-size: 50px;
+}
+ 
+/* 导航条 */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+ 
+/* 导航条链接 */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ 
+/* 链接颜色修改 */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+ 
+/* 创建两列 */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+ 
+/* 右侧栏 */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+ 
+/* 图像部分 */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+ 
+/* 文章卡片效果 */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+ 
+/* 列后面清除浮动 */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+ 
+/* 底部 */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+ 
+/* 响应式布局 - 屏幕尺寸小于 800px 时，两列布局改为上下布局 */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+ 
+/* 响应式布局 -屏幕尺寸小于 400px 时，导航等布局改为上下布局 */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+```
+
+# 34 CSS !important 规则
+## 34.1 什么是 !important
 CSS 中的 !important 规则用于增加样式的权重。
 
-!important 与优先级无关，但它与最终的结果直接相关，使用一个 !important 规则时，此声明将覆盖任何其他声明。
+**!important 与优先级无关，但它与最终的结果直接相关，使用一个 !important 规则时，此声明将覆盖任何其他声明。**
+```css
 #myid {
   background-color: blue;
 }
@@ -2917,15 +3254,17 @@ CSS 中的 !important 规则用于增加样式的权重。
 p {
   background-color: red !important;
 }
-
+```
 以上实例中，尽管 ID 选择器和类选择器具有更高的优先级，但三个段落背景颜色都显示为红色，因为 !important 规则会覆盖 background-color 属性。
 
-重要说明
-使用 !important 是一个坏习惯，应该尽量避免，因为这破坏了样式表中的固有的级联规则 使得调试找 bug 变得更加困难了。
+## 34.2 重要说明
+
+**使用 !important 是一个坏习惯，应该尽量避免，因为这破坏了样式表中的固有的级联规则 使得调试找 bug 变得更加困难了。**
 
 当两条相互冲突的带有 !important 规则的声明被应用到相同的元素上时，拥有更大优先级的声明将会被采用。
 
 以下实例我们在查看 CSS 源码时就不是很清楚哪种颜色最重要：
+```css
 #myid {
   background-color: blue !important;
 }
@@ -2937,26 +3276,28 @@ p {
 p {
   background-color: red !important;
 }
-
+```
 使用建议：
+- 一定要优先考虑使用样式规则的优先级来解决问题而不是 !important
+- 只有在需要覆盖全站或外部 CSS 的特定页面中使用 !important
+- 永远不要在你的插件中使用 !important
+- 永远不要在全站范围的 CSS 代码中使用 !important
 
-一定要优先考虑使用样式规则的优先级来解决问题而不是 !important
-只有在需要覆盖全站或外部 CSS 的特定页面中使用 !important
-永远不要在你的插件中使用 !important
-永远不要在全站范围的 CSS 代码中使用 !important
-
-33.1.何时使用 !important
+## 34.2 何时使用 !important
 如果要在你的网站上设定一个全站样式的 CSS 样式可以使用 !important。
 
 比如我们要让网站上所有按钮的样式都一样：
+```css
 .button {
   background-color: #8c8c8c;
   color: white;
   padding: 5px;
   border: 1px solid black;
 }
+```
 
 如果我们将按钮放在另一个具有更优先级的元素中，按钮的外观就会发生变化，并且属性会发生冲突，如下实例：
+```css
 .button {
   background-color: #8c8c8c;
   color: white;
@@ -2968,8 +3309,10 @@ p {
   color: red;
   background-color: yellow;
 }
+```
 
 如果想要设置所有按钮具有相同的外观，我们可以将 !important 规则添加到按钮的样式属性中，如下所示：
+```css
 .button {
   background-color: #8c8c8c !important;
   color: white !important;
@@ -2978,6 +3321,27 @@ p {
 }
  
 #myDiv a {
-  color: red;
+  color: red;	
   background-color: yellow;
 }
+```
+
+# 35总结
+## 你已经学习了CSS,下一步学习什么呢?
+CSS 总结
+本教程已向你讲解了如何创建样式表来同时控制多重页面的样式和布局。
+
+你已经学会如何使用 CSS 来添加背景、格式化文本、以及格式化边框，并定义元素的填充和边距。
+
+同时，你也学会了如何定位元素、控制元素的可见性和尺寸、设置元素的形状、将一个元素置于另一个之后，以及向某些选择器添加特殊的效果，比如链接。
+
+## 你已经学习了CSS,下一步学习什么呢?
+下一步应该学习 JavaScript 。
+
+JavaScript 是最流行的语言之一。
+
+JavaScript 是属于 web 的语言，它适用于 PC、笔记本电脑、平板电脑和移动电话。
+
+JavaScript可以使您的网站更具活力。
+
+许多 HTML 开发者都不是程序员，但是 JavaScript 却拥有非常简单的语法。几乎每个人都有能力将小的 JavaScript 片段添加到网页中。
