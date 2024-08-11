@@ -1,0 +1,96 @@
+0 DOM (Document Object Model)（文档对象模型）
+0.1 src 源代码
+0.2 break	用于跳出循环。
+0.3 catch	语句块，在 try 语句块执行出错时执行 catch 语句块。
+0.4 continue	跳过循环中的一个迭代。
+0.5 do ... while	执行一个语句块，在条件语句为 true 时继续执行该语句块。
+0.6 for	在条件语句为 true 时，可以将代码块执行指定的次数。
+0.7 for ... in	用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。
+0.8 function	定义一个函数
+0.9 if ... else	用于基于不同的条件来执行不同的动作。
+0.10 return	退出函数
+0.11 switch	用于基于不同的条件来执行不同的动作。
+0.12 throw	抛出（生成）错误 。
+0.13 try	实现错误处理，与 catch 一同使用。
+0.14 var	声明一个变量。
+0.15 while	当条件语句为 true 时，执行语句块。
+0.16 undefined 未定义（未使用值来声明的变量 如：var x   x没有赋值）
+0.16.1 null 用于对象, undefined 用于变量，属性和方法（null与undefined的区别）
+
+0.17 值类型(基本类型)：字符串（String）、数字(Number)、布尔(Boolean)、空（Null）、未定义（Undefined）、Symbol（表示独一无二的值）
+0.18 引用数据类型（对象类型）：对象(Object)、数组(Array)、函数(Function)，还有两个特殊的对象：正则（RegExp）和日期（Date）
+
+0.19 function : 函数，定义函数的关键字
+
+0.20 for - 循环代码块一定的次数
+0.21 for/in - 循环遍历对象的属性
+0.22 while - 当指定的条件为 true 时循环指定的代码块
+0.23 do/while - 同样当指定的条件为 true 时循环指定的代码块
+0.24 break 打破、跳出。停止函数内的循环，继续执行函数外部的内容。可以给出函数里的返回值。
+0.25 continue 继续， 在函数循环中跳过一次循环，继续循环函数。
+
+
+0.26 constructor 构造函数：返回所有 JavaScript 变量的构造函数的属性。 【使用方法：需要辨别的内容+ .点 +constructor。如：false.constructor。数字要用括号包裹起来：（3.14）. constructor】
+
+0.27 checkValidity()：【约束验证 DOM 方法】如果 input 元素中的数据是合法的返回 true，否则返回 false。
+0.28 setCustomValidity()：【约束验证 DOM 方法】设置 input 元素的 validationMessage 属性，用于自定义错误提示信息的方法。
+0.29 validity（）：【约束验证 DOM 方法】布尔属性值，返回 input 输入值是否合法
+0.30 validationMessage（）：【约束验证 DOM 方法】浏览器错误提示信息
+0.31 willValidate（）：【约束验证 DOM 方法】指定 input 是否需要验证
+
+
+0.32 JSON.parse():【JSON格式：根据json格式创建字符串，用这个函数把字符串对象转化为javascript对象】用于将一个 JSON 字符串转换为 JavaScript 对象
+0.33 JSON.stringify():【JSON格式】用于将 JavaScript 值转换为 JSON 字符串。
+
+1document：文档
+2 write:打印
+3 alert:打印（测试用）
+4 type:类型
+5 onclick:点击（click点击 常用于元素内调用函数）
+6 button：按钮
+7 getElementById：通过元素id得到（get:得到; Element:元素; by:通过）
+8 get:得到、请求
+9 element:元素
+10 by : 通过
+11 document.getElementById("demo")【组合起来过后解释】; : 查找元素 document：查找的意思（可以找任何东西） getElementById:元素id的意思，用个括号吧需要查找的元素写进去
+12 innerHTML【组合起来过后解释】：// 修改元素内容  inner:翻译内部的意思。这里是内容啦   innerHTML ：表示修改x元素在HTML里的内容
+13 inner : 翻译内部的意思。这里是内容啦 
+14 macth：匹配
+15 replace：取代
+16 window.alert()：javascript输出--警告弹窗
+17 document.write()：javascript输出--将内容写到 HTML 文档中
+18 innerHTML ：javascript输出--写入到 HTML 元素。
+19 console.log() ：javascript输出--写入到浏览器的控制台
+20 typeof：查看数据类型
+21 Array：数组 （创建数组方法1：var cars=new Array(); cars[0]="Saab";....  或者 方法2： var cars=["Saab","Volvo","BMW"];
+21 object：对象 （对象的属性以名称和值对的形式 (name : value) 来定义。创建方法：var person
+={firstname:"John", lastname:"Doe", id:5566}; 对象属性有两种寻址方式name=person.lastname; 或者 name=person["lastname"];）
+22 Null :可以通过将变量的值设置为 null 来清空变量
+23 new : 关键词 "new" 来声明其类型 （如：var x=      new Number;）
+24 first ：第一
+25 last : 最后的
+26 age : 年龄
+27 eye: 眼睛
+28 length :计算字符长度
+29 try 语句测试代码块的错误。	（错误触发）
+30 catch 语句处理错误。	（错误触发）
+31 throw 语句创建自定义错误。	（错误触发）
+
+32 与类相关的东东
+创建与初始化类方法
+## 
+
+| 方法          | 描述                         |
+| ------------- | ---------------------------- |
+| constructor() | 构造函数，用于创建和初始化类 |
+
+类关键字
+
+| 关键字  | 描述                   |
+| ------- | ---------------------- |
+| extends | 继承一个类             |
+| static  | 在类中定义一个静态方法 |
+| super   | 调用父类的构造方法     |
+
+33 JavaScript HTML DOM ：通过 HTML DOM，可访问 JavaScript HTML 文档的所有元素
+
